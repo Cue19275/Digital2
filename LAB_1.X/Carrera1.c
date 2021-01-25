@@ -34,48 +34,102 @@
 //******************************************************************************
 // Variables
 //******************************************************************************
+#define ROJO        PORTEbits.RE0
+#define AMARILLO    PORTEbits.RE1
+#define VERDE       PORTEbits.RE2
+#define MRST        PORTCbits.RC5
+#define BTN_1       PORTCbits.RC6
 
+unsigned char   estadoSalida;
+unsigned char   salidaLED;
+unsigned char   estadoLED;
+unsigned char   estado;
 
 //******************************************************************************
 // Prototipos de funciones
 //******************************************************************************
 void Setup(void);
+void semaforo(void);
+void debounceRC6 (void);
 
 //******************************************************************************
 // Ciclo principal
 //******************************************************************************
 void main(void) { 
-    Setup;
+    Setup();
     while (1){
-    
+        if (RC5 = 1){
+            semaforo();
+        }
+        else if (VERDE == 1){
+        debounceRC6();    
     }
+        
+}
 }
 //******************************************************************************
 // Configuración
 //******************************************************************************
 void Setup(void){
     PORTB = 0; //Corredor 1
-    PORTA = 0; //Corredor 2
+    PORTD = 0; //Corredor 2
     PORTE = 0; //Semaforo
     PORTC = 0; //Botones e Indicadores
     ANSEL = 0;
     ANSELH = 0;
-    TRISB = 0; //Output
-    TRISA = 0; //Output
-    TRISE = 0; //Output
-    TRISC = 0b11100000; //Output/Input
+    TRISB = 0; //Output Corredor 1
+    TRISD = 0; //Output Corredor 2
+    TRISE = 0; //Output Semaforo
+    TRISC = 0b11100000; //Output/Input Botones e indicadores
     
     //TRISBbits.TRISB0 = 0;
     //PORTBbits.RB0 = 0;
 }
+
 //******************************************************************************
-// Delay
+// semaforo
 //******************************************************************************
-void delay(char n){
-    for(int i = 0; i < n; i++){
-        for(int j = 0; j < 255; j++ ){
-            
-        }
+void semaforo(void){
+        ROJO = 0;
+        AMARILLO = 0;
+        VERDE = 0;
+        PORTB = 0;
+        PORTC = 0;
+        __delay_ms(500);
+       
+       ROJO = 1;
+       AMARILLO = 0;
+       VERDE = 0;
+       __delay_ms(500);
+       
+       ROJO = 0;
+       AMARILLO = 1;
+       VERDE = 0;
+       __delay_ms(500);
+       
+       ROJO = 0;
+       AMARILLO = 0;
+       VERDE = 1;
+       
+}
+//******************************************************************************
+// Debounce_RC6
+//******************************************************************************
+void debounceRC6(void){ 
+    estado = BTN_1 ;
+    if (estado == 1){
+        estadoSalida=1;
     }
     
+    if (estadoSalida==1){
+        if (estado == 0){
+            if (PORTB == 0){
+                PORTB = 1;
+            }
+            else {
+                PORTB = PORTB << 1;
+            }
+            estadoSalida =0;
+        }
+    }
 }

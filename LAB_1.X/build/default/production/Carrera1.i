@@ -2513,30 +2513,46 @@ extern __bank0 __bit __timeout;
 
 #pragma config BOR4V = BOR40V
 #pragma config WRT = OFF
-# 42 "Carrera1.c"
+# 43 "Carrera1.c"
+unsigned char estadoSalida;
+unsigned char salidaLED;
+unsigned char estadoLED;
+unsigned char estado;
+
+
+
+
 void Setup(void);
+void semaforo(void);
+void debounceRC6 (void);
 
 
 
 
 void main(void) {
-    Setup;
+    Setup();
     while (1){
-
+        if (RC5 = 1){
+            semaforo();
+        }
+        else if (PORTEbits.RE2 == 1){
+        debounceRC6();
     }
+
+}
 }
 
 
 
 void Setup(void){
     PORTB = 0;
-    PORTA = 0;
+    PORTD = 0;
     PORTE = 0;
     PORTC = 0;
     ANSEL = 0;
     ANSELH = 0;
     TRISB = 0;
-    TRISA = 0;
+    TRISD = 0;
     TRISE = 0;
     TRISC = 0b11100000;
 
@@ -2546,11 +2562,48 @@ void Setup(void){
 
 
 
-void delay(char n){
-    for(int i = 0; i < n; i++){
-        for(int j = 0; j < 255; j++ ){
 
-        }
+void semaforo(void){
+        PORTEbits.RE0 = 0;
+        PORTEbits.RE1 = 0;
+        PORTEbits.RE2 = 0;
+        PORTB = 0;
+        PORTC = 0;
+        _delay((unsigned long)((500)*(8000000/4000.0)));
+
+       PORTEbits.RE0 = 1;
+       PORTEbits.RE1 = 0;
+       PORTEbits.RE2 = 0;
+       _delay((unsigned long)((500)*(8000000/4000.0)));
+
+       PORTEbits.RE0 = 0;
+       PORTEbits.RE1 = 1;
+       PORTEbits.RE2 = 0;
+       _delay((unsigned long)((500)*(8000000/4000.0)));
+
+       PORTEbits.RE0 = 0;
+       PORTEbits.RE1 = 0;
+       PORTEbits.RE2 = 1;
+
+}
+
+
+
+void debounceRC6(void){
+    estado = PORTCbits.RC6 ;
+    if (estado == 1){
+        estadoSalida=1;
     }
 
+    if (estadoSalida==1){
+        if (estado == 0){
+            if (PORTB == 0){
+                PORTB = 1;
+            }
+            else {
+                PORTB = PORTB << 1;
+            }
+            estadoSalida =0;
+        }
+    }
 }
