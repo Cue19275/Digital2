@@ -5,7 +5,7 @@ Linker command line:
 -W-3 --edf=C:\Program Files\Microchip\xc8\v2.20\pic\dat\en_msgs.txt -cn \
   -h+dist/default/production\LAB_1.X.production.sym \
   --cmf=dist/default/production\LAB_1.X.production.cmf -z -Q16F887 \
-  -oC:\Users\Carlo\AppData\Local\Temp\s7q4.2 --defsym=__MPLAB_BUILD=1 \
+  -oC:\Users\Carlo\AppData\Local\Temp\so60.2 --defsym=__MPLAB_BUILD=1 \
   -Mdist/default/production/LAB_1.X.production.map -E1 -ver=XC8 Compiler \
   --acfsm=1493 -ASTACK=0110h-016Fh -pstack=STACK -ACODE=00h-07FFhx4 \
   -ASTRCODE=00h-01FFFh -ASTRING=00h-0FFhx32 -ACONST=00h-0FFhx32 \
@@ -18,7 +18,7 @@ Linker command line:
   -preset_vec=00h,intentry,init,end_init -ppowerup=CODE -pcinit=CODE \
   -pfunctab=ENTRY -AEEDATA=00h-0FFh/02100h -peeprom_data=EEDATA -DEEDATA=2 \
   -DCODE=2 -DSTRCODE=2 -DSTRING=2 -DCONST=2 -DENTRY=2 -k \
-  C:\Users\Carlo\AppData\Local\Temp\s7q4.o \
+  C:\Users\Carlo\AppData\Local\Temp\so60.o \
   dist/default/production\LAB_1.X.production.o 
 
 Object code version is 3.11
@@ -28,16 +28,17 @@ Machine type is 16F887
 
 
                 Name                               Link     Load   Length Selector   Space Scale
-C:\Users\Carlo\AppData\Local\Temp\s7q4.o
+C:\Users\Carlo\AppData\Local\Temp\so60.o
                 end_init                              0        0        3        0       0
                 config                             2007     2007        2        0       4
 dist/default/production\LAB_1.X.production.o
                 cinit                               7F8      7F8        8      FF0       0
                 config                             2007     2007        2        0       4
-                text3                               764      764       12      EC8       0
-                text2                               795      795       25      F2A       0
-                text1                               7BA      7BA       3E      F74       0
-                maintext                            776      776       1F      EEC       0
+                text4                               71A      71A       14      E34       0
+                text3                               72E      72E       25      E5C       0
+                text2                               753      753       25      EA6       0
+                text1                               778      778       3F      EF0       0
+                maintext                            7B7      7B7       41      F6E       0
                 cstackCOMMON                         74       74        3       70       1
                 bssCOMMON                            70       70        4       70       1
 
@@ -47,10 +48,11 @@ TOTAL           Name                               Link     Load   Length     Sp
         CLASS   CODE           
                 end_init                              0        0        3         0
                 cinit                               7F8      7F8        8         0
-                text3                               764      764       12         0
-                text2                               795      795       25         0
-                text1                               7BA      7BA       3E         0
-                maintext                            776      776       1F         0
+                text4                               71A      71A       14         0
+                text3                               72E      72E       25         0
+                text2                               753      753       25         0
+                text1                               778      778       3F         0
+                maintext                            7B7      7B7       41         0
 
         CLASS   STRCODE        
 
@@ -98,10 +100,11 @@ SEGMENTS        Name                           Load    Length   Top    Selector 
 
                 reset_vec                      000000  000003  000003         0       0  CODE        2
                 bssCOMMON                      000070  000007  000077        70       1  COMMON      1
-                text3                          000764  000012  000776       EC8       0  CODE        2
-                maintext                       000776  00001F  000795       EEC       0  CODE        2
-                text2                          000795  000025  0007BA       F2A       0  CODE        2
-                text1                          0007BA  00003E  0007F8       F74       0  CODE        2
+                text4                          00071A  000014  00072E       E34       0  CODE        2
+                text3                          00072E  000025  000753       E5C       0  CODE        2
+                text2                          000753  000025  000778       EA6       0  CODE        2
+                text1                          000778  00003F  0007B7       EF0       0  CODE        2
+                maintext                       0007B7  000041  0007F8       F6E       0  CODE        2
                 cinit                          0007F8  000008  000800       FF0       0  CODE        2
 
 
@@ -112,13 +115,13 @@ UNUSED ADDRESS RANGES
         BANK1            00A0-00EF             50           1
         BANK2            0110-016F             60           1
         BANK3            0190-01EF             60           1
-        CODE             0003-0763            761           2
+        CODE             0003-0719            717           2
                          0800-1FFF            800
         COMMON           0077-007D              7           1
-        CONST            0003-0763            100           2
+        CONST            0003-0719            100           2
                          0800-1FFF            100
         EEDATA           2100-21FF            100           2
-        ENTRY            0003-0763            100           2
+        ENTRY            0003-0719            100           2
                          0800-1FFF            100
         IDLOC            2000-2003              4           2
         RAM              0020-006F             50           1
@@ -130,9 +133,9 @@ UNUSED ADDRESS RANGES
         SFR2             0100-010F             10           1
         SFR3             0180-018F             10           1
         STACK            0110-016F             60           1
-        STRCODE          0003-0763            761           2
+        STRCODE          0003-0719            717           2
                          0800-1FFF           1800
-        STRING           0003-0763            100           2
+        STRING           0003-0719            100           2
                          0800-1FFF            100
 
                                   Symbol Table
@@ -146,7 +149,7 @@ _PORTD                   (abs)        0008
 _PORTE                   (abs)        0009
 _PORTEbits               (abs)        0009
 _RC5                     (abs)        003D
-_Setup                   text3        0764
+_Setup                   text4        071A
 _TRISB                   (abs)        0086
 _TRISC                   (abs)        0087
 _TRISD                   (abs)        0088
@@ -226,27 +229,33 @@ ___latbits               (abs)        0002
 ___sp                    stack        0000
 ___stackhi               (abs)        0000
 ___stacklo               (abs)        0000
-__end_of_Setup           text3        0776
+__end_of_Setup           text4        072E
 __end_of__initialization cinit        07FC
-__end_of_debounceRC6     text2        07BA
-__end_of_main            maintext     0795
-__end_of_semaforo        text1        07F8
+__end_of_debounceRC6     text3        0753
+__end_of_debounceRC7     text2        0778
+__end_of_main            maintext     07F8
+__end_of_semaforo        text1        07B7
 __initialization         cinit        07F8
 __pbssCOMMON             bssCOMMON    0070
 __pcstackCOMMON          cstackCOMMON 0074
-__pmaintext              maintext     0776
-__ptext1                 text1        07BA
-__ptext2                 text2        0795
-__ptext3                 text3        0764
+__pmaintext              maintext     07B7
+__ptext1                 text1        0778
+__ptext2                 text2        0753
+__ptext3                 text3        072E
+__ptext4                 text4        071A
 __size_of_Setup          (abs)        0000
 __size_of_debounceRC6    (abs)        0000
+__size_of_debounceRC7    (abs)        0000
 __size_of_main           (abs)        0000
 __size_of_semaforo       (abs)        0000
-_debounceRC6             text2        0795
-_estado                  bssCOMMON    0070
+_debounceRC6             text3        072E
+_debounceRC7             text2        0753
+_estado                  bssCOMMON    0072
+_estadoC2                bssCOMMON    0070
 _estadoSalida            bssCOMMON    0073
-_main                    maintext     0776
-_semaforo                text1        07BA
+_estadoSalidaC2          bssCOMMON    0071
+_main                    maintext     07B7
+_semaforo                text1        0778
 btemp                    (abs)        007E
 end_of_initialization    cinit        07FC
 intlevel0                functab      0000
@@ -265,7 +274,7 @@ FUNCTION INFORMATION:
 
  *************** function _main *****************
  Defined at:
-		line 58 in file "Carrera1.c"
+		line 62 in file "Carrera1.c"
  Parameters:    Size  Location     Type
 		None
  Auto vars:     Size  Location     Type
@@ -288,6 +297,7 @@ Total ram usage:        0 bytes
  This function calls:
 		_Setup
 		_debounceRC6
+		_debounceRC7
 		_semaforo
  This function is called by:
 		Startup code after reset
@@ -296,7 +306,7 @@ Total ram usage:        0 bytes
 
  *************** function _semaforo *****************
  Defined at:
-		line 92 in file "Carrera1.c"
+		line 119 in file "Carrera1.c"
  Parameters:    Size  Location     Type
 		None
  Auto vars:     Size  Location     Type
@@ -323,9 +333,38 @@ Total ram usage:        3 bytes
  This function uses a non-reentrant model
 
 
+ *************** function _debounceRC7 *****************
+ Defined at:
+		line 170 in file "Carrera1.c"
+ Parameters:    Size  Location     Type
+		None
+ Auto vars:     Size  Location     Type
+		None
+ Return value:  Size  Location     Type
+                  1    wreg      void 
+ Registers used:
+		wreg, status,2, status,0
+ Tracked objects:
+		On entry : 
+		On exit  : 
+		Unchanged: 
+ Data sizes:     COMMON   BANK0   BANK1   BANK3   BANK2
+      Params:         0       0       0       0       0
+      Locals:         0       0       0       0       0
+      Temps:          1       0       0       0       0
+      Totals:         1       0       0       0       0
+Total ram usage:        1 bytes
+ Hardware stack levels used:    1
+ This function calls:
+		Nothing
+ This function is called by:
+		_main
+ This function uses a non-reentrant model
+
+
  *************** function _debounceRC6 *****************
  Defined at:
-		line 118 in file "Carrera1.c"
+		line 149 in file "Carrera1.c"
  Parameters:    Size  Location     Type
 		None
  Auto vars:     Size  Location     Type
@@ -354,7 +393,7 @@ Total ram usage:        1 bytes
 
  *************** function _Setup *****************
  Defined at:
-		line 73 in file "Carrera1.c"
+		line 98 in file "Carrera1.c"
  Parameters:    Size  Location     Type
 		None
  Auto vars:     Size  Location     Type
@@ -386,12 +425,13 @@ MODULE INFORMATION
 
 Module		Function		Class		Link	Load	Size
 Carrera1.c
-		_debounceRC6   		CODE           	0795	0000	38
-		_main          		CODE           	0776	0000	32
-		_Setup         		CODE           	0764	0000	19
-		_semaforo      		CODE           	07BA	0000	63
+		_debounceRC6   		CODE           	072E	0000	38
+		_debounceRC7   		CODE           	0753	0000	38
+		_main          		CODE           	07B7	0000	66
+		_Setup         		CODE           	071A	0000	21
+		_semaforo      		CODE           	0778	0000	64
 
-Carrera1.c estimated size: 152
+Carrera1.c estimated size: 227
 
 shared
 		__initialization		CODE           	07F8	0000	5

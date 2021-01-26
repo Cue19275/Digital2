@@ -2513,11 +2513,11 @@ extern __bank0 __bit __timeout;
 
 #pragma config BOR4V = BOR40V
 #pragma config WRT = OFF
-# 43 "Carrera1.c"
+# 46 "Carrera1.c"
 unsigned char estadoSalida;
-unsigned char salidaLED;
-unsigned char estadoLED;
 unsigned char estado;
+unsigned char estadoSalidaC2;
+unsigned char estadoC2;
 
 
 
@@ -2525,6 +2525,7 @@ unsigned char estado;
 void Setup(void);
 void semaforo(void);
 void debounceRC6 (void);
+void debounceRC7 (void);
 
 
 
@@ -2535,8 +2536,29 @@ void main(void) {
         if (RC5 = 1){
             semaforo();
         }
+        else if (PORTB > 0b01000000 ){
+            PORTCbits.RC0 = 1;
+            PORTE = 0;
+            while(1){
+                if (RC5 = 1){
+                    semaforo();
+                    break;
+                }
+            }
+        }
+        else if (PORTD > 0b01000000 ){
+            PORTCbits.RC1 = 1;
+            PORTE = 0;
+            while(1){
+                if (RC5 = 1){
+                    semaforo();
+                    break;
+                }
+            }
+        }
         else if (PORTEbits.RE2 == 1){
         debounceRC6();
+        debounceRC7();
     }
 
 }
@@ -2547,6 +2569,8 @@ void main(void) {
 void Setup(void){
     PORTB = 0;
     PORTD = 0;
+    PORTCbits.RC0 = 0;
+    PORTCbits.RC1 = 0;
     PORTE = 0;
     PORTC = 0;
     ANSEL = 0;
@@ -2569,6 +2593,10 @@ void semaforo(void){
         PORTEbits.RE2 = 0;
         PORTB = 0;
         PORTC = 0;
+        PORTD = 0;
+
+
+
         _delay((unsigned long)((500)*(8000000/4000.0)));
 
        PORTEbits.RE0 = 1;
@@ -2604,6 +2632,27 @@ void debounceRC6(void){
                 PORTB = PORTB << 1;
             }
             estadoSalida =0;
+        }
+    }
+}
+
+
+
+void debounceRC7(void){
+    estadoC2 = PORTCbits.RC7 ;
+    if (estadoC2 == 1){
+        estadoSalidaC2=1;
+    }
+
+    if (estadoSalidaC2==1){
+        if (estadoC2 == 0){
+            if (PORTD == 0){
+                PORTD= 1;
+            }
+            else {
+                PORTD = PORTD << 1;
+            }
+            estadoSalidaC2 =0;
         }
     }
 }

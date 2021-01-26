@@ -39,11 +39,14 @@
 #define VERDE       PORTEbits.RE2
 #define MRST        PORTCbits.RC5
 #define BTN_1       PORTCbits.RC6
+#define BTN_2       PORTCbits.RC7
+#define IND_1       PORTCbits.RC0
+#define IND_2       PORTCbits.RC1
 
 unsigned char   estadoSalida;
-unsigned char   salidaLED;
-unsigned char   estadoLED;
 unsigned char   estado;
+unsigned char   estadoSalidaC2;
+unsigned char   estadoC2;
 
 //******************************************************************************
 // Prototipos de funciones
@@ -51,6 +54,7 @@ unsigned char   estado;
 void Setup(void);
 void semaforo(void);
 void debounceRC6 (void);
+void debounceRC7 (void);
 
 //******************************************************************************
 // Ciclo principal
@@ -61,8 +65,29 @@ void main(void) {
         if (RC5 = 1){
             semaforo();
         }
+        else if (PORTB > 0b01000000 ){
+            IND_1 = 1;
+            PORTE = 0;
+            while(1){
+                if (RC5 = 1){
+                    semaforo();
+                    break;
+                }
+            }
+        }
+        else if (PORTD > 0b01000000 ){
+            IND_2 = 1;
+            PORTE = 0;
+            while(1){
+                if (RC5 = 1){
+                    semaforo();
+                    break;
+                }
+            }
+        }
         else if (VERDE == 1){
-        debounceRC6();    
+        debounceRC6(); 
+        debounceRC7();
     }
         
 }
@@ -73,6 +98,8 @@ void main(void) {
 void Setup(void){
     PORTB = 0; //Corredor 1
     PORTD = 0; //Corredor 2
+    IND_1 = 0;
+    IND_2 = 0;
     PORTE = 0; //Semaforo
     PORTC = 0; //Botones e Indicadores
     ANSEL = 0;
@@ -95,6 +122,10 @@ void semaforo(void){
         VERDE = 0;
         PORTB = 0;
         PORTC = 0;
+        PORTD = 0;
+        
+        
+        
         __delay_ms(500);
        
        ROJO = 1;
@@ -130,6 +161,27 @@ void debounceRC6(void){
                 PORTB = PORTB << 1;
             }
             estadoSalida =0;
+        }
+    }
+}
+//******************************************************************************
+// Debounce_RC7
+//******************************************************************************
+void debounceRC7(void){ 
+    estadoC2 = BTN_2 ;
+    if (estadoC2 == 1){
+        estadoSalidaC2=1;
+    }
+    
+    if (estadoSalidaC2==1){
+        if (estadoC2 == 0){
+            if (PORTD == 0){
+                PORTD= 1;
+            }
+            else {
+                PORTD = PORTD << 1;
+            }
+            estadoSalidaC2 =0;
         }
     }
 }
