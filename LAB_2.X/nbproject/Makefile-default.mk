@@ -57,17 +57,17 @@ OBJECTDIR=build/${CND_CONF}/${IMAGE_TYPE}
 DISTDIR=dist/${CND_CONF}/${IMAGE_TYPE}
 
 # Source Files Quoted if spaced
-SOURCEFILES_QUOTED_IF_SPACED=LAB2_INT.c "C:/Users/Carlo/OneDrive/Documentos/Quinto Semestre/Digital2/LAB_2.X/Osc.c" "C:/Users/Carlo/OneDrive/Documentos/Quinto Semestre/Digital2/LAB_2.X/ADCLIB.c"
+SOURCEFILES_QUOTED_IF_SPACED=LAB2_INT.c "C:/Users/Carlo/OneDrive/Documentos/Quinto Semestre/Digital2/LAB_2.X/Osc.c" "C:/Users/Carlo/OneDrive/Documentos/Quinto Semestre/Digital2/LAB_2.X/ADCLIB.c" "C:/Users/Carlo/OneDrive/Documentos/Quinto Semestre/Digital2/LAB_2.X/DECODESSD.c"
 
 # Object Files Quoted if spaced
-OBJECTFILES_QUOTED_IF_SPACED=${OBJECTDIR}/LAB2_INT.p1 ${OBJECTDIR}/_ext/992195898/Osc.p1 ${OBJECTDIR}/_ext/992195898/ADCLIB.p1
-POSSIBLE_DEPFILES=${OBJECTDIR}/LAB2_INT.p1.d ${OBJECTDIR}/_ext/992195898/Osc.p1.d ${OBJECTDIR}/_ext/992195898/ADCLIB.p1.d
+OBJECTFILES_QUOTED_IF_SPACED=${OBJECTDIR}/LAB2_INT.p1 ${OBJECTDIR}/_ext/992195898/Osc.p1 ${OBJECTDIR}/_ext/992195898/ADCLIB.p1 ${OBJECTDIR}/_ext/992195898/DECODESSD.p1
+POSSIBLE_DEPFILES=${OBJECTDIR}/LAB2_INT.p1.d ${OBJECTDIR}/_ext/992195898/Osc.p1.d ${OBJECTDIR}/_ext/992195898/ADCLIB.p1.d ${OBJECTDIR}/_ext/992195898/DECODESSD.p1.d
 
 # Object Files
-OBJECTFILES=${OBJECTDIR}/LAB2_INT.p1 ${OBJECTDIR}/_ext/992195898/Osc.p1 ${OBJECTDIR}/_ext/992195898/ADCLIB.p1
+OBJECTFILES=${OBJECTDIR}/LAB2_INT.p1 ${OBJECTDIR}/_ext/992195898/Osc.p1 ${OBJECTDIR}/_ext/992195898/ADCLIB.p1 ${OBJECTDIR}/_ext/992195898/DECODESSD.p1
 
 # Source Files
-SOURCEFILES=LAB2_INT.c C:/Users/Carlo/OneDrive/Documentos/Quinto Semestre/Digital2/LAB_2.X/Osc.c C:/Users/Carlo/OneDrive/Documentos/Quinto Semestre/Digital2/LAB_2.X/ADCLIB.c
+SOURCEFILES=LAB2_INT.c C:/Users/Carlo/OneDrive/Documentos/Quinto Semestre/Digital2/LAB_2.X/Osc.c C:/Users/Carlo/OneDrive/Documentos/Quinto Semestre/Digital2/LAB_2.X/ADCLIB.c C:/Users/Carlo/OneDrive/Documentos/Quinto Semestre/Digital2/LAB_2.X/DECODESSD.c
 
 
 CFLAGS=
@@ -114,6 +114,13 @@ ${OBJECTDIR}/_ext/992195898/ADCLIB.p1: C:/Users/Carlo/OneDrive/Documentos/Quinto
 	${MP_CC} $(MP_EXTRA_CC_PRE) -mcpu=$(MP_PROCESSOR_OPTION) -c  -D__DEBUG=1  -fno-short-double -fno-short-float -O0 -fasmfile -maddrqual=ignore -xassembler-with-cpp -Wa,-a -DXPRJ_default=$(CND_CONF)  -msummary=-psect,-class,+mem,-hex,-file  -ginhx032 -Wl,--data-init -mno-keep-startup -mno-osccal -mno-resetbits -mno-save-resetbits -mno-download -mno-stackcall $(COMPARISON_BUILD)  -std=c99 -gdwarf-3 -mstack=compiled:auto:auto     -o ${OBJECTDIR}/_ext/992195898/ADCLIB.p1 "C:/Users/Carlo/OneDrive/Documentos/Quinto Semestre/Digital2/LAB_2.X/ADCLIB.c" 
 	@${FIXDEPS} ${OBJECTDIR}/_ext/992195898/ADCLIB.p1.d $(SILENT) -rsi ${MP_CC_DIR}../  
 	
+${OBJECTDIR}/_ext/992195898/DECODESSD.p1: C:/Users/Carlo/OneDrive/Documentos/Quinto\ Semestre/Digital2/LAB_2.X/DECODESSD.c  nbproject/Makefile-${CND_CONF}.mk
+	@${MKDIR} "${OBJECTDIR}/_ext/992195898" 
+	@${RM} ${OBJECTDIR}/_ext/992195898/DECODESSD.p1.d 
+	@${RM} ${OBJECTDIR}/_ext/992195898/DECODESSD.p1 
+	${MP_CC} $(MP_EXTRA_CC_PRE) -mcpu=$(MP_PROCESSOR_OPTION) -c  -D__DEBUG=1  -fno-short-double -fno-short-float -O0 -fasmfile -maddrqual=ignore -xassembler-with-cpp -Wa,-a -DXPRJ_default=$(CND_CONF)  -msummary=-psect,-class,+mem,-hex,-file  -ginhx032 -Wl,--data-init -mno-keep-startup -mno-osccal -mno-resetbits -mno-save-resetbits -mno-download -mno-stackcall $(COMPARISON_BUILD)  -std=c99 -gdwarf-3 -mstack=compiled:auto:auto     -o ${OBJECTDIR}/_ext/992195898/DECODESSD.p1 "C:/Users/Carlo/OneDrive/Documentos/Quinto Semestre/Digital2/LAB_2.X/DECODESSD.c" 
+	@${FIXDEPS} ${OBJECTDIR}/_ext/992195898/DECODESSD.p1.d $(SILENT) -rsi ${MP_CC_DIR}../  
+	
 else
 ${OBJECTDIR}/LAB2_INT.p1: LAB2_INT.c  nbproject/Makefile-${CND_CONF}.mk
 	@${MKDIR} "${OBJECTDIR}" 
@@ -135,6 +142,13 @@ ${OBJECTDIR}/_ext/992195898/ADCLIB.p1: C:/Users/Carlo/OneDrive/Documentos/Quinto
 	@${RM} ${OBJECTDIR}/_ext/992195898/ADCLIB.p1 
 	${MP_CC} $(MP_EXTRA_CC_PRE) -mcpu=$(MP_PROCESSOR_OPTION) -c  -fno-short-double -fno-short-float -O0 -fasmfile -maddrqual=ignore -xassembler-with-cpp -Wa,-a -DXPRJ_default=$(CND_CONF)  -msummary=-psect,-class,+mem,-hex,-file  -ginhx032 -Wl,--data-init -mno-keep-startup -mno-osccal -mno-resetbits -mno-save-resetbits -mno-download -mno-stackcall $(COMPARISON_BUILD)  -std=c99 -gdwarf-3 -mstack=compiled:auto:auto     -o ${OBJECTDIR}/_ext/992195898/ADCLIB.p1 "C:/Users/Carlo/OneDrive/Documentos/Quinto Semestre/Digital2/LAB_2.X/ADCLIB.c" 
 	@${FIXDEPS} ${OBJECTDIR}/_ext/992195898/ADCLIB.p1.d $(SILENT) -rsi ${MP_CC_DIR}../  
+	
+${OBJECTDIR}/_ext/992195898/DECODESSD.p1: C:/Users/Carlo/OneDrive/Documentos/Quinto\ Semestre/Digital2/LAB_2.X/DECODESSD.c  nbproject/Makefile-${CND_CONF}.mk
+	@${MKDIR} "${OBJECTDIR}/_ext/992195898" 
+	@${RM} ${OBJECTDIR}/_ext/992195898/DECODESSD.p1.d 
+	@${RM} ${OBJECTDIR}/_ext/992195898/DECODESSD.p1 
+	${MP_CC} $(MP_EXTRA_CC_PRE) -mcpu=$(MP_PROCESSOR_OPTION) -c  -fno-short-double -fno-short-float -O0 -fasmfile -maddrqual=ignore -xassembler-with-cpp -Wa,-a -DXPRJ_default=$(CND_CONF)  -msummary=-psect,-class,+mem,-hex,-file  -ginhx032 -Wl,--data-init -mno-keep-startup -mno-osccal -mno-resetbits -mno-save-resetbits -mno-download -mno-stackcall $(COMPARISON_BUILD)  -std=c99 -gdwarf-3 -mstack=compiled:auto:auto     -o ${OBJECTDIR}/_ext/992195898/DECODESSD.p1 "C:/Users/Carlo/OneDrive/Documentos/Quinto Semestre/Digital2/LAB_2.X/DECODESSD.c" 
+	@${FIXDEPS} ${OBJECTDIR}/_ext/992195898/DECODESSD.p1.d $(SILENT) -rsi ${MP_CC_DIR}../  
 	
 endif
 

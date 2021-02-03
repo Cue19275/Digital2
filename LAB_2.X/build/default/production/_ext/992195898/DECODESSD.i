@@ -1,4 +1,4 @@
-# 1 "LAB2_INT.c"
+# 1 "C:/Users/Carlo/OneDrive/Documentos/Quinto Semestre/Digital2/LAB_2.X/DECODESSD.c"
 # 1 "<built-in>" 1
 # 1 "<built-in>" 3
 # 288 "<built-in>" 3
@@ -6,8 +6,7 @@
 # 1 "<built-in>" 2
 # 1 "C:\\Program Files\\Microchip\\xc8\\v2.20\\pic\\include\\language_support.h" 1 3
 # 2 "<built-in>" 2
-# 1 "LAB2_INT.c" 2
-# 12 "LAB2_INT.c"
+# 1 "C:/Users/Carlo/OneDrive/Documentos/Quinto Semestre/Digital2/LAB_2.X/DECODESSD.c" 2
 # 1 "C:\\Program Files\\Microchip\\xc8\\v2.20\\pic\\include\\xc.h" 1 3
 # 18 "C:\\Program Files\\Microchip\\xc8\\v2.20\\pic\\include\\xc.h" 3
 extern const char __xc8_OPTIM_SPEED;
@@ -2492,7 +2491,7 @@ extern __bank0 unsigned char __resetbits;
 extern __bank0 __bit __powerdown;
 extern __bank0 __bit __timeout;
 # 27 "C:\\Program Files\\Microchip\\xc8\\v2.20\\pic\\include\\xc.h" 2 3
-# 12 "LAB2_INT.c" 2
+# 1 "C:/Users/Carlo/OneDrive/Documentos/Quinto Semestre/Digital2/LAB_2.X/DECODESSD.c" 2
 
 # 1 "C:\\Program Files\\Microchip\\xc8\\v2.20\\pic\\include\\c90\\stdint.h" 1 3
 # 13 "C:\\Program Files\\Microchip\\xc8\\v2.20\\pic\\include\\c90\\stdint.h" 3
@@ -2627,218 +2626,72 @@ typedef int16_t intptr_t;
 
 
 typedef uint16_t uintptr_t;
-# 13 "LAB2_INT.c" 2
-
-# 1 "./Osc.h" 1
-# 34 "./Osc.h"
-#pragma config FOSC = INTRC_NOCLKOUT
+# 2 "C:/Users/Carlo/OneDrive/Documentos/Quinto Semestre/Digital2/LAB_2.X/DECODESSD.c" 2
 
 
-
-
-
-
-
-void initOsc(uint8_t frec);
-# 14 "LAB2_INT.c" 2
-
-# 1 "./ADCLIB.h" 1
-# 13 "./ADCLIB.h"
-# 1 "C:\\Program Files\\Microchip\\xc8\\v2.20\\pic\\include\\c90\\stdint.h" 1 3
-# 13 "./ADCLIB.h" 2
-
-
-
-void ADCinit(uint8_t vel, uint8_t chan);
-# 15 "LAB2_INT.c" 2
-
-# 1 "./DECODESSD.h" 1
+# 1 "C:/Users/Carlo/OneDrive/Documentos/Quinto Semestre/Digital2/LAB_2.X/DECODESSD.h" 1
 
 
 
 
 # 1 "C:\\Program Files\\Microchip\\xc8\\v2.20\\pic\\include\\c90\\stdint.h" 1 3
-# 5 "./DECODESSD.h" 2
+# 5 "C:/Users/Carlo/OneDrive/Documentos/Quinto Semestre/Digital2/LAB_2.X/DECODESSD.h" 2
 
 
 
 void tabla(uint8_t dec);
-# 16 "LAB2_INT.c" 2
+# 4 "C:/Users/Carlo/OneDrive/Documentos/Quinto Semestre/Digital2/LAB_2.X/DECODESSD.c" 2
 
-
-
-
-
-
-#pragma config WDTE = OFF
-#pragma config PWRTE = OFF
-#pragma config MCLRE = OFF
-#pragma config CP = OFF
-#pragma config CPD = OFF
-#pragma config BOREN = OFF
-#pragma config IESO = OFF
-#pragma config FCMEN = OFF
-#pragma config LVP = OFF
-
-
-#pragma config BOR4V = BOR40V
-#pragma config WRT = OFF
-
-
-
-
-
-uint8_t tiempo_mux = 0;
-uint8_t sel_mux = 0;
-uint8_t lec_ADC = 0;
-uint8_t go_adc = 0;
-uint8_t v = 1;
-uint8_t can = 30;
-uint8_t estadoSalida;
-uint8_t estado;
-uint8_t estadoSalidaC2;
-uint8_t estadoC2;
-uint8_t nibbleH = 0;
-uint8_t nibbleL = 0;
-
-
-
-
-
-
-void Setup(void);
-void ADC_LEER(void);
-void Alarma(void);
-void nibbles(void);
-
-
-
-void __attribute__((picinterrupt(("")))) ISR(void){
-    if (INTCONbits.TMR0IF == 1){
-        INTCONbits.TMR0IF = 0;
-        TMR0 = 236;
-        go_adc++;
-        PORTEbits.RE1 = 0;
-        PORTEbits.RE2 = 0;
-        if (sel_mux == 0){
-            sel_mux = 1;
-            PORTEbits.RE1 = 1;
-            nibbleH = (lec_ADC & 0b11110000) >> 4;
-            tabla(nibbleH);
-
-        }
-        else{
-            sel_mux = 0;
-            PORTEbits.RE2 = 1;
-            nibbleL = lec_ADC & 0b00001111;
-            tabla(nibbleL);
-        }
+void tabla(uint8_t dec) {
+    switch (dec){
+        case 0:
+            PORTC = 0b00111111;
+            break;
+        case 1:
+            PORTC = 0b00000110;
+            break;
+        case 2:
+            PORTC = 0b001011011;
+            break;
+        case 3:
+            PORTC = 0b001001111;
+            break;
+        case 4:
+            PORTC = 0b01100110;
+            break;
+        case 5:
+            PORTC = 0b01101101;
+            break;
+        case 6:
+            PORTC = 0b01111101;
+            break;
+        case 7:
+            PORTC = 0b00000111;
+            break;
+        case 8:
+            PORTC = 0b01111111;
+            break;
+        case 9:
+            PORTC = 0b01100111;
+            break;
+        case 10:
+            PORTC = 0b01110111;
+            break;
+        case 11:
+            PORTC = 0b01111100;
+            break;
+        case 12:
+            PORTC = 0b00111001;
+            break;
+        case 13:
+            PORTC = 0b01011110;
+            break;
+        case 14:
+            PORTC = 0b01111001;
+            break;
+        case 15:
+            PORTC = 0b01110001;
+            break;
     }
 
-    if (PIR1bits.ADIF == 1){
-        PIR1bits.ADIF = 0;
-        lec_ADC = ADRESH;
-    }
-    if (INTCONbits.RBIF == 1) {
-        INTCONbits.RBIF = 0;
-
-        estado = PORTBbits.RB0 ;
-        if (estado == 1){
-            estadoSalida=1;
-        }
-
-        if (estadoSalida==1){
-            if (estado == 0){
-                PORTD++;
-                estadoSalida = 0;
-            }
-        }
-        estadoC2 = PORTBbits.RB1 ;
-        if (estadoC2 == 1){
-            estadoSalidaC2=1;
-        }
-
-        if (estadoSalidaC2==1){
-           if (estadoC2 == 0){
-               PORTD--;
-                estadoSalidaC2 =0;
-            }
-        }
-    }
-
-
-}
-
-
-
-
-void main(void) {
-    initOsc(20);
-    Setup();
-    ADCinit(1, 20);
-    while (1){
-    ADC_LEER();
-    Alarma();
-    }
-}
-
-
-
-void Setup(void){
-
-    PORTA = 0;
-    PORTB = 0;
-    PORTC = 0;
-    PORTD = 0;
-    PORTE = 0;
-    ANSEL = 0;
-    ANSELbits.ANS0 = 1;
-    ANSELH = 0;
-    TRISA = 1;
-    TRISB = 0b11111111;
-    TRISC = 0;
-    TRISD = 0;
-    TRISE = 0;
-    INTCONbits.TMR0IF = 0;
-    PIR1bits.ADIF = 0;
-    INTCONbits.RBIF = 0;
-
-
-    OPTION_REG = 0b01010111;
-
-
-    INTCONbits.GIE = 1;
-    INTCONbits.PEIE = 1;
-
-    INTCONbits.RBIE = 1;
-    WPUBbits.WPUB0 = 1;
-    WPUBbits.WPUB1 = 1;
-    IOCBbits.IOCB0 = 1;
-    IOCBbits.IOCB1 = 1;
-    PIE1bits.ADIE = 1;
-    INTCONbits.T0IE = 1;
-    TMR0 = 236;
-
-
-
-}
-
-
-
-void ADC_LEER(void){
-    if (go_adc > 5){
-        go_adc = 0;
-        ADCON0bits.GO_nDONE =1;
-    }
-}
-
-
-
-void Alarma(void){
-    if(lec_ADC > PORTD){
-        PORTEbits.RE0 = 1;
-    }
-    else{
-        PORTEbits.RE0 = 0;
-    }
 }

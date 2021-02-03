@@ -13,6 +13,7 @@
 #include <stdint.h>
 #include "Osc.h"
 #include "ADCLIB.h"
+#include "DECODESSD.h"
 //******************************************************************************
 // Palabra de configuración
 //******************************************************************************
@@ -42,13 +43,22 @@ uint8_t lec_ADC = 0;
 uint8_t go_adc = 0;
 uint8_t v = 1;
 uint8_t can = 30;
+uint8_t   estadoSalida;
+uint8_t   estado;
+uint8_t   estadoSalidaC2;
+uint8_t   estadoC2;
+uint8_t   nibbleH = 0;
+uint8_t   nibbleL = 0;
 
+#define BTN_1       PORTBbits.RB0
+#define BTN_2       PORTBbits.RB1
 //******************************************************************************
 // Prototipos de funciones
 //******************************************************************************
 void Setup(void);
 void ADC_LEER(void);
-
+void Alarma(void);
+void nibbles(void);
 //******************************************************************************
 // Vector de Interrupción
 //******************************************************************************
@@ -57,16 +67,20 @@ void __interrupt() ISR(void){
         INTCONbits.TMR0IF = 0;
         TMR0 = 236;
         go_adc++;
-        
+        PORTEbits.RE1 = 0;
+        PORTEbits.RE2 = 0;
         if (sel_mux == 0){
             sel_mux = 1;
             PORTEbits.RE1 = 1;
-            PORTEbits.RE2 = 0;
+            nibbleH = (lec_ADC & 0b11110000) >> 4;
+            tabla(nibbleH);
+            
         }
         else{
             sel_mux = 0;
-            PORTEbits.RE1 = 0;
             PORTEbits.RE2 = 1;
+            nibbleL = lec_ADC & 0b00001111;
+            tabla(nibbleL);
         }
     }
     
@@ -77,6 +91,28 @@ void __interrupt() ISR(void){
     if (INTCONbits.RBIF == 1) {
         INTCONbits.RBIF = 0;
         //Aquí van los debounce de los dos botones
+        estado = BTN_1 ;
+        if (estado == 1){
+            estadoSalida=1;
+        }
+    
+        if (estadoSalida==1){
+            if (estado == 0){
+                PORTD++;
+                estadoSalida = 0;
+            }
+        }
+        estadoC2 = BTN_2 ;
+        if (estadoC2 == 1){
+            estadoSalidaC2=1;
+        }
+    
+        if (estadoSalidaC2==1){
+           if (estadoC2 == 0){
+               PORTD--;
+                estadoSalidaC2 =0;
+            }
+        }
     }  
         
     
@@ -91,7 +127,7 @@ void main(void) {
     ADCinit(1, 20);
     while (1){
     ADC_LEER();
-    PORTD = lec_ADC;
+    Alarma();
     }
 }
 //******************************************************************************
@@ -144,3 +180,17 @@ void ADC_LEER(void){
         ADCON0bits.GO_nDONE =1;
     }
 }
+//******************************************************************************
+// Alarma
+//******************************************************************************
+void Alarma(void){
+    if(lec_ADC > PORTD){
+        PORTEbits.RE0 = 1;
+    }
+    else{
+        PORTEbits.RE0 = 0;
+    }
+}
+//******************************************************************************
+// nibbles
+//******************************************************************************
