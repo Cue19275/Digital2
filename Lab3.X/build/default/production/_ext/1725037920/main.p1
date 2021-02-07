@@ -36,10 +36,10 @@ Version 4.0 HI-TECH Software Intermediate Code
 "1140
 [; ;C:\Program Files\Microchip\xc8\v2.20\pic\include\proc\pic16f887.h: 1140: extern volatile unsigned char RCREG __attribute__((address(0x01A)));
 [v _RCREG `Vuc ~T0 @X0 0 e@26 ]
-"1133
-[; ;C:\Program Files\Microchip\xc8\v2.20\pic\include\proc\pic16f887.h: 1133: extern volatile unsigned char TXREG __attribute__((address(0x019)));
-[v _TXREG `Vuc ~T0 @X0 0 e@25 ]
-"1708
+"79 C:/Users/Carlo/OneDrive/Documentos/Quinto Semestre/Digital2/Lab3.X/main.c
+[; ;C:/Users/Carlo/OneDrive/Documentos/Quinto Semestre/Digital2/Lab3.X/main.c: 79: 
+[v _envio `(v ~T0 @X0 0 ef ]
+"1708 C:\Program Files\Microchip\xc8\v2.20\pic\include\proc\pic16f887.h
 [; ;C:\Program Files\Microchip\xc8\v2.20\pic\include\proc\pic16f887.h: 1708:     struct {
 [s S63 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
 [n S63 . TMR1IE TMR2IE CCP1IE SSPIE TXIE RCIE ADIE ]
@@ -57,8 +57,8 @@ Version 4.0 HI-TECH Software Intermediate Code
 "23 C:/Users/Carlo/OneDrive/Documentos/Quinto Semestre/Digital2/Lab3.X/Osc.h
 [; ;C:/Users/Carlo/OneDrive/Documentos/Quinto Semestre/Digital2/Lab3.X/Osc.h: 23: void initOsc(uint8_t frec);
 [v _initOsc `(v ~T0 @X0 0 ef1`uc ]
-"60 C:/Users/Carlo/OneDrive/Documentos/Quinto Semestre/Digital2/Lab3.X/main.c
-[; ;C:/Users/Carlo/OneDrive/Documentos/Quinto Semestre/Digital2/Lab3.X/main.c: 60:         Lcd_Write_String("S1    S2    S3");
+"73 C:/Users/Carlo/OneDrive/Documentos/Quinto Semestre/Digital2/Lab3.X/main.c
+[; ;C:/Users/Carlo/OneDrive/Documentos/Quinto Semestre/Digital2/Lab3.X/main.c: 73:     Setup();
 [v _Setup `(v ~T0 @X0 0 ef ]
 "6 C:/Users/Carlo/OneDrive/Documentos/Quinto Semestre/Digital2/Lab3.X/usart.h
 [; ;C:/Users/Carlo/OneDrive/Documentos/Quinto Semestre/Digital2/Lab3.X/usart.h: 6: void USARTconf(void);
@@ -78,16 +78,28 @@ Version 4.0 HI-TECH Software Intermediate Code
 "26
 [; ;C:/Users/Carlo/OneDrive/Documentos/Quinto Semestre/Digital2/Lab3.X/LCD8BIT.h: 26: void Lcd_Write_String(char *a);
 [v _Lcd_Write_String `(v ~T0 @X0 0 ef1`*uc ]
-"61 C:/Users/Carlo/OneDrive/Documentos/Quinto Semestre/Digital2/Lab3.X/main.c
-[; ;C:/Users/Carlo/OneDrive/Documentos/Quinto Semestre/Digital2/Lab3.X/main.c: 61:         Lcd_Set_Cursor(2,1);
+"80 C:/Users/Carlo/OneDrive/Documentos/Quinto Semestre/Digital2/Lab3.X/main.c
+[; ;C:/Users/Carlo/OneDrive/Documentos/Quinto Semestre/Digital2/Lab3.X/main.c: 80:         Lcd_Set_Cursor(1,1);
+[v _conver `(*Cuc ~T0 @X0 0 ef3`uc`uc`uc ]
+"74
+[; ;C:/Users/Carlo/OneDrive/Documentos/Quinto Semestre/Digital2/Lab3.X/main.c: 74:     USARTconf();
 [v _ADC_LEER `(v ~T0 @X0 0 ef ]
-"62
-[; ;C:/Users/Carlo/OneDrive/Documentos/Quinto Semestre/Digital2/Lab3.X/main.c: 62:         Lcd_Write_String("Voltajes:");
+"75
+[; ;C:/Users/Carlo/OneDrive/Documentos/Quinto Semestre/Digital2/Lab3.X/main.c: 75:     Lcd_Init();
 [v _debounce_T `(v ~T0 @X0 0 ef ]
 "166 C:\Program Files\Microchip\xc8\v2.20\pic\include\proc\pic16f887.h
 [; ;C:\Program Files\Microchip\xc8\v2.20\pic\include\proc\pic16f887.h: 166: extern volatile unsigned char PORTA __attribute__((address(0x005)));
 [v _PORTA `Vuc ~T0 @X0 0 e@5 ]
-"228
+"76 C:/Users/Carlo/OneDrive/Documentos/Quinto Semestre/Digital2/Lab3.X/main.c
+[; ;C:/Users/Carlo/OneDrive/Documentos/Quinto Semestre/Digital2/Lab3.X/main.c: 76:     Lcd_Cmd(0x8A);
+[v _map_cont `(v ~T0 @X0 0 ef ]
+"77
+[; ;C:/Users/Carlo/OneDrive/Documentos/Quinto Semestre/Digital2/Lab3.X/main.c: 77:     ADCinit(11, 20);
+[v _map_pot1 `(v ~T0 @X0 0 ef ]
+"78
+[; ;C:/Users/Carlo/OneDrive/Documentos/Quinto Semestre/Digital2/Lab3.X/main.c: 78:     while (1){
+[v _map_pot2 `(v ~T0 @X0 0 ef ]
+"228 C:\Program Files\Microchip\xc8\v2.20\pic\include\proc\pic16f887.h
 [; ;C:\Program Files\Microchip\xc8\v2.20\pic\include\proc\pic16f887.h: 228: extern volatile unsigned char PORTB __attribute__((address(0x006)));
 [v _PORTB `Vuc ~T0 @X0 0 e@6 ]
 "290
@@ -148,6 +160,12 @@ Version 4.0 HI-TECH Software Intermediate Code
 "1276
 [; ;C:\Program Files\Microchip\xc8\v2.20\pic\include\proc\pic16f887.h: 1276: extern volatile ADCON0bits_t ADCON0bits __attribute__((address(0x01F)));
 [v _ADCON0bits `VS44 ~T0 @X0 0 e@31 ]
+"6 C:/Users/Carlo/OneDrive/Documentos/Quinto Semestre/Digital2/Lab3.X/ASCII_NUM.h
+[; ;C:/Users/Carlo/OneDrive/Documentos/Quinto Semestre/Digital2/Lab3.X/ASCII_NUM.h: 6: char num_ascii(uint8_t num);
+[v _num_ascii `(uc ~T0 @X0 0 ef1`uc ]
+"1133 C:\Program Files\Microchip\xc8\v2.20\pic\include\proc\pic16f887.h
+[; ;C:\Program Files\Microchip\xc8\v2.20\pic\include\proc\pic16f887.h: 1133: extern volatile unsigned char TXREG __attribute__((address(0x019)));
+[v _TXREG `Vuc ~T0 @X0 0 e@25 ]
 "54 C:\Program Files\Microchip\xc8\v2.20\pic\include\proc\pic16f887.h
 [; ;C:\Program Files\Microchip\xc8\v2.20\pic\include\proc\pic16f887.h: 54: __asm("INDF equ 00h");
 [; <" INDF equ 00h ;# ">
@@ -384,423 +402,797 @@ Version 4.0 HI-TECH Software Intermediate Code
 [; <" EECON2 equ 018Dh ;# ">
 "15 C:/Users/Carlo/OneDrive/Documentos/Quinto Semestre/Digital2/Lab3.X/Osc.h
 [p x FOSC = INTRC_NOCLKOUT ]
-"25 C:/Users/Carlo/OneDrive/Documentos/Quinto Semestre/Digital2/Lab3.X/main.c
-[; ;C:/Users/Carlo/OneDrive/Documentos/Quinto Semestre/Digital2/Lab3.X/main.c: 25: 
+"26 C:/Users/Carlo/OneDrive/Documentos/Quinto Semestre/Digital2/Lab3.X/main.c
+[; ;C:/Users/Carlo/OneDrive/Documentos/Quinto Semestre/Digital2/Lab3.X/main.c: 26: uint8_t temp2 = 0;
 [p x WDTE = OFF ]
-"26
-[; ;C:/Users/Carlo/OneDrive/Documentos/Quinto Semestre/Digital2/Lab3.X/main.c: 26: 
-[p x PWRTE = OFF ]
 "27
-[; ;C:/Users/Carlo/OneDrive/Documentos/Quinto Semestre/Digital2/Lab3.X/main.c: 27: 
-[p x MCLRE = OFF ]
+[; ;C:/Users/Carlo/OneDrive/Documentos/Quinto Semestre/Digital2/Lab3.X/main.c: 27: uint8_t temp3 = 0;
+[p x PWRTE = OFF ]
 "28
-[; ;C:/Users/Carlo/OneDrive/Documentos/Quinto Semestre/Digital2/Lab3.X/main.c: 28: void __attribute__((picinterrupt(("")))) ISR(void){
-[p x CP = OFF ]
+[; ;C:/Users/Carlo/OneDrive/Documentos/Quinto Semestre/Digital2/Lab3.X/main.c: 28: 
+[p x MCLRE = OFF ]
 "29
-[; ;C:/Users/Carlo/OneDrive/Documentos/Quinto Semestre/Digital2/Lab3.X/main.c: 29:     if (PIR1bits.ADIF == 1){
-[p x CPD = OFF ]
+[; ;C:/Users/Carlo/OneDrive/Documentos/Quinto Semestre/Digital2/Lab3.X/main.c: 29: 
+[p x CP = OFF ]
 "30
-[; ;C:/Users/Carlo/OneDrive/Documentos/Quinto Semestre/Digital2/Lab3.X/main.c: 30:         PIR1bits.ADIF = 0;
-[p x BOREN = OFF ]
+[; ;C:/Users/Carlo/OneDrive/Documentos/Quinto Semestre/Digital2/Lab3.X/main.c: 30: 
+[p x CPD = OFF ]
 "31
-[; ;C:/Users/Carlo/OneDrive/Documentos/Quinto Semestre/Digital2/Lab3.X/main.c: 31:         lec_ADC = ADRESH;
-[p x IESO = OFF ]
+[; ;C:/Users/Carlo/OneDrive/Documentos/Quinto Semestre/Digital2/Lab3.X/main.c: 31: 
+[p x BOREN = OFF ]
 "32
-[; ;C:/Users/Carlo/OneDrive/Documentos/Quinto Semestre/Digital2/Lab3.X/main.c: 32:     }
-[p x FCMEN = OFF ]
+[; ;C:/Users/Carlo/OneDrive/Documentos/Quinto Semestre/Digital2/Lab3.X/main.c: 32: 
+[p x IESO = OFF ]
 "33
-[; ;C:/Users/Carlo/OneDrive/Documentos/Quinto Semestre/Digital2/Lab3.X/main.c: 33:     if (INTCONbits.TMR0IF == 1){
+[; ;C:/Users/Carlo/OneDrive/Documentos/Quinto Semestre/Digital2/Lab3.X/main.c: 33: void Setup(void);
+[p x FCMEN = OFF ]
+"34
+[; ;C:/Users/Carlo/OneDrive/Documentos/Quinto Semestre/Digital2/Lab3.X/main.c: 34: void ADC_LEER(void);
 [p x LVP = OFF ]
-"36
-[; ;C:/Users/Carlo/OneDrive/Documentos/Quinto Semestre/Digital2/Lab3.X/main.c: 36:         go_adc++;
-[p x BOR4V = BOR40V ]
 "37
-[; ;C:/Users/Carlo/OneDrive/Documentos/Quinto Semestre/Digital2/Lab3.X/main.c: 37:     }
+[; ;C:/Users/Carlo/OneDrive/Documentos/Quinto Semestre/Digital2/Lab3.X/main.c: 37: void map_pot1(void);
+[p x BOR4V = BOR40V ]
+"38
+[; ;C:/Users/Carlo/OneDrive/Documentos/Quinto Semestre/Digital2/Lab3.X/main.c: 38: void map_pot2(void);
 [p x WRT = OFF ]
-"43
-[; ;C:/Users/Carlo/OneDrive/Documentos/Quinto Semestre/Digital2/Lab3.X/main.c: 43:         PIE1bits.TXIE = 0;
+"44
+[; ;C:/Users/Carlo/OneDrive/Documentos/Quinto Semestre/Digital2/Lab3.X/main.c: 44: 
 [v _go_adc `uc ~T0 @X0 1 e ]
 [i _go_adc
 -> -> 0 `i `uc
 ]
-"44
-[; ;C:/Users/Carlo/OneDrive/Documentos/Quinto Semestre/Digital2/Lab3.X/main.c: 44:     }
+"45
+[; ;C:/Users/Carlo/OneDrive/Documentos/Quinto Semestre/Digital2/Lab3.X/main.c: 45: 
 [v _lec_ADC `uc ~T0 @X0 1 e ]
 [i _lec_ADC
 -> -> 0 `i `uc
 ]
-"45
-[; ;C:/Users/Carlo/OneDrive/Documentos/Quinto Semestre/Digital2/Lab3.X/main.c: 45: }
+"46
+[; ;C:/Users/Carlo/OneDrive/Documentos/Quinto Semestre/Digital2/Lab3.X/main.c: 46: 
 [v _toggle `uc ~T0 @X0 1 e ]
 [i _toggle
 -> -> 0 `i `uc
 ]
-"46
-[; ;C:/Users/Carlo/OneDrive/Documentos/Quinto Semestre/Digital2/Lab3.X/main.c: 46: 
+"47
+[; ;C:/Users/Carlo/OneDrive/Documentos/Quinto Semestre/Digital2/Lab3.X/main.c: 47: 
 [v _valor_r `uc ~T0 @X0 1 e ]
 [i _valor_r
 -> -> 0 `i `uc
 ]
-"47
-[; ;C:/Users/Carlo/OneDrive/Documentos/Quinto Semestre/Digital2/Lab3.X/main.c: 47: 
+"48
+[; ;C:/Users/Carlo/OneDrive/Documentos/Quinto Semestre/Digital2/Lab3.X/main.c: 48: void __attribute__((picinterrupt(("")))) ISR(void){
 [v _valor_e `uc ~T0 @X0 1 e ]
 [i _valor_e
 -> -> 0 `i `uc
 ]
-"48
-[; ;C:/Users/Carlo/OneDrive/Documentos/Quinto Semestre/Digital2/Lab3.X/main.c: 48: 
+"49
+[; ;C:/Users/Carlo/OneDrive/Documentos/Quinto Semestre/Digital2/Lab3.X/main.c: 49:     if (PIR1bits.ADIF == 1){
 [v _pot1 `uc ~T0 @X0 1 e ]
 [i _pot1
 -> -> 0 `i `uc
 ]
-"49
-[; ;C:/Users/Carlo/OneDrive/Documentos/Quinto Semestre/Digital2/Lab3.X/main.c: 49: void main(void) {
+"50
+[; ;C:/Users/Carlo/OneDrive/Documentos/Quinto Semestre/Digital2/Lab3.X/main.c: 50:         PIR1bits.ADIF = 0;
 [v _pot2 `uc ~T0 @X0 1 e ]
 [i _pot2
 -> -> 0 `i `uc
 ]
-"50
-[; ;C:/Users/Carlo/OneDrive/Documentos/Quinto Semestre/Digital2/Lab3.X/main.c: 50:     TRISD = 0x00;
+"51
+[; ;C:/Users/Carlo/OneDrive/Documentos/Quinto Semestre/Digital2/Lab3.X/main.c: 51:         lec_ADC = ADRESH;
 [v _terminal `uc ~T0 @X0 1 e ]
 [i _terminal
 -> -> 0 `i `uc
 ]
-"51
-[; ;C:/Users/Carlo/OneDrive/Documentos/Quinto Semestre/Digital2/Lab3.X/main.c: 51:     initOsc(20);
+"52
+[; ;C:/Users/Carlo/OneDrive/Documentos/Quinto Semestre/Digital2/Lab3.X/main.c: 52:     }
 [v _flag_T `uc ~T0 @X0 1 e ]
 [i _flag_T
 -> -> 0 `i `uc
 ]
-"52
-[; ;C:/Users/Carlo/OneDrive/Documentos/Quinto Semestre/Digital2/Lab3.X/main.c: 52:     Setup();
+"53
+[; ;C:/Users/Carlo/OneDrive/Documentos/Quinto Semestre/Digital2/Lab3.X/main.c: 53:     if (INTCONbits.TMR0IF == 1){
 [v _flag_T2 `uc ~T0 @X0 1 e ]
 [i _flag_T2
 -> -> 0 `i `uc
 ]
-"53
-[; ;C:/Users/Carlo/OneDrive/Documentos/Quinto Semestre/Digital2/Lab3.X/main.c: 53:     USARTconf();
+"54
+[; ;C:/Users/Carlo/OneDrive/Documentos/Quinto Semestre/Digital2/Lab3.X/main.c: 54:         INTCONbits.TMR0IF = 0;
 [v _estado1 `uc ~T0 @X0 1 e ]
 [i _estado1
 -> -> 0 `i `uc
 ]
-"54
-[; ;C:/Users/Carlo/OneDrive/Documentos/Quinto Semestre/Digital2/Lab3.X/main.c: 54:     Lcd_Init();
+"55
+[; ;C:/Users/Carlo/OneDrive/Documentos/Quinto Semestre/Digital2/Lab3.X/main.c: 55:         TMR0 = 236;
 [v _CONT `uc ~T0 @X0 1 e ]
 [i _CONT
 -> -> 0 `i `uc
 ]
-[v $root$_ISR `(v ~T0 @X0 0 e ]
+"56
+[; ;C:/Users/Carlo/OneDrive/Documentos/Quinto Semestre/Digital2/Lab3.X/main.c: 56:         go_adc++;
+[v _toggleTX `uc ~T0 @X0 1 e ]
+[i _toggleTX
+-> -> 0 `i `uc
+]
+"57
+[; ;C:/Users/Carlo/OneDrive/Documentos/Quinto Semestre/Digital2/Lab3.X/main.c: 57:     }
+[v _CONT_U `uc ~T0 @X0 1 e ]
+[i _CONT_U
+-> -> 0 `i `uc
+]
+"58
+[; ;C:/Users/Carlo/OneDrive/Documentos/Quinto Semestre/Digital2/Lab3.X/main.c: 58:     if (PIR1bits.RCIF == 1){
+[v _CONT_D `uc ~T0 @X0 1 e ]
+[i _CONT_D
+-> -> 0 `i `uc
+]
+"59
+[; ;C:/Users/Carlo/OneDrive/Documentos/Quinto Semestre/Digital2/Lab3.X/main.c: 59:         terminal = RCREG;
+[v _CONT_C `uc ~T0 @X0 1 e ]
+[i _CONT_C
+-> -> 0 `i `uc
+]
+"60
+[; ;C:/Users/Carlo/OneDrive/Documentos/Quinto Semestre/Digital2/Lab3.X/main.c: 60:     }
+[v _POT1_U `uc ~T0 @X0 1 e ]
+[i _POT1_U
+-> -> 0 `i `uc
+]
+"61
+[; ;C:/Users/Carlo/OneDrive/Documentos/Quinto Semestre/Digital2/Lab3.X/main.c: 61:     if (PIR1bits.TXIF == 1){
+[v _POT1_D `uc ~T0 @X0 1 e ]
+[i _POT1_D
+-> -> 0 `i `uc
+]
+"62
+[; ;C:/Users/Carlo/OneDrive/Documentos/Quinto Semestre/Digital2/Lab3.X/main.c: 62:         toggleTX++;
+[v _POT1_C `uc ~T0 @X0 1 e ]
+[i _POT1_C
+-> -> 0 `i `uc
+]
+"63
+[; ;C:/Users/Carlo/OneDrive/Documentos/Quinto Semestre/Digital2/Lab3.X/main.c: 63:         envio();
+[v _POT2_U `uc ~T0 @X0 1 e ]
+[i _POT2_U
+-> -> 0 `i `uc
+]
+"64
+[; ;C:/Users/Carlo/OneDrive/Documentos/Quinto Semestre/Digital2/Lab3.X/main.c: 64:         PIE1bits.TXIE = 0;
+[v _POT2_D `uc ~T0 @X0 1 e ]
+[i _POT2_D
+-> -> 0 `i `uc
+]
+"65
+[; ;C:/Users/Carlo/OneDrive/Documentos/Quinto Semestre/Digital2/Lab3.X/main.c: 65:     }
+[v _POT2_C `uc ~T0 @X0 1 e ]
+[i _POT2_C
+-> -> 0 `i `uc
+]
+"66
+[; ;C:/Users/Carlo/OneDrive/Documentos/Quinto Semestre/Digital2/Lab3.X/main.c: 66: }
+[v _temp2 `uc ~T0 @X0 1 e ]
+[i _temp2
+-> -> 0 `i `uc
+]
 "67
-[; ;C:/Users/Carlo/OneDrive/Documentos/Quinto Semestre/Digital2/Lab3.X/main.c: 67:         }
+[; ;C:/Users/Carlo/OneDrive/Documentos/Quinto Semestre/Digital2/Lab3.X/main.c: 67: 
+[v _temp3 `uc ~T0 @X0 1 e ]
+[i _temp3
+-> -> 0 `i `uc
+]
+[v $root$_ISR `(v ~T0 @X0 0 e ]
+"88
+[; ;C:/Users/Carlo/OneDrive/Documentos/Quinto Semestre/Digital2/Lab3.X/main.c: 88:             flag_T2 = 0;
 [v _ISR `(v ~T1 @X0 1 ef ]
 {
 [e :U _ISR ]
 [f ]
-"68
-[; ;C:/Users/Carlo/OneDrive/Documentos/Quinto Semestre/Digital2/Lab3.X/main.c: 68:         debounce_T();
+"89
+[; ;C:/Users/Carlo/OneDrive/Documentos/Quinto Semestre/Digital2/Lab3.X/main.c: 89:         }
 [e $ ! == -> . . _PIR1bits 0 6 `i -> 1 `i 139  ]
 {
-"69
-[; ;C:/Users/Carlo/OneDrive/Documentos/Quinto Semestre/Digital2/Lab3.X/main.c: 69: 
+"90
+[; ;C:/Users/Carlo/OneDrive/Documentos/Quinto Semestre/Digital2/Lab3.X/main.c: 90:         debounce_T();
 [e = . . _PIR1bits 0 6 -> -> 0 `i `uc ]
-"70
-[; ;C:/Users/Carlo/OneDrive/Documentos/Quinto Semestre/Digital2/Lab3.X/main.c: 70:     }
+"91
+[; ;C:/Users/Carlo/OneDrive/Documentos/Quinto Semestre/Digital2/Lab3.X/main.c: 91:         PORTA = POT1_C;
 [e = _lec_ADC _ADRESH ]
-"71
-[; ;C:/Users/Carlo/OneDrive/Documentos/Quinto Semestre/Digital2/Lab3.X/main.c: 71: }
+"92
+[; ;C:/Users/Carlo/OneDrive/Documentos/Quinto Semestre/Digital2/Lab3.X/main.c: 92:         map_cont();
 }
 [e :U 139 ]
-"72
-[; ;C:/Users/Carlo/OneDrive/Documentos/Quinto Semestre/Digital2/Lab3.X/main.c: 72: 
+"93
+[; ;C:/Users/Carlo/OneDrive/Documentos/Quinto Semestre/Digital2/Lab3.X/main.c: 93:         map_pot1();
 [e $ ! == -> . . _INTCONbits 1 1 `i -> 1 `i 140  ]
 {
-"73
-[; ;C:/Users/Carlo/OneDrive/Documentos/Quinto Semestre/Digital2/Lab3.X/main.c: 73: 
+"94
+[; ;C:/Users/Carlo/OneDrive/Documentos/Quinto Semestre/Digital2/Lab3.X/main.c: 94:         map_pot2();
 [e = . . _INTCONbits 1 1 -> -> 0 `i `uc ]
-"74
-[; ;C:/Users/Carlo/OneDrive/Documentos/Quinto Semestre/Digital2/Lab3.X/main.c: 74: 
+"95
+[; ;C:/Users/Carlo/OneDrive/Documentos/Quinto Semestre/Digital2/Lab3.X/main.c: 95:     }
 [e = _TMR0 -> -> 236 `i `uc ]
-"75
-[; ;C:/Users/Carlo/OneDrive/Documentos/Quinto Semestre/Digital2/Lab3.X/main.c: 75: void Setup(void){
+"96
+[; ;C:/Users/Carlo/OneDrive/Documentos/Quinto Semestre/Digital2/Lab3.X/main.c: 96: }
 [e ++ _go_adc -> -> 1 `i `uc ]
-"76
-[; ;C:/Users/Carlo/OneDrive/Documentos/Quinto Semestre/Digital2/Lab3.X/main.c: 76: 
+"97
+[; ;C:/Users/Carlo/OneDrive/Documentos/Quinto Semestre/Digital2/Lab3.X/main.c: 97: 
 }
 [e :U 140 ]
-"77
-[; ;C:/Users/Carlo/OneDrive/Documentos/Quinto Semestre/Digital2/Lab3.X/main.c: 77:     PORTA = 0;
+"98
+[; ;C:/Users/Carlo/OneDrive/Documentos/Quinto Semestre/Digital2/Lab3.X/main.c: 98: 
 [e $ ! == -> . . _PIR1bits 0 5 `i -> 1 `i 141  ]
 {
-"78
-[; ;C:/Users/Carlo/OneDrive/Documentos/Quinto Semestre/Digital2/Lab3.X/main.c: 78:     PORTB = 0;
+"99
+[; ;C:/Users/Carlo/OneDrive/Documentos/Quinto Semestre/Digital2/Lab3.X/main.c: 99: 
 [e = _terminal _RCREG ]
-"79
-[; ;C:/Users/Carlo/OneDrive/Documentos/Quinto Semestre/Digital2/Lab3.X/main.c: 79:     PORTC = 0;
+"100
+[; ;C:/Users/Carlo/OneDrive/Documentos/Quinto Semestre/Digital2/Lab3.X/main.c: 100: void Setup(void){
 }
 [e :U 141 ]
-"80
-[; ;C:/Users/Carlo/OneDrive/Documentos/Quinto Semestre/Digital2/Lab3.X/main.c: 80:     PORTD = 0;
+"101
+[; ;C:/Users/Carlo/OneDrive/Documentos/Quinto Semestre/Digital2/Lab3.X/main.c: 101: 
 [e $ ! == -> . . _PIR1bits 0 4 `i -> 1 `i 142  ]
 {
-"81
-[; ;C:/Users/Carlo/OneDrive/Documentos/Quinto Semestre/Digital2/Lab3.X/main.c: 81:     ANSEL = 0;
-[e = _TXREG -> -> 48 `i `uc ]
-"82
-[; ;C:/Users/Carlo/OneDrive/Documentos/Quinto Semestre/Digital2/Lab3.X/main.c: 82:     ANSELbits.ANS0 = 1;
+"102
+[; ;C:/Users/Carlo/OneDrive/Documentos/Quinto Semestre/Digital2/Lab3.X/main.c: 102:     PORTA = 0;
+[e ++ _toggleTX -> -> 1 `i `uc ]
+"103
+[; ;C:/Users/Carlo/OneDrive/Documentos/Quinto Semestre/Digital2/Lab3.X/main.c: 103:     PORTB = 0;
+[e ( _envio ..  ]
+"104
+[; ;C:/Users/Carlo/OneDrive/Documentos/Quinto Semestre/Digital2/Lab3.X/main.c: 104:     PORTC = 0;
 [e = . . _PIE1bits 0 4 -> -> 0 `i `uc ]
-"83
-[; ;C:/Users/Carlo/OneDrive/Documentos/Quinto Semestre/Digital2/Lab3.X/main.c: 83:     ANSELH = 0;
+"105
+[; ;C:/Users/Carlo/OneDrive/Documentos/Quinto Semestre/Digital2/Lab3.X/main.c: 105:     PORTD = 0;
 }
 [e :U 142 ]
-"84
-[; ;C:/Users/Carlo/OneDrive/Documentos/Quinto Semestre/Digital2/Lab3.X/main.c: 84:     TRISA = 0;
+"106
+[; ;C:/Users/Carlo/OneDrive/Documentos/Quinto Semestre/Digital2/Lab3.X/main.c: 106:     ANSEL = 0;
 [e :UE 138 ]
 }
 [v $root$_main `(v ~T0 @X0 0 e ]
-"88
-[; ;C:/Users/Carlo/OneDrive/Documentos/Quinto Semestre/Digital2/Lab3.X/main.c: 88:     INTCONbits.TMR0IF = 0;
+"110
+[; ;C:/Users/Carlo/OneDrive/Documentos/Quinto Semestre/Digital2/Lab3.X/main.c: 110:     TRISB = 0b00011000;
 [v _main `(v ~T0 @X0 1 ef ]
 {
 [e :U _main ]
 [f ]
-"89
-[; ;C:/Users/Carlo/OneDrive/Documentos/Quinto Semestre/Digital2/Lab3.X/main.c: 89:     PIR1bits.ADIF = 0;
+"111
+[; ;C:/Users/Carlo/OneDrive/Documentos/Quinto Semestre/Digital2/Lab3.X/main.c: 111:     TRISD = 0;
 [e = _TRISD -> -> 0 `i `uc ]
-"90
-[; ;C:/Users/Carlo/OneDrive/Documentos/Quinto Semestre/Digital2/Lab3.X/main.c: 90:     INTCONbits.RBIF = 0;
+"112
+[; ;C:/Users/Carlo/OneDrive/Documentos/Quinto Semestre/Digital2/Lab3.X/main.c: 112:     TRISC = 0b10000000;
 [e ( _initOsc (1 -> -> 20 `i `uc ]
-"91
-[; ;C:/Users/Carlo/OneDrive/Documentos/Quinto Semestre/Digital2/Lab3.X/main.c: 91: 
+"113
+[; ;C:/Users/Carlo/OneDrive/Documentos/Quinto Semestre/Digital2/Lab3.X/main.c: 113:     INTCONbits.TMR0IF = 0;
 [e ( _Setup ..  ]
-"92
-[; ;C:/Users/Carlo/OneDrive/Documentos/Quinto Semestre/Digital2/Lab3.X/main.c: 92: 
+"114
+[; ;C:/Users/Carlo/OneDrive/Documentos/Quinto Semestre/Digital2/Lab3.X/main.c: 114:     PIR1bits.ADIF = 0;
 [e ( _USARTconf ..  ]
-"93
-[; ;C:/Users/Carlo/OneDrive/Documentos/Quinto Semestre/Digital2/Lab3.X/main.c: 93:     OPTION_REG = 0b11010111;
+"115
+[; ;C:/Users/Carlo/OneDrive/Documentos/Quinto Semestre/Digital2/Lab3.X/main.c: 115:     INTCONbits.RBIF = 0;
 [e ( _Lcd_Init ..  ]
-"94
-[; ;C:/Users/Carlo/OneDrive/Documentos/Quinto Semestre/Digital2/Lab3.X/main.c: 94: 
+"116
+[; ;C:/Users/Carlo/OneDrive/Documentos/Quinto Semestre/Digital2/Lab3.X/main.c: 116: 
 [e ( _Lcd_Cmd (1 -> -> 138 `i `uc ]
-"95
-[; ;C:/Users/Carlo/OneDrive/Documentos/Quinto Semestre/Digital2/Lab3.X/main.c: 95: 
+"117
+[; ;C:/Users/Carlo/OneDrive/Documentos/Quinto Semestre/Digital2/Lab3.X/main.c: 117: 
 [e ( _ADCinit (2 , -> -> 11 `i `uc -> -> 20 `i `uc ]
-"96
-[; ;C:/Users/Carlo/OneDrive/Documentos/Quinto Semestre/Digital2/Lab3.X/main.c: 96:     INTCONbits.GIE = 1;
+"118
+[; ;C:/Users/Carlo/OneDrive/Documentos/Quinto Semestre/Digital2/Lab3.X/main.c: 118:     OPTION_REG = 0b11010111;
 [e :U 145 ]
 {
-"98
-[; ;C:/Users/Carlo/OneDrive/Documentos/Quinto Semestre/Digital2/Lab3.X/main.c: 98: 
+"120
+[; ;C:/Users/Carlo/OneDrive/Documentos/Quinto Semestre/Digital2/Lab3.X/main.c: 120: 
 [e ( _Lcd_Set_Cursor (2 , -> -> 1 `i `uc -> -> 1 `i `uc ]
-"99
-[; ;C:/Users/Carlo/OneDrive/Documentos/Quinto Semestre/Digital2/Lab3.X/main.c: 99:     INTCONbits.RBIE = 0;
+"121
+[; ;C:/Users/Carlo/OneDrive/Documentos/Quinto Semestre/Digital2/Lab3.X/main.c: 121:     INTCONbits.GIE = 1;
 [e ( _Lcd_Write_String (1 :s 1C ]
-"100
-[; ;C:/Users/Carlo/OneDrive/Documentos/Quinto Semestre/Digital2/Lab3.X/main.c: 100:     PIE1bits.ADIE = 1;
+"122
+[; ;C:/Users/Carlo/OneDrive/Documentos/Quinto Semestre/Digital2/Lab3.X/main.c: 122:     INTCONbits.PEIE = 1;
 [e ( _Lcd_Set_Cursor (2 , -> -> 2 `i `uc -> -> 1 `i `uc ]
-"101
-[; ;C:/Users/Carlo/OneDrive/Documentos/Quinto Semestre/Digital2/Lab3.X/main.c: 101:     INTCONbits.T0IE = 1;
-[e ( _Lcd_Write_String (1 :s 2C ]
-"102
-[; ;C:/Users/Carlo/OneDrive/Documentos/Quinto Semestre/Digital2/Lab3.X/main.c: 102:     TMR0 = 236;
+"123
+[; ;C:/Users/Carlo/OneDrive/Documentos/Quinto Semestre/Digital2/Lab3.X/main.c: 123: 
+[e ( _Lcd_Write_String (1 -> ( _conver (3 , , _CONT_C _CONT_D _CONT_U `*uc ]
+"125
+[; ;C:/Users/Carlo/OneDrive/Documentos/Quinto Semestre/Digital2/Lab3.X/main.c: 125:     PIE1bits.ADIE = 1;
 [e ( _ADC_LEER ..  ]
-"103
-[; ;C:/Users/Carlo/OneDrive/Documentos/Quinto Semestre/Digital2/Lab3.X/main.c: 103: 
+"126
+[; ;C:/Users/Carlo/OneDrive/Documentos/Quinto Semestre/Digital2/Lab3.X/main.c: 126:     INTCONbits.T0IE = 1;
 [e $ ! && && != -> _terminal `i -> 43 `i != -> _terminal `i -> 13 `i != -> _terminal `i -> 45 `i 147  ]
 {
-"104
-[; ;C:/Users/Carlo/OneDrive/Documentos/Quinto Semestre/Digital2/Lab3.X/main.c: 104:     PIE1bits.RCIE = 1;
+"127
+[; ;C:/Users/Carlo/OneDrive/Documentos/Quinto Semestre/Digital2/Lab3.X/main.c: 127:     TMR0 = 236;
 [e = _flag_T -> -> 0 `i `uc ]
-"105
-[; ;C:/Users/Carlo/OneDrive/Documentos/Quinto Semestre/Digital2/Lab3.X/main.c: 105:     PIE1bits.TXIE = 1;
+"128
+[; ;C:/Users/Carlo/OneDrive/Documentos/Quinto Semestre/Digital2/Lab3.X/main.c: 128: 
 [e = _flag_T2 -> -> 0 `i `uc ]
-"106
-[; ;C:/Users/Carlo/OneDrive/Documentos/Quinto Semestre/Digital2/Lab3.X/main.c: 106: 
+"129
+[; ;C:/Users/Carlo/OneDrive/Documentos/Quinto Semestre/Digital2/Lab3.X/main.c: 129:     PIE1bits.RCIE = 1;
 }
 [e :U 147 ]
-"107
-[; ;C:/Users/Carlo/OneDrive/Documentos/Quinto Semestre/Digital2/Lab3.X/main.c: 107: }
+"130
+[; ;C:/Users/Carlo/OneDrive/Documentos/Quinto Semestre/Digital2/Lab3.X/main.c: 130:     PIE1bits.TXIE = 1;
 [e ( _debounce_T ..  ]
-"109
-[; ;C:/Users/Carlo/OneDrive/Documentos/Quinto Semestre/Digital2/Lab3.X/main.c: 109: 
+"131
+[; ;C:/Users/Carlo/OneDrive/Documentos/Quinto Semestre/Digital2/Lab3.X/main.c: 131: 
+[e = _PORTA -> _POT1_C `uc ]
+"132
+[; ;C:/Users/Carlo/OneDrive/Documentos/Quinto Semestre/Digital2/Lab3.X/main.c: 132: }
+[e ( _map_cont ..  ]
+"133
+[; ;C:/Users/Carlo/OneDrive/Documentos/Quinto Semestre/Digital2/Lab3.X/main.c: 133: 
+[e ( _map_pot1 ..  ]
+"134
+[; ;C:/Users/Carlo/OneDrive/Documentos/Quinto Semestre/Digital2/Lab3.X/main.c: 134: 
+[e ( _map_pot2 ..  ]
+"135
+[; ;C:/Users/Carlo/OneDrive/Documentos/Quinto Semestre/Digital2/Lab3.X/main.c: 135: 
 }
 [e :U 144 ]
 [e $U 145  ]
 [e :U 146 ]
-"110
-[; ;C:/Users/Carlo/OneDrive/Documentos/Quinto Semestre/Digital2/Lab3.X/main.c: 110: 
+"136
+[; ;C:/Users/Carlo/OneDrive/Documentos/Quinto Semestre/Digital2/Lab3.X/main.c: 136: void ADC_LEER(void){
 [e :UE 143 ]
 }
-"114
-[; ;C:/Users/Carlo/OneDrive/Documentos/Quinto Semestre/Digital2/Lab3.X/main.c: 114:         ADCON0bits.GO_nDONE =1;
+"140
+[; ;C:/Users/Carlo/OneDrive/Documentos/Quinto Semestre/Digital2/Lab3.X/main.c: 140:         if (toggle == 0){
 [v _Setup `(v ~T0 @X0 1 ef ]
 {
 [e :U _Setup ]
 [f ]
-"116
-[; ;C:/Users/Carlo/OneDrive/Documentos/Quinto Semestre/Digital2/Lab3.X/main.c: 116:             toggle = 1;
+"142
+[; ;C:/Users/Carlo/OneDrive/Documentos/Quinto Semestre/Digital2/Lab3.X/main.c: 142:             ADCinit(1, 9);
 [e = _PORTA -> -> 0 `i `uc ]
-"117
-[; ;C:/Users/Carlo/OneDrive/Documentos/Quinto Semestre/Digital2/Lab3.X/main.c: 117:             ADCinit(1, 9);
-[e = _PORTB -> -> 0 `i `uc ]
-"118
-[; ;C:/Users/Carlo/OneDrive/Documentos/Quinto Semestre/Digital2/Lab3.X/main.c: 118:             pot1 = lec_ADC;
-[e = _PORTC -> -> 0 `i `uc ]
-"119
-[; ;C:/Users/Carlo/OneDrive/Documentos/Quinto Semestre/Digital2/Lab3.X/main.c: 119:         }
-[e = _PORTD -> -> 0 `i `uc ]
-"120
-[; ;C:/Users/Carlo/OneDrive/Documentos/Quinto Semestre/Digital2/Lab3.X/main.c: 120:         else{
-[e = _ANSEL -> -> 0 `i `uc ]
-"121
-[; ;C:/Users/Carlo/OneDrive/Documentos/Quinto Semestre/Digital2/Lab3.X/main.c: 121:             toggle = 0;
-[e = . . _ANSELbits 0 0 -> -> 1 `i `uc ]
-"122
-[; ;C:/Users/Carlo/OneDrive/Documentos/Quinto Semestre/Digital2/Lab3.X/main.c: 122:             ADCinit(1, 11);
-[e = _ANSELH -> -> 0 `i `uc ]
-"123
-[; ;C:/Users/Carlo/OneDrive/Documentos/Quinto Semestre/Digital2/Lab3.X/main.c: 123:             pot2 = lec_ADC;
-[e = _TRISA -> -> 0 `i `uc ]
-"124
-[; ;C:/Users/Carlo/OneDrive/Documentos/Quinto Semestre/Digital2/Lab3.X/main.c: 124:         }
-[e = _TRISB -> -> 24 `i `uc ]
-"125
-[; ;C:/Users/Carlo/OneDrive/Documentos/Quinto Semestre/Digital2/Lab3.X/main.c: 125:     }
-[e = _TRISD -> -> 0 `i `uc ]
-"126
-[; ;C:/Users/Carlo/OneDrive/Documentos/Quinto Semestre/Digital2/Lab3.X/main.c: 126: }
-[e = _TRISC -> -> 128 `i `uc ]
-"127
-[; ;C:/Users/Carlo/OneDrive/Documentos/Quinto Semestre/Digital2/Lab3.X/main.c: 127: 
-[e = . . _INTCONbits 1 1 -> -> 0 `i `uc ]
-"128
-[; ;C:/Users/Carlo/OneDrive/Documentos/Quinto Semestre/Digital2/Lab3.X/main.c: 128: 
-[e = . . _PIR1bits 0 6 -> -> 0 `i `uc ]
-"129
-[; ;C:/Users/Carlo/OneDrive/Documentos/Quinto Semestre/Digital2/Lab3.X/main.c: 129: 
-[e = . . _INTCONbits 0 0 -> -> 0 `i `uc ]
-"132
-[; ;C:/Users/Carlo/OneDrive/Documentos/Quinto Semestre/Digital2/Lab3.X/main.c: 132:         flag_T = 1;
-[e = _OPTION_REG -> -> 215 `i `uc ]
-"135
-[; ;C:/Users/Carlo/OneDrive/Documentos/Quinto Semestre/Digital2/Lab3.X/main.c: 135:     if (terminal == 13){
-[e = . . _INTCONbits 0 7 -> -> 1 `i `uc ]
-"136
-[; ;C:/Users/Carlo/OneDrive/Documentos/Quinto Semestre/Digital2/Lab3.X/main.c: 136:         if (flag_T == 1){
-[e = . . _INTCONbits 0 6 -> -> 1 `i `uc ]
-"138
-[; ;C:/Users/Carlo/OneDrive/Documentos/Quinto Semestre/Digital2/Lab3.X/main.c: 138:             CONT++;
-[e = . . _INTCONbits 0 3 -> -> 0 `i `uc ]
-"139
-[; ;C:/Users/Carlo/OneDrive/Documentos/Quinto Semestre/Digital2/Lab3.X/main.c: 139:         }
-[e = . . _PIE1bits 0 6 -> -> 1 `i `uc ]
-"140
-[; ;C:/Users/Carlo/OneDrive/Documentos/Quinto Semestre/Digital2/Lab3.X/main.c: 140:     }
-[e = . . _INTCONbits 0 5 -> -> 1 `i `uc ]
-"141
-[; ;C:/Users/Carlo/OneDrive/Documentos/Quinto Semestre/Digital2/Lab3.X/main.c: 141: 
-[e = _TMR0 -> -> 236 `i `uc ]
 "143
-[; ;C:/Users/Carlo/OneDrive/Documentos/Quinto Semestre/Digital2/Lab3.X/main.c: 143:         flag_T2 = 1;
-[e = . . _PIE1bits 0 5 -> -> 1 `i `uc ]
+[; ;C:/Users/Carlo/OneDrive/Documentos/Quinto Semestre/Digital2/Lab3.X/main.c: 143:             pot1 = lec_ADC;
+[e = _PORTB -> -> 0 `i `uc ]
 "144
-[; ;C:/Users/Carlo/OneDrive/Documentos/Quinto Semestre/Digital2/Lab3.X/main.c: 144:     }
-[e = . . _PIE1bits 0 4 -> -> 1 `i `uc ]
+[; ;C:/Users/Carlo/OneDrive/Documentos/Quinto Semestre/Digital2/Lab3.X/main.c: 144:         }
+[e = _PORTC -> -> 0 `i `uc ]
+"145
+[; ;C:/Users/Carlo/OneDrive/Documentos/Quinto Semestre/Digital2/Lab3.X/main.c: 145:         else{
+[e = _PORTD -> -> 0 `i `uc ]
 "146
-[; ;C:/Users/Carlo/OneDrive/Documentos/Quinto Semestre/Digital2/Lab3.X/main.c: 146:     if(terminal ==13 && flag_T2 == 1){
+[; ;C:/Users/Carlo/OneDrive/Documentos/Quinto Semestre/Digital2/Lab3.X/main.c: 146:             toggle = 0;
+[e = _ANSEL -> -> 0 `i `uc ]
+"147
+[; ;C:/Users/Carlo/OneDrive/Documentos/Quinto Semestre/Digital2/Lab3.X/main.c: 147:             ADCinit(1, 11);
+[e = . . _ANSELbits 0 0 -> -> 1 `i `uc ]
+"148
+[; ;C:/Users/Carlo/OneDrive/Documentos/Quinto Semestre/Digital2/Lab3.X/main.c: 148:             pot2 = lec_ADC;
+[e = _ANSELH -> -> 0 `i `uc ]
+"149
+[; ;C:/Users/Carlo/OneDrive/Documentos/Quinto Semestre/Digital2/Lab3.X/main.c: 149:         }
+[e = _TRISA -> -> 0 `i `uc ]
+"150
+[; ;C:/Users/Carlo/OneDrive/Documentos/Quinto Semestre/Digital2/Lab3.X/main.c: 150:     }
+[e = _TRISB -> -> 24 `i `uc ]
+"151
+[; ;C:/Users/Carlo/OneDrive/Documentos/Quinto Semestre/Digital2/Lab3.X/main.c: 151: }
+[e = _TRISD -> -> 0 `i `uc ]
+"152
+[; ;C:/Users/Carlo/OneDrive/Documentos/Quinto Semestre/Digital2/Lab3.X/main.c: 152: 
+[e = _TRISC -> -> 128 `i `uc ]
+"153
+[; ;C:/Users/Carlo/OneDrive/Documentos/Quinto Semestre/Digital2/Lab3.X/main.c: 153: 
+[e = . . _INTCONbits 1 1 -> -> 0 `i `uc ]
+"154
+[; ;C:/Users/Carlo/OneDrive/Documentos/Quinto Semestre/Digital2/Lab3.X/main.c: 154: 
+[e = . . _PIR1bits 0 6 -> -> 0 `i `uc ]
+"155
+[; ;C:/Users/Carlo/OneDrive/Documentos/Quinto Semestre/Digital2/Lab3.X/main.c: 155: void debounce_T(void){
+[e = . . _INTCONbits 0 0 -> -> 0 `i `uc ]
+"158
+[; ;C:/Users/Carlo/OneDrive/Documentos/Quinto Semestre/Digital2/Lab3.X/main.c: 158:     }
+[e = _OPTION_REG -> -> 215 `i `uc ]
+"161
+[; ;C:/Users/Carlo/OneDrive/Documentos/Quinto Semestre/Digital2/Lab3.X/main.c: 161:         if (flag_T == 1){
+[e = . . _INTCONbits 0 7 -> -> 1 `i `uc ]
+"162
+[; ;C:/Users/Carlo/OneDrive/Documentos/Quinto Semestre/Digital2/Lab3.X/main.c: 162:             flag_T = 0;
+[e = . . _INTCONbits 0 6 -> -> 1 `i `uc ]
+"164
+[; ;C:/Users/Carlo/OneDrive/Documentos/Quinto Semestre/Digital2/Lab3.X/main.c: 164:         }
+[e = . . _INTCONbits 0 3 -> -> 0 `i `uc ]
+"165
+[; ;C:/Users/Carlo/OneDrive/Documentos/Quinto Semestre/Digital2/Lab3.X/main.c: 165:     }
+[e = . . _PIE1bits 0 6 -> -> 1 `i `uc ]
+"166
+[; ;C:/Users/Carlo/OneDrive/Documentos/Quinto Semestre/Digital2/Lab3.X/main.c: 166: 
+[e = . . _INTCONbits 0 5 -> -> 1 `i `uc ]
+"167
+[; ;C:/Users/Carlo/OneDrive/Documentos/Quinto Semestre/Digital2/Lab3.X/main.c: 167:     if (terminal == 45){
+[e = _TMR0 -> -> 236 `i `uc ]
+"169
+[; ;C:/Users/Carlo/OneDrive/Documentos/Quinto Semestre/Digital2/Lab3.X/main.c: 169:     }
+[e = . . _PIE1bits 0 5 -> -> 1 `i `uc ]
+"170
+[; ;C:/Users/Carlo/OneDrive/Documentos/Quinto Semestre/Digital2/Lab3.X/main.c: 170: 
+[e = . . _PIE1bits 0 4 -> -> 1 `i `uc ]
+"172
+[; ;C:/Users/Carlo/OneDrive/Documentos/Quinto Semestre/Digital2/Lab3.X/main.c: 172:         flag_T2 = 0;
 [e :UE 148 ]
 }
-"150
-[; ;C:/Users/Carlo/OneDrive/Documentos/Quinto Semestre/Digital2/Lab3.X/main.c: 150: }
+"176
+[; ;C:/Users/Carlo/OneDrive/Documentos/Quinto Semestre/Digital2/Lab3.X/main.c: 176: 
 [v _ADC_LEER `(v ~T0 @X0 1 ef ]
 {
 [e :U _ADC_LEER ]
 [f ]
-"151
+"177
+[; ;C:/Users/Carlo/OneDrive/Documentos/Quinto Semestre/Digital2/Lab3.X/main.c: 177: 
 [e $ ! > -> _go_adc `i -> 5 `i 150  ]
 {
-"152
+"178
+[; ;C:/Users/Carlo/OneDrive/Documentos/Quinto Semestre/Digital2/Lab3.X/main.c: 178: 
 [e = _go_adc -> -> 0 `i `uc ]
-"153
+"179
+[; ;C:/Users/Carlo/OneDrive/Documentos/Quinto Semestre/Digital2/Lab3.X/main.c: 179: void map_cont(void){
 [e = . . _ADCON0bits 0 1 -> -> 1 `i `uc ]
-"154
+"180
+[; ;C:/Users/Carlo/OneDrive/Documentos/Quinto Semestre/Digital2/Lab3.X/main.c: 180:    CONT_C = CONT/100;
 [e $ ! == -> _toggle `i -> 0 `i 151  ]
 {
-"155
+"181
+[; ;C:/Users/Carlo/OneDrive/Documentos/Quinto Semestre/Digital2/Lab3.X/main.c: 181:    CONT_D = (CONT-(CONT_C*100))/10;
 [e = _toggle -> -> 1 `i `uc ]
-"156
+"182
+[; ;C:/Users/Carlo/OneDrive/Documentos/Quinto Semestre/Digital2/Lab3.X/main.c: 182:    CONT_U = (CONT-(CONT_C*100)-(CONT_D*10));
 [e ( _ADCinit (2 , -> -> 1 `i `uc -> -> 9 `i `uc ]
-"157
+"183
+[; ;C:/Users/Carlo/OneDrive/Documentos/Quinto Semestre/Digital2/Lab3.X/main.c: 183:    CONT_C = num_ascii(CONT_C);
 [e = _pot1 _lec_ADC ]
-"158
+"184
+[; ;C:/Users/Carlo/OneDrive/Documentos/Quinto Semestre/Digital2/Lab3.X/main.c: 184:    CONT_D = num_ascii(CONT_D);
 }
 [e $U 152  ]
-"159
+"185
+[; ;C:/Users/Carlo/OneDrive/Documentos/Quinto Semestre/Digital2/Lab3.X/main.c: 185:    CONT_U = num_ascii(CONT_U);
 [e :U 151 ]
 {
-"160
+"186
+[; ;C:/Users/Carlo/OneDrive/Documentos/Quinto Semestre/Digital2/Lab3.X/main.c: 186: }
 [e = _toggle -> -> 0 `i `uc ]
-"161
+"187
+[; ;C:/Users/Carlo/OneDrive/Documentos/Quinto Semestre/Digital2/Lab3.X/main.c: 187: 
 [e ( _ADCinit (2 , -> -> 1 `i `uc -> -> 11 `i `uc ]
-"162
+"188
+[; ;C:/Users/Carlo/OneDrive/Documentos/Quinto Semestre/Digital2/Lab3.X/main.c: 188: 
 [e = _pot2 _lec_ADC ]
-"163
+"189
+[; ;C:/Users/Carlo/OneDrive/Documentos/Quinto Semestre/Digital2/Lab3.X/main.c: 189: 
 }
 [e :U 152 ]
-"164
+"190
+[; ;C:/Users/Carlo/OneDrive/Documentos/Quinto Semestre/Digital2/Lab3.X/main.c: 190: const char* conver(char CONT_C, char CONT_D, char CONT_U){
 }
 [e :U 150 ]
-"165
+"191
+[; ;C:/Users/Carlo/OneDrive/Documentos/Quinto Semestre/Digital2/Lab3.X/main.c: 191:     char temporal[16];
 [e :UE 149 ]
 }
-"169
+"195
+[; ;C:/Users/Carlo/OneDrive/Documentos/Quinto Semestre/Digital2/Lab3.X/main.c: 195:     temporal[3] = 0x20;
 [v _debounce_T `(v ~T0 @X0 1 ef ]
 {
 [e :U _debounce_T ]
 [f ]
-"170
+"196
+[; ;C:/Users/Carlo/OneDrive/Documentos/Quinto Semestre/Digital2/Lab3.X/main.c: 196:     temporal[4] = 0x20;
 [e $ ! == -> _terminal `i -> 43 `i 154  ]
 {
-"171
+"197
+[; ;C:/Users/Carlo/OneDrive/Documentos/Quinto Semestre/Digital2/Lab3.X/main.c: 197:     temporal[5] = POT1_C;
 [e = _flag_T -> -> 1 `i `uc ]
-"172
+"198
+[; ;C:/Users/Carlo/OneDrive/Documentos/Quinto Semestre/Digital2/Lab3.X/main.c: 198:     temporal[6] = 0x2E;
 }
 [e :U 154 ]
-"174
+"200
+[; ;C:/Users/Carlo/OneDrive/Documentos/Quinto Semestre/Digital2/Lab3.X/main.c: 200:     temporal[8] = POT1_U;
 [e $ ! == -> _terminal `i -> 13 `i 155  ]
 {
-"175
+"201
+[; ;C:/Users/Carlo/OneDrive/Documentos/Quinto Semestre/Digital2/Lab3.X/main.c: 201:     temporal[9] = 0x76;
 [e $ ! == -> _flag_T `i -> 1 `i 156  ]
 {
-"176
+"202
+[; ;C:/Users/Carlo/OneDrive/Documentos/Quinto Semestre/Digital2/Lab3.X/main.c: 202:     temporal[10] = 0x20;
 [e = _flag_T -> -> 0 `i `uc ]
-"177
+"203
+[; ;C:/Users/Carlo/OneDrive/Documentos/Quinto Semestre/Digital2/Lab3.X/main.c: 203:     temporal[11] = POT2_C;
 [e ++ _CONT -> -> 1 `i `uc ]
-"178
+"204
+[; ;C:/Users/Carlo/OneDrive/Documentos/Quinto Semestre/Digital2/Lab3.X/main.c: 204:     temporal[12] = 0x2E;
 }
 [e :U 156 ]
-"179
+"205
+[; ;C:/Users/Carlo/OneDrive/Documentos/Quinto Semestre/Digital2/Lab3.X/main.c: 205:     temporal[13] = POT2_D;
 }
 [e :U 155 ]
-"181
+"207
+[; ;C:/Users/Carlo/OneDrive/Documentos/Quinto Semestre/Digital2/Lab3.X/main.c: 207:     temporal[15] = 0x76;
 [e $ ! == -> _terminal `i -> 45 `i 157  ]
 {
-"182
+"208
+[; ;C:/Users/Carlo/OneDrive/Documentos/Quinto Semestre/Digital2/Lab3.X/main.c: 208:     return temporal;
 [e = _flag_T2 -> -> 1 `i `uc ]
-"183
+"209
+[; ;C:/Users/Carlo/OneDrive/Documentos/Quinto Semestre/Digital2/Lab3.X/main.c: 209: }
 }
 [e :U 157 ]
-"185
+"211
+[; ;C:/Users/Carlo/OneDrive/Documentos/Quinto Semestre/Digital2/Lab3.X/main.c: 211: 
 [e $ ! && == -> _terminal `i -> 13 `i == -> _flag_T2 `i -> 1 `i 158  ]
 {
-"186
+"212
+[; ;C:/Users/Carlo/OneDrive/Documentos/Quinto Semestre/Digital2/Lab3.X/main.c: 212: 
 [e = _flag_T2 -> -> 0 `i `uc ]
-"187
+"213
+[; ;C:/Users/Carlo/OneDrive/Documentos/Quinto Semestre/Digital2/Lab3.X/main.c: 213: void map_pot1(void){
 [e -- _CONT -> -> 1 `i `uc ]
-"188
+"214
+[; ;C:/Users/Carlo/OneDrive/Documentos/Quinto Semestre/Digital2/Lab3.X/main.c: 214:     temp2 = pot1;
 }
 [e :U 158 ]
-"189
+"215
+[; ;C:/Users/Carlo/OneDrive/Documentos/Quinto Semestre/Digital2/Lab3.X/main.c: 215:     POT1_C = ((temp2*100)/51)/100;
 [e :UE 153 ]
 }
-[a 2C 86 111 108 116 97 106 101 115 58 0 ]
+"219
+[; ;C:/Users/Carlo/OneDrive/Documentos/Quinto Semestre/Digital2/Lab3.X/main.c: 219:     POT1_D = num_ascii(POT1_D);
+[v _map_cont `(v ~T0 @X0 1 ef ]
+{
+[e :U _map_cont ]
+[f ]
+"220
+[; ;C:/Users/Carlo/OneDrive/Documentos/Quinto Semestre/Digital2/Lab3.X/main.c: 220:     POT1_U = num_ascii(POT1_U);
+[e = _CONT_C -> / -> _CONT `i -> 100 `i `uc ]
+"221
+[; ;C:/Users/Carlo/OneDrive/Documentos/Quinto Semestre/Digital2/Lab3.X/main.c: 221: 
+[e = _CONT_D -> / - -> _CONT `i * -> _CONT_C `i -> 100 `i -> 10 `i `uc ]
+"222
+[; ;C:/Users/Carlo/OneDrive/Documentos/Quinto Semestre/Digital2/Lab3.X/main.c: 222: }
+[e = _CONT_U -> - - -> _CONT `i * -> _CONT_C `i -> 100 `i * -> _CONT_D `i -> 10 `i `uc ]
+"223
+[; ;C:/Users/Carlo/OneDrive/Documentos/Quinto Semestre/Digital2/Lab3.X/main.c: 223: 
+[e = _CONT_C ( _num_ascii (1 -> _CONT_C `uc ]
+"224
+[; ;C:/Users/Carlo/OneDrive/Documentos/Quinto Semestre/Digital2/Lab3.X/main.c: 224: 
+[e = _CONT_D ( _num_ascii (1 -> _CONT_D `uc ]
+"225
+[; ;C:/Users/Carlo/OneDrive/Documentos/Quinto Semestre/Digital2/Lab3.X/main.c: 225: 
+[e = _CONT_U ( _num_ascii (1 -> _CONT_U `uc ]
+"226
+[; ;C:/Users/Carlo/OneDrive/Documentos/Quinto Semestre/Digital2/Lab3.X/main.c: 226: void map_pot2(void){
+[e :UE 159 ]
+}
+"230
+[; ;C:/Users/Carlo/OneDrive/Documentos/Quinto Semestre/Digital2/Lab3.X/main.c: 230:     POT2_U = (((temp3*100)/51)-(POT2_C*100)-(POT2_D*10));
+[v _conver `(*Cuc ~T0 @X0 1 ef3`uc`uc`uc ]
+{
+[e :U _conver ]
+[v _CONT_C `uc ~T0 @X0 1 r1 ]
+[v _CONT_D `uc ~T0 @X0 1 r2 ]
+[v _CONT_U `uc ~T0 @X0 1 r3 ]
+[f ]
+"231
+[; ;C:/Users/Carlo/OneDrive/Documentos/Quinto Semestre/Digital2/Lab3.X/main.c: 231:     POT2_C = num_ascii(POT2_C);
+[v _temporal `uc ~T0 @X0 -> 16 `i a ]
+"232
+[; ;C:/Users/Carlo/OneDrive/Documentos/Quinto Semestre/Digital2/Lab3.X/main.c: 232:     POT2_D = num_ascii(POT2_D);
+[e = *U + &U _temporal * -> -> -> 0 `i `ui `ux -> -> # *U &U _temporal `ui `ux _CONT_C ]
+"233
+[; ;C:/Users/Carlo/OneDrive/Documentos/Quinto Semestre/Digital2/Lab3.X/main.c: 233:     POT2_U = num_ascii(POT2_U);
+[e = *U + &U _temporal * -> -> -> 1 `i `ui `ux -> -> # *U &U _temporal `ui `ux _CONT_D ]
+"234
+[; ;C:/Users/Carlo/OneDrive/Documentos/Quinto Semestre/Digital2/Lab3.X/main.c: 234: }
+[e = *U + &U _temporal * -> -> -> 2 `i `ui `ux -> -> # *U &U _temporal `ui `ux _CONT_U ]
+"235
+[; ;C:/Users/Carlo/OneDrive/Documentos/Quinto Semestre/Digital2/Lab3.X/main.c: 235: 
+[e = *U + &U _temporal * -> -> -> 3 `i `ui `ux -> -> # *U &U _temporal `ui `ux -> -> 32 `i `uc ]
+"236
+[; ;C:/Users/Carlo/OneDrive/Documentos/Quinto Semestre/Digital2/Lab3.X/main.c: 236: 
+[e = *U + &U _temporal * -> -> -> 4 `i `ui `ux -> -> # *U &U _temporal `ui `ux -> -> 32 `i `uc ]
+"237
+[; ;C:/Users/Carlo/OneDrive/Documentos/Quinto Semestre/Digital2/Lab3.X/main.c: 237: 
+[e = *U + &U _temporal * -> -> -> 5 `i `ui `ux -> -> # *U &U _temporal `ui `ux _POT1_C ]
+"238
+[; ;C:/Users/Carlo/OneDrive/Documentos/Quinto Semestre/Digital2/Lab3.X/main.c: 238: void envio(void){
+[e = *U + &U _temporal * -> -> -> 6 `i `ui `ux -> -> # *U &U _temporal `ui `ux -> -> 46 `i `uc ]
+"239
+[; ;C:/Users/Carlo/OneDrive/Documentos/Quinto Semestre/Digital2/Lab3.X/main.c: 239:     if (toggleTX == 1){
+[e = *U + &U _temporal * -> -> -> 7 `i `ui `ux -> -> # *U &U _temporal `ui `ux _POT1_D ]
+"240
+[; ;C:/Users/Carlo/OneDrive/Documentos/Quinto Semestre/Digital2/Lab3.X/main.c: 240:         TXREG = POT1_C;
+[e = *U + &U _temporal * -> -> -> 8 `i `ui `ux -> -> # *U &U _temporal `ui `ux _POT1_U ]
+"241
+[; ;C:/Users/Carlo/OneDrive/Documentos/Quinto Semestre/Digital2/Lab3.X/main.c: 241:     }
+[e = *U + &U _temporal * -> -> -> 9 `i `ui `ux -> -> # *U &U _temporal `ui `ux -> -> 118 `i `uc ]
+"242
+[; ;C:/Users/Carlo/OneDrive/Documentos/Quinto Semestre/Digital2/Lab3.X/main.c: 242:     if (toggleTX == 2){
+[e = *U + &U _temporal * -> -> -> 10 `i `ui `ux -> -> # *U &U _temporal `ui `ux -> -> 32 `i `uc ]
+"243
+[; ;C:/Users/Carlo/OneDrive/Documentos/Quinto Semestre/Digital2/Lab3.X/main.c: 243:         TXREG = 0x2E;
+[e = *U + &U _temporal * -> -> -> 11 `i `ui `ux -> -> # *U &U _temporal `ui `ux _POT2_C ]
+"244
+[; ;C:/Users/Carlo/OneDrive/Documentos/Quinto Semestre/Digital2/Lab3.X/main.c: 244:     }
+[e = *U + &U _temporal * -> -> -> 12 `i `ui `ux -> -> # *U &U _temporal `ui `ux -> -> 46 `i `uc ]
+"245
+[; ;C:/Users/Carlo/OneDrive/Documentos/Quinto Semestre/Digital2/Lab3.X/main.c: 245:     if (toggleTX == 3){
+[e = *U + &U _temporal * -> -> -> 13 `i `ui `ux -> -> # *U &U _temporal `ui `ux _POT2_D ]
+"246
+[; ;C:/Users/Carlo/OneDrive/Documentos/Quinto Semestre/Digital2/Lab3.X/main.c: 246:         TXREG = POT1_D;
+[e = *U + &U _temporal * -> -> -> 14 `i `ui `ux -> -> # *U &U _temporal `ui `ux _POT2_U ]
+"247
+[; ;C:/Users/Carlo/OneDrive/Documentos/Quinto Semestre/Digital2/Lab3.X/main.c: 247:     }
+[e = *U + &U _temporal * -> -> -> 15 `i `ui `ux -> -> # *U &U _temporal `ui `ux -> -> 118 `i `uc ]
+"248
+[; ;C:/Users/Carlo/OneDrive/Documentos/Quinto Semestre/Digital2/Lab3.X/main.c: 248:     if (toggleTX == 4){
+[e ) -> &U _temporal `*Cuc ]
+[e $UE 160  ]
+"249
+[; ;C:/Users/Carlo/OneDrive/Documentos/Quinto Semestre/Digital2/Lab3.X/main.c: 249:         TXREG = POT1_U;
+[e :UE 160 ]
+}
+"253
+[; ;C:/Users/Carlo/OneDrive/Documentos/Quinto Semestre/Digital2/Lab3.X/main.c: 253:     }
+[v _map_pot1 `(v ~T0 @X0 1 ef ]
+{
+[e :U _map_pot1 ]
+[f ]
+"254
+[; ;C:/Users/Carlo/OneDrive/Documentos/Quinto Semestre/Digital2/Lab3.X/main.c: 254:     if (toggleTX == 6){
+[e = _temp2 _pot1 ]
+"255
+[; ;C:/Users/Carlo/OneDrive/Documentos/Quinto Semestre/Digital2/Lab3.X/main.c: 255:         TXREG = 0x20;
+[e = _POT1_C -> / / * -> _temp2 `i -> 100 `i -> 51 `i -> 100 `i `uc ]
+"256
+[; ;C:/Users/Carlo/OneDrive/Documentos/Quinto Semestre/Digital2/Lab3.X/main.c: 256:     }
+[e = _POT1_D -> / - / * -> _temp2 `i -> 100 `i -> 51 `i * -> _POT1_C `i -> 100 `i -> 10 `i `uc ]
+"257
+[; ;C:/Users/Carlo/OneDrive/Documentos/Quinto Semestre/Digital2/Lab3.X/main.c: 257:     if (toggleTX == 7){
+[e = _POT1_U -> - - / * -> _temp2 `i -> 100 `i -> 51 `i * -> _POT1_C `i -> 100 `i * -> _POT1_D `i -> 10 `i `uc ]
+"258
+[; ;C:/Users/Carlo/OneDrive/Documentos/Quinto Semestre/Digital2/Lab3.X/main.c: 258:         TXREG = POT2_C;
+[e = _POT1_C ( _num_ascii (1 -> _POT1_C `uc ]
+"259
+[; ;C:/Users/Carlo/OneDrive/Documentos/Quinto Semestre/Digital2/Lab3.X/main.c: 259:     }
+[e = _POT1_D ( _num_ascii (1 -> _POT1_D `uc ]
+"260
+[; ;C:/Users/Carlo/OneDrive/Documentos/Quinto Semestre/Digital2/Lab3.X/main.c: 260:     if (toggleTX == 8){
+[e = _POT1_U ( _num_ascii (1 -> _POT1_U `uc ]
+"262
+[; ;C:/Users/Carlo/OneDrive/Documentos/Quinto Semestre/Digital2/Lab3.X/main.c: 262:     }
+[e :UE 161 ]
+}
+"266
+[; ;C:/Users/Carlo/OneDrive/Documentos/Quinto Semestre/Digital2/Lab3.X/main.c: 266:     if (toggleTX == 10){
+[v _map_pot2 `(v ~T0 @X0 1 ef ]
+{
+[e :U _map_pot2 ]
+[f ]
+"267
+[; ;C:/Users/Carlo/OneDrive/Documentos/Quinto Semestre/Digital2/Lab3.X/main.c: 267:         TXREG = POT2_U;
+[e = _temp3 _pot2 ]
+"268
+[; ;C:/Users/Carlo/OneDrive/Documentos/Quinto Semestre/Digital2/Lab3.X/main.c: 268:     }
+[e = _POT2_C -> / / * -> _temp3 `i -> 100 `i -> 51 `i -> 100 `i `uc ]
+"269
+[; ;C:/Users/Carlo/OneDrive/Documentos/Quinto Semestre/Digital2/Lab3.X/main.c: 269:     if (toggleTX == 11){
+[e = _POT2_D -> / - / * -> _temp3 `i -> 100 `i -> 51 `i * -> _POT2_C `i -> 100 `i -> 10 `i `uc ]
+"270
+[; ;C:/Users/Carlo/OneDrive/Documentos/Quinto Semestre/Digital2/Lab3.X/main.c: 270:         TXREG = 13;
+[e = _POT2_U -> - - / * -> _temp3 `i -> 100 `i -> 51 `i * -> _POT2_C `i -> 100 `i * -> _POT2_D `i -> 10 `i `uc ]
+"271
+[; ;C:/Users/Carlo/OneDrive/Documentos/Quinto Semestre/Digital2/Lab3.X/main.c: 271:         toggleTX = 0;
+[e = _POT2_C ( _num_ascii (1 -> _POT2_C `uc ]
+"272
+[; ;C:/Users/Carlo/OneDrive/Documentos/Quinto Semestre/Digital2/Lab3.X/main.c: 272:     }
+[e = _POT2_D ( _num_ascii (1 -> _POT2_D `uc ]
+"273
+[; ;C:/Users/Carlo/OneDrive/Documentos/Quinto Semestre/Digital2/Lab3.X/main.c: 273: }
+[e = _POT2_U ( _num_ascii (1 -> _POT2_U `uc ]
+"274
+[e :UE 162 ]
+}
+"278
+[v _envio `(v ~T0 @X0 1 ef ]
+{
+[e :U _envio ]
+[f ]
+"279
+[e $ ! == -> _toggleTX `i -> 1 `i 164  ]
+{
+"280
+[e = _TXREG -> _POT1_C `uc ]
+"281
+}
+[e :U 164 ]
+"282
+[e $ ! == -> _toggleTX `i -> 2 `i 165  ]
+{
+"283
+[e = _TXREG -> -> 46 `i `uc ]
+"284
+}
+[e :U 165 ]
+"285
+[e $ ! == -> _toggleTX `i -> 3 `i 166  ]
+{
+"286
+[e = _TXREG -> _POT1_D `uc ]
+"287
+}
+[e :U 166 ]
+"288
+[e $ ! == -> _toggleTX `i -> 4 `i 167  ]
+{
+"289
+[e = _TXREG -> _POT1_U `uc ]
+"290
+}
+[e :U 167 ]
+"291
+[e $ ! == -> _toggleTX `i -> 5 `i 168  ]
+{
+"292
+[e = _TXREG -> -> 44 `i `uc ]
+"293
+}
+[e :U 168 ]
+"294
+[e $ ! == -> _toggleTX `i -> 6 `i 169  ]
+{
+"295
+[e = _TXREG -> -> 32 `i `uc ]
+"296
+}
+[e :U 169 ]
+"297
+[e $ ! == -> _toggleTX `i -> 7 `i 170  ]
+{
+"298
+[e = _TXREG -> _POT2_C `uc ]
+"299
+}
+[e :U 170 ]
+"300
+[e $ ! == -> _toggleTX `i -> 8 `i 171  ]
+{
+"301
+[e = _TXREG -> -> 46 `i `uc ]
+"302
+}
+[e :U 171 ]
+"303
+[e $ ! == -> _toggleTX `i -> 9 `i 172  ]
+{
+"304
+[e = _TXREG -> _POT2_D `uc ]
+"305
+}
+[e :U 172 ]
+"306
+[e $ ! == -> _toggleTX `i -> 10 `i 173  ]
+{
+"307
+[e = _TXREG -> _POT2_U `uc ]
+"308
+}
+[e :U 173 ]
+"309
+[e $ ! == -> _toggleTX `i -> 11 `i 174  ]
+{
+"310
+[e = _TXREG -> -> 13 `i `uc ]
+"311
+[e = _toggleTX -> -> 0 `i `uc ]
+"312
+}
+[e :U 174 ]
+"313
+[e :UE 163 ]
+}
 [a 1C 83 49 32 32 32 32 83 50 32 32 32 32 83 51 0 ]

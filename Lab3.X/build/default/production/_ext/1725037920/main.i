@@ -2688,6 +2688,17 @@ void Lcd_Shift_Left(void);
 void USARTconf(void);
 # 19 "C:/Users/Carlo/OneDrive/Documentos/Quinto Semestre/Digital2/Lab3.X/main.c" 2
 
+# 1 "C:/Users/Carlo/OneDrive/Documentos/Quinto Semestre/Digital2/Lab3.X/ASCII_NUM.h" 1
+
+
+# 1 "C:\\Program Files\\Microchip\\xc8\\v2.20\\pic\\include\\c90\\stdint.h" 1 3
+# 3 "C:/Users/Carlo/OneDrive/Documentos/Quinto Semestre/Digital2/Lab3.X/ASCII_NUM.h" 2
+
+
+
+char num_ascii(uint8_t num);
+# 20 "C:/Users/Carlo/OneDrive/Documentos/Quinto Semestre/Digital2/Lab3.X/main.c" 2
+
 
 
 
@@ -2723,6 +2734,18 @@ uint8_t flag_T = 0;
 uint8_t flag_T2 = 0;
 uint8_t estado1 = 0;
 uint8_t CONT = 0;
+uint8_t toggleTX = 0;
+char CONT_U = 0;
+char CONT_D = 0;
+char CONT_C = 0;
+char POT1_U = 0;
+char POT1_D = 0;
+char POT1_C = 0;
+char POT2_U = 0;
+char POT2_D = 0;
+char POT2_C = 0;
+uint8_t temp2 = 0;
+uint8_t temp3 = 0;
 
 
 
@@ -2731,6 +2754,14 @@ uint8_t CONT = 0;
 void Setup(void);
 void ADC_LEER(void);
 void debounce_T(void);
+void map_cont(void);
+void map_pot1(void);
+void map_pot2(void);
+void envio(void);
+const char* conver(char A, char B, char C);
+const char* conver2(char D, char E, char F);
+const char* conver3(char G, char H, char I);
+
 
 
 
@@ -2749,7 +2780,8 @@ void __attribute__((picinterrupt(("")))) ISR(void){
         terminal = RCREG;
     }
     if (PIR1bits.TXIF == 1){
-        TXREG = 0x30;
+        toggleTX++;
+        envio();
         PIE1bits.TXIE = 0;
     }
 }
@@ -2769,14 +2801,18 @@ void main(void) {
         Lcd_Set_Cursor(1,1);
         Lcd_Write_String("S1    S2    S3");
         Lcd_Set_Cursor(2,1);
-        Lcd_Write_String("Voltajes:");
+        Lcd_Write_String(conver(CONT_C, CONT_D, CONT_U));
+
         ADC_LEER();
         if (terminal != 43 && terminal != 13 && terminal != 45){
             flag_T = 0;
             flag_T2 = 0;
         }
         debounce_T();
-
+        PORTA = POT1_C;
+        map_cont();
+        map_pot1();
+        map_pot2();
     }
 }
 
@@ -2856,5 +2892,103 @@ void debounce_T(void){
     if(terminal ==13 && flag_T2 == 1){
         flag_T2 = 0;
         CONT--;
+    }
+}
+
+
+
+void map_cont(void){
+   CONT_C = CONT/100;
+   CONT_D = (CONT-(CONT_C*100))/10;
+   CONT_U = (CONT-(CONT_C*100)-(CONT_D*10));
+   CONT_C = num_ascii(CONT_C);
+   CONT_D = num_ascii(CONT_D);
+   CONT_U = num_ascii(CONT_U);
+}
+
+
+
+const char* conver(char CONT_C, char CONT_D, char CONT_U){
+    char temporal[16];
+    temporal[0] = CONT_C;
+    temporal[1] = CONT_D;
+    temporal[2] = CONT_U;
+    temporal[3] = 0x20;
+    temporal[4] = 0x20;
+    temporal[5] = POT1_C;
+    temporal[6] = 0x2E;
+    temporal[7] = POT1_D;
+    temporal[8] = POT1_U;
+    temporal[9] = 0x76;
+    temporal[10] = 0x20;
+    temporal[11] = POT2_C;
+    temporal[12] = 0x2E;
+    temporal[13] = POT2_D;
+    temporal[14] = POT2_U;
+    temporal[15] = 0x76;
+    return temporal;
+}
+
+
+
+void map_pot1(void){
+    temp2 = pot1;
+    POT1_C = ((temp2*100)/51)/100;
+    POT1_D = (((temp2*100)/51)-(POT1_C*100))/10;
+    POT1_U = (((temp2*100)/51)-(POT1_C*100)-(POT1_D*10));
+    POT1_C = num_ascii(POT1_C);
+    POT1_D = num_ascii(POT1_D);
+    POT1_U = num_ascii(POT1_U);
+
+}
+
+
+
+void map_pot2(void){
+    temp3 = pot2;
+    POT2_C = ((temp3*100)/51)/100;
+    POT2_D = (((temp3*100)/51)-(POT2_C*100))/10;
+    POT2_U = (((temp3*100)/51)-(POT2_C*100)-(POT2_D*10));
+    POT2_C = num_ascii(POT2_C);
+    POT2_D = num_ascii(POT2_D);
+    POT2_U = num_ascii(POT2_U);
+}
+
+
+
+void envio(void){
+    if (toggleTX == 1){
+        TXREG = POT1_C;
+    }
+    if (toggleTX == 2){
+        TXREG = 0x2E;
+    }
+    if (toggleTX == 3){
+        TXREG = POT1_D;
+    }
+    if (toggleTX == 4){
+        TXREG = POT1_U;
+    }
+    if (toggleTX == 5){
+        TXREG = 0x2C;
+    }
+    if (toggleTX == 6){
+        TXREG = 0x20;
+    }
+    if (toggleTX == 7){
+        TXREG = POT2_C;
+    }
+    if (toggleTX == 8){
+        TXREG = 0x2E;
+    }
+    if (toggleTX == 9){
+        TXREG = POT2_D;
+    }
+    if (toggleTX == 10){
+        TXREG = POT2_U;
+    }
+    if (toggleTX == 11){
+        TXREG = 13;
+        toggleTX = 0;
     }
 }

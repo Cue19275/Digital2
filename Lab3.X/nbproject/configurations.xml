@@ -8,6 +8,7 @@
       <itemPath>C:/Users/Carlo/OneDrive/Documentos/Quinto Semestre/Digital2/Lab3.X/LCD8BIT.h</itemPath>
       <itemPath>C:/Users/Carlo/OneDrive/Documentos/Quinto Semestre/Digital2/Lab3.X/Osc.h</itemPath>
       <itemPath>C:/Users/Carlo/OneDrive/Documentos/Quinto Semestre/Digital2/Lab3.X/usart.h</itemPath>
+      <itemPath>C:/Users/Carlo/OneDrive/Documentos/Quinto Semestre/Digital2/Lab3.X/ASCII_NUM.h</itemPath>
     </logicalFolder>
     <logicalFolder name="LinkerScript"
                    displayName="Linker Files"
@@ -21,6 +22,7 @@
       <itemPath>C:/Users/Carlo/OneDrive/Documentos/Quinto Semestre/Digital2/Lab3.X/LCD8BIT.c</itemPath>
       <itemPath>C:/Users/Carlo/OneDrive/Documentos/Quinto Semestre/Digital2/Lab3.X/Osc.c</itemPath>
       <itemPath>C:/Users/Carlo/OneDrive/Documentos/Quinto Semestre/Digital2/Lab3.X/usartP.c</itemPath>
+      <itemPath>C:/Users/Carlo/OneDrive/Documentos/Quinto Semestre/Digital2/Lab3.X/ASCII_NUM.c</itemPath>
     </logicalFolder>
     <logicalFolder name="ExternalFiles"
                    displayName="Important Files"

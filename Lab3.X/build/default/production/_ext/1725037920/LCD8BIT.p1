@@ -489,30 +489,24 @@ Version 4.0 HI-TECH Software Intermediate Code
 [e :U _Lcd_Shift_Right ]
 [f ]
 "72
-[; ;C:/Users/Carlo/OneDrive/Documentos/Quinto Semestre/Digital2/Lab3.X/LCD8BIT.c: 72:  Lcd_Cmd(0x01);
-[e ( _Lcd_Cmd (1 -> -> 1 `i `uc ]
+[; ;C:/Users/Carlo/OneDrive/Documentos/Quinto Semestre/Digital2/Lab3.X/LCD8BIT.c: 72:  Lcd_Cmd(0x1C);
+[e ( _Lcd_Cmd (1 -> -> 28 `i `uc ]
 "73
-[; ;C:/Users/Carlo/OneDrive/Documentos/Quinto Semestre/Digital2/Lab3.X/LCD8BIT.c: 73:  Lcd_Cmd(0x0C);
-[e ( _Lcd_Cmd (1 -> -> 12 `i `uc ]
-"74
-[; ;C:/Users/Carlo/OneDrive/Documentos/Quinto Semestre/Digital2/Lab3.X/LCD8BIT.c: 74: }
+[; ;C:/Users/Carlo/OneDrive/Documentos/Quinto Semestre/Digital2/Lab3.X/LCD8BIT.c: 73: }
 [e :UE 152 ]
 }
-"76
-[; ;C:/Users/Carlo/OneDrive/Documentos/Quinto Semestre/Digital2/Lab3.X/LCD8BIT.c: 76: void Lcd_Shift_Left()
+"75
+[; ;C:/Users/Carlo/OneDrive/Documentos/Quinto Semestre/Digital2/Lab3.X/LCD8BIT.c: 75: void Lcd_Shift_Left()
 [v _Lcd_Shift_Left `(v ~T0 @X0 1 ef ]
-"77
-[; ;C:/Users/Carlo/OneDrive/Documentos/Quinto Semestre/Digital2/Lab3.X/LCD8BIT.c: 77: {
+"76
+[; ;C:/Users/Carlo/OneDrive/Documentos/Quinto Semestre/Digital2/Lab3.X/LCD8BIT.c: 76: {
 {
 [e :U _Lcd_Shift_Left ]
 [f ]
+"77
+[; ;C:/Users/Carlo/OneDrive/Documentos/Quinto Semestre/Digital2/Lab3.X/LCD8BIT.c: 77:  Lcd_Cmd(0x018);
+[e ( _Lcd_Cmd (1 -> -> 24 `i `uc ]
 "78
-[; ;C:/Users/Carlo/OneDrive/Documentos/Quinto Semestre/Digital2/Lab3.X/LCD8BIT.c: 78:  Lcd_Cmd(0x01);
-[e ( _Lcd_Cmd (1 -> -> 1 `i `uc ]
-"79
-[; ;C:/Users/Carlo/OneDrive/Documentos/Quinto Semestre/Digital2/Lab3.X/LCD8BIT.c: 79:  Lcd_Cmd(0x08);
-[e ( _Lcd_Cmd (1 -> -> 8 `i `uc ]
-"80
-[; ;C:/Users/Carlo/OneDrive/Documentos/Quinto Semestre/Digital2/Lab3.X/LCD8BIT.c: 80: }
+[; ;C:/Users/Carlo/OneDrive/Documentos/Quinto Semestre/Digital2/Lab3.X/LCD8BIT.c: 78: }
 [e :UE 153 ]
 }

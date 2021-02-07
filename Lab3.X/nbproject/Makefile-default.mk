@@ -57,17 +57,17 @@ OBJECTDIR=build/${CND_CONF}/${IMAGE_TYPE}
 DISTDIR=dist/${CND_CONF}/${IMAGE_TYPE}
 
 # Source Files Quoted if spaced
-SOURCEFILES_QUOTED_IF_SPACED="C:/Users/Carlo/OneDrive/Documentos/Quinto Semestre/Digital2/Lab3.X/main.c" "C:/Users/Carlo/OneDrive/Documentos/Quinto Semestre/Digital2/Lab3.X/ADCLIB.c" "C:/Users/Carlo/OneDrive/Documentos/Quinto Semestre/Digital2/Lab3.X/LCD8BIT.c" "C:/Users/Carlo/OneDrive/Documentos/Quinto Semestre/Digital2/Lab3.X/Osc.c" "C:/Users/Carlo/OneDrive/Documentos/Quinto Semestre/Digital2/Lab3.X/usartP.c"
+SOURCEFILES_QUOTED_IF_SPACED="C:/Users/Carlo/OneDrive/Documentos/Quinto Semestre/Digital2/Lab3.X/main.c" "C:/Users/Carlo/OneDrive/Documentos/Quinto Semestre/Digital2/Lab3.X/ADCLIB.c" "C:/Users/Carlo/OneDrive/Documentos/Quinto Semestre/Digital2/Lab3.X/LCD8BIT.c" "C:/Users/Carlo/OneDrive/Documentos/Quinto Semestre/Digital2/Lab3.X/Osc.c" "C:/Users/Carlo/OneDrive/Documentos/Quinto Semestre/Digital2/Lab3.X/usartP.c" "C:/Users/Carlo/OneDrive/Documentos/Quinto Semestre/Digital2/Lab3.X/ASCII_NUM.c"
 
 # Object Files Quoted if spaced
-OBJECTFILES_QUOTED_IF_SPACED=${OBJECTDIR}/_ext/1725037920/main.p1 ${OBJECTDIR}/_ext/1725037920/ADCLIB.p1 ${OBJECTDIR}/_ext/1725037920/LCD8BIT.p1 ${OBJECTDIR}/_ext/1725037920/Osc.p1 ${OBJECTDIR}/_ext/1725037920/usartP.p1
-POSSIBLE_DEPFILES=${OBJECTDIR}/_ext/1725037920/main.p1.d ${OBJECTDIR}/_ext/1725037920/ADCLIB.p1.d ${OBJECTDIR}/_ext/1725037920/LCD8BIT.p1.d ${OBJECTDIR}/_ext/1725037920/Osc.p1.d ${OBJECTDIR}/_ext/1725037920/usartP.p1.d
+OBJECTFILES_QUOTED_IF_SPACED=${OBJECTDIR}/_ext/1725037920/main.p1 ${OBJECTDIR}/_ext/1725037920/ADCLIB.p1 ${OBJECTDIR}/_ext/1725037920/LCD8BIT.p1 ${OBJECTDIR}/_ext/1725037920/Osc.p1 ${OBJECTDIR}/_ext/1725037920/usartP.p1 ${OBJECTDIR}/_ext/1725037920/ASCII_NUM.p1
+POSSIBLE_DEPFILES=${OBJECTDIR}/_ext/1725037920/main.p1.d ${OBJECTDIR}/_ext/1725037920/ADCLIB.p1.d ${OBJECTDIR}/_ext/1725037920/LCD8BIT.p1.d ${OBJECTDIR}/_ext/1725037920/Osc.p1.d ${OBJECTDIR}/_ext/1725037920/usartP.p1.d ${OBJECTDIR}/_ext/1725037920/ASCII_NUM.p1.d
 
 # Object Files
-OBJECTFILES=${OBJECTDIR}/_ext/1725037920/main.p1 ${OBJECTDIR}/_ext/1725037920/ADCLIB.p1 ${OBJECTDIR}/_ext/1725037920/LCD8BIT.p1 ${OBJECTDIR}/_ext/1725037920/Osc.p1 ${OBJECTDIR}/_ext/1725037920/usartP.p1
+OBJECTFILES=${OBJECTDIR}/_ext/1725037920/main.p1 ${OBJECTDIR}/_ext/1725037920/ADCLIB.p1 ${OBJECTDIR}/_ext/1725037920/LCD8BIT.p1 ${OBJECTDIR}/_ext/1725037920/Osc.p1 ${OBJECTDIR}/_ext/1725037920/usartP.p1 ${OBJECTDIR}/_ext/1725037920/ASCII_NUM.p1
 
 # Source Files
-SOURCEFILES=C:/Users/Carlo/OneDrive/Documentos/Quinto Semestre/Digital2/Lab3.X/main.c C:/Users/Carlo/OneDrive/Documentos/Quinto Semestre/Digital2/Lab3.X/ADCLIB.c C:/Users/Carlo/OneDrive/Documentos/Quinto Semestre/Digital2/Lab3.X/LCD8BIT.c C:/Users/Carlo/OneDrive/Documentos/Quinto Semestre/Digital2/Lab3.X/Osc.c C:/Users/Carlo/OneDrive/Documentos/Quinto Semestre/Digital2/Lab3.X/usartP.c
+SOURCEFILES=C:/Users/Carlo/OneDrive/Documentos/Quinto Semestre/Digital2/Lab3.X/main.c C:/Users/Carlo/OneDrive/Documentos/Quinto Semestre/Digital2/Lab3.X/ADCLIB.c C:/Users/Carlo/OneDrive/Documentos/Quinto Semestre/Digital2/Lab3.X/LCD8BIT.c C:/Users/Carlo/OneDrive/Documentos/Quinto Semestre/Digital2/Lab3.X/Osc.c C:/Users/Carlo/OneDrive/Documentos/Quinto Semestre/Digital2/Lab3.X/usartP.c C:/Users/Carlo/OneDrive/Documentos/Quinto Semestre/Digital2/Lab3.X/ASCII_NUM.c
 
 
 CFLAGS=
@@ -128,6 +128,13 @@ ${OBJECTDIR}/_ext/1725037920/usartP.p1: C:/Users/Carlo/OneDrive/Documentos/Quint
 	${MP_CC} $(MP_EXTRA_CC_PRE) -mcpu=$(MP_PROCESSOR_OPTION) -c  -D__DEBUG=1  -fno-short-double -fno-short-float -O0 -fasmfile -maddrqual=ignore -xassembler-with-cpp -Wa,-a -DXPRJ_default=$(CND_CONF)  -msummary=-psect,-class,+mem,-hex,-file  -ginhx032 -Wl,--data-init -mno-keep-startup -mno-osccal -mno-resetbits -mno-save-resetbits -mno-download -mno-stackcall $(COMPARISON_BUILD)  -std=c99 -gdwarf-3 -mstack=compiled:auto:auto     -o ${OBJECTDIR}/_ext/1725037920/usartP.p1 "C:/Users/Carlo/OneDrive/Documentos/Quinto Semestre/Digital2/Lab3.X/usartP.c" 
 	@${FIXDEPS} ${OBJECTDIR}/_ext/1725037920/usartP.p1.d $(SILENT) -rsi ${MP_CC_DIR}../  
 	
+${OBJECTDIR}/_ext/1725037920/ASCII_NUM.p1: C:/Users/Carlo/OneDrive/Documentos/Quinto\ Semestre/Digital2/Lab3.X/ASCII_NUM.c  nbproject/Makefile-${CND_CONF}.mk
+	@${MKDIR} "${OBJECTDIR}/_ext/1725037920" 
+	@${RM} ${OBJECTDIR}/_ext/1725037920/ASCII_NUM.p1.d 
+	@${RM} ${OBJECTDIR}/_ext/1725037920/ASCII_NUM.p1 
+	${MP_CC} $(MP_EXTRA_CC_PRE) -mcpu=$(MP_PROCESSOR_OPTION) -c  -D__DEBUG=1  -fno-short-double -fno-short-float -O0 -fasmfile -maddrqual=ignore -xassembler-with-cpp -Wa,-a -DXPRJ_default=$(CND_CONF)  -msummary=-psect,-class,+mem,-hex,-file  -ginhx032 -Wl,--data-init -mno-keep-startup -mno-osccal -mno-resetbits -mno-save-resetbits -mno-download -mno-stackcall $(COMPARISON_BUILD)  -std=c99 -gdwarf-3 -mstack=compiled:auto:auto     -o ${OBJECTDIR}/_ext/1725037920/ASCII_NUM.p1 "C:/Users/Carlo/OneDrive/Documentos/Quinto Semestre/Digital2/Lab3.X/ASCII_NUM.c" 
+	@${FIXDEPS} ${OBJECTDIR}/_ext/1725037920/ASCII_NUM.p1.d $(SILENT) -rsi ${MP_CC_DIR}../  
+	
 else
 ${OBJECTDIR}/_ext/1725037920/main.p1: C:/Users/Carlo/OneDrive/Documentos/Quinto\ Semestre/Digital2/Lab3.X/main.c  nbproject/Makefile-${CND_CONF}.mk
 	@${MKDIR} "${OBJECTDIR}/_ext/1725037920" 
@@ -163,6 +170,13 @@ ${OBJECTDIR}/_ext/1725037920/usartP.p1: C:/Users/Carlo/OneDrive/Documentos/Quint
 	@${RM} ${OBJECTDIR}/_ext/1725037920/usartP.p1 
 	${MP_CC} $(MP_EXTRA_CC_PRE) -mcpu=$(MP_PROCESSOR_OPTION) -c  -fno-short-double -fno-short-float -O0 -fasmfile -maddrqual=ignore -xassembler-with-cpp -Wa,-a -DXPRJ_default=$(CND_CONF)  -msummary=-psect,-class,+mem,-hex,-file  -ginhx032 -Wl,--data-init -mno-keep-startup -mno-osccal -mno-resetbits -mno-save-resetbits -mno-download -mno-stackcall $(COMPARISON_BUILD)  -std=c99 -gdwarf-3 -mstack=compiled:auto:auto     -o ${OBJECTDIR}/_ext/1725037920/usartP.p1 "C:/Users/Carlo/OneDrive/Documentos/Quinto Semestre/Digital2/Lab3.X/usartP.c" 
 	@${FIXDEPS} ${OBJECTDIR}/_ext/1725037920/usartP.p1.d $(SILENT) -rsi ${MP_CC_DIR}../  
+	
+${OBJECTDIR}/_ext/1725037920/ASCII_NUM.p1: C:/Users/Carlo/OneDrive/Documentos/Quinto\ Semestre/Digital2/Lab3.X/ASCII_NUM.c  nbproject/Makefile-${CND_CONF}.mk
+	@${MKDIR} "${OBJECTDIR}/_ext/1725037920" 
+	@${RM} ${OBJECTDIR}/_ext/1725037920/ASCII_NUM.p1.d 
+	@${RM} ${OBJECTDIR}/_ext/1725037920/ASCII_NUM.p1 
+	${MP_CC} $(MP_EXTRA_CC_PRE) -mcpu=$(MP_PROCESSOR_OPTION) -c  -fno-short-double -fno-short-float -O0 -fasmfile -maddrqual=ignore -xassembler-with-cpp -Wa,-a -DXPRJ_default=$(CND_CONF)  -msummary=-psect,-class,+mem,-hex,-file  -ginhx032 -Wl,--data-init -mno-keep-startup -mno-osccal -mno-resetbits -mno-save-resetbits -mno-download -mno-stackcall $(COMPARISON_BUILD)  -std=c99 -gdwarf-3 -mstack=compiled:auto:auto     -o ${OBJECTDIR}/_ext/1725037920/ASCII_NUM.p1 "C:/Users/Carlo/OneDrive/Documentos/Quinto Semestre/Digital2/Lab3.X/ASCII_NUM.c" 
+	@${FIXDEPS} ${OBJECTDIR}/_ext/1725037920/ASCII_NUM.p1.d $(SILENT) -rsi ${MP_CC_DIR}../  
 	
 endif
 
