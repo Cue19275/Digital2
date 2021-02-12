@@ -1,0 +1,1 @@
+ build/default/production/_ext/1052080958/ADCLIB.d  build/default/production/_ext/1052080958/ADCLIB.p1:  C:/Users/Carlo/OneDrive/Documentos/Quinto\ Semestre/Digital2/Libs/ADCLIB.c C:/Users/Carlo/OneDrive/Documentos/Quinto\ Semestre/Digital2/Libs/ADCLIB.h

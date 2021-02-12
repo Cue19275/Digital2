@@ -1,0 +1,1 @@
+ build/default/production/_ext/1052080958/LCD8BIT.d  build/default/production/_ext/1052080958/LCD8BIT.p1:  C:/Users/Carlo/OneDrive/Documentos/Quinto\ Semestre/Digital2/Libs/LCD8BIT.c C:/Users/Carlo/OneDrive/Documentos/Quinto\ Semestre/Digital2/Libs/LCD8BIT.h

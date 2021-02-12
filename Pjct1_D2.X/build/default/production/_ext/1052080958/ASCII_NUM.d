@@ -1,0 +1,1 @@
+ build/default/production/_ext/1052080958/ASCII_NUM.d  build/default/production/_ext/1052080958/ASCII_NUM.p1:  C:/Users/Carlo/OneDrive/Documentos/Quinto\ Semestre/Digital2/Libs/ASCII_NUM.c C:/Users/Carlo/OneDrive/Documentos/Quinto\ Semestre/Digital2/Libs/ASCII_NUM.h

@@ -1,0 +1,1 @@
+ build/default/production/_ext/1052080958/Osc.d  build/default/production/_ext/1052080958/Osc.p1:  C:/Users/Carlo/OneDrive/Documentos/Quinto\ Semestre/Digital2/Libs/Osc.c C:/Users/Carlo/OneDrive/Documentos/Quinto\ Semestre/Digital2/Libs/Osc.h
