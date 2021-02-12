@@ -46,12 +46,25 @@
 //******************************************************************************
 uint8_t go_adc = 0;
 uint8_t basura = 0;
+char CONT_U = 0x30;
+char CONT_D = 0x30;
+char CONT_C = 0x30;
+char POT1_U = 0x30;
+char POT1_D = 0x30;
+char POT1_C = 0x30;
+char POT2_U = 0x30;
+char POT2_D = 0x30;
+char POT2_C = 0x30;
+uint8_t temp2 = 0;
+uint8_t lec_ADC = 0;
 
 //******************************************************************************
 // Prototipos de funciones
 //******************************************************************************
 void Setup(void);
 void slave1(void);
+void map_pot1(void);
+const char* conver(void);
 
 //******************************************************************************
 // Vector de Interrupción
@@ -77,12 +90,13 @@ void main(void) {
         Lcd_Set_Cursor(1,1);
         Lcd_Write_String("S1    S2    S3");
         Lcd_Set_Cursor(2,1);
+        Lcd_Write_String(conver());
+        map_pot1();
         slave1();
-       
+
        
 
     }
-    return;
 }
 //******************************************************************************
 // Configuración Setup
@@ -98,7 +112,7 @@ void Setup(void) {
     ANSELbits.ANS0 = 1;
     ANSELH = 0;
     TRISA = 0b00000000; //Output
-    TRISB = 0b00011000;
+    TRISB = 0b00000000; //Output Input
     TRISD = 0; //Output
     TRISC = 0b00010000;
     PORTCbits.RC2 = 1;
@@ -127,13 +141,50 @@ void Setup(void) {
 // Slave 1
 //******************************************************************************
 void slave1(void){
-    PORTCbits.RC2 = 0;       //Slave Select
+           PORTCbits.RC2 = 0;       //Slave Select
        __delay_ms(1);
        
        spiWrite(basura); //Es necesario para limipiar el buffer y habilitar SPI
-       PORTA = spiRead(); //Mete al puerto lo que lee del SPI
+       lec_ADC = spiRead(); //Mete al puerto lo que lee del SPI
        
        __delay_ms(1);
        PORTCbits.RC2 = 1;       //Slave Deselect 
+}
+//******************************************************************************
+// Mapeo Pot1
+//******************************************************************************
+void map_pot1(void){
+    temp2 = lec_ADC;
+    POT1_C = ((temp2*100)/51)/100;
+    POT1_D = (((temp2*100)/51)-(POT1_C*100))/10;
+    POT1_U = (((temp2*100)/51)-(POT1_C*100)-(POT1_D*10));
+    POT1_C = num_ascii(POT1_C);
+    POT1_D = num_ascii(POT1_D);
+    POT1_U = num_ascii(POT1_U);
     
+}
+
+
+//******************************************************************************
+// Conv_Str
+//******************************************************************************
+const char* conver(void){
+    char temporal[16];
+    temporal[0] = CONT_C;
+    temporal[1] = CONT_D;
+    temporal[2] = CONT_U;
+    temporal[3] = 0x20;
+    temporal[4] = 0x20;
+    temporal[5] = POT1_C;
+    temporal[6] = 0x2E;
+    temporal[7] = POT1_D;
+    temporal[8] = POT1_U;
+    temporal[9] = 0x76;
+    temporal[10] = 0x20;
+    temporal[11] = POT2_C;
+    temporal[12] = 0x2E;
+    temporal[13] = POT2_D;
+    temporal[14] = POT2_U;
+    temporal[15] = 0x76;
+    return temporal;
 }

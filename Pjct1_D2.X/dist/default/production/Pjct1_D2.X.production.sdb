@@ -3,7 +3,7 @@
 [d edition pro ]
 [d chip 16F887 ]
 [d frameptr 0 ]
-"72 C:/Users/Carlo/OneDrive/Documentos/Quinto Semestre/Digital2/Pjct1_D2.X/main.c
+"85 C:/Users/Carlo/OneDrive/Documentos/Quinto Semestre/Digital2/Pjct1_D2.X/main.c
 [e E1321 . `uc
 SPI_MASTER_OSC_DIV4 32
 SPI_MASTER_OSC_DIV16 33
@@ -45,6 +45,8 @@ SPI_CLOCK_IDLE_LOW 0
 SPI_IDLE_2_ACTIVE 0
 SPI_ACTIVE_2_IDLE 64
 ]
+"3 C:/Users/Carlo/OneDrive/Documentos/Quinto Semestre/Digital2/Libs/ASCII_NUM.c
+[v _num_ascii num_ascii `(uc  1 e 1 0 ]
 "5 C:/Users/Carlo/OneDrive/Documentos/Quinto Semestre/Digital2/Libs/LCD8BIT.c
 [v _Lcd_Port Lcd_Port `(v  1 e 1 0 ]
 "10
@@ -59,14 +61,18 @@ SPI_ACTIVE_2_IDLE 64
 [v _Lcd_Write_String Lcd_Write_String `(v  1 e 1 0 ]
 "7 C:/Users/Carlo/OneDrive/Documentos/Quinto Semestre/Digital2/Libs/Osc.c
 [v _initOsc initOsc `(v  1 e 1 0 ]
-"60 C:/Users/Carlo/OneDrive/Documentos/Quinto Semestre/Digital2/Pjct1_D2.X/main.c
+"73 C:/Users/Carlo/OneDrive/Documentos/Quinto Semestre/Digital2/Pjct1_D2.X/main.c
 [v _ISR ISR `II(v  1 e 1 0 ]
-"68
+"81
 [v _main main `(v  1 e 1 0 ]
-"91
+"105
 [v _Setup Setup `(v  1 e 1 0 ]
-"129
+"143
 [v _slave1 slave1 `(v  1 e 1 0 ]
+"156
+[v _map_pot1 map_pot1 `(v  1 e 1 0 ]
+"171
+[v _conver conver `(*.4DCuc  1 e 1 0 ]
 "12 C:/Users/Carlo/OneDrive/Documentos/Quinto Semestre/Digital2/Pjct1_D2.X/SPI.c
 [v _spiInit spiInit `(v  1 e 1 0 ]
 "29
@@ -75,21 +81,37 @@ SPI_ACTIVE_2_IDLE 64
 [v _spiWrite spiWrite `(v  1 e 1 0 ]
 "49
 [v _spiRead spiRead `(uc  1 e 1 0 ]
+"5 C:\Program Files\Microchip\xc8\v2.20\pic\sources\c90\common\awdiv.c
+[v ___awdiv __awdiv `(i  1 e 2 0 ]
 "10 C:\Program Files\Microchip\xc8\v2.20\pic\sources\c90\common\sprcadd.c
 [v ___fladd __fladd `(d  1 e 4 0 ]
+"15 C:\Program Files\Microchip\xc8\v2.20\pic\sources\c90\common\Umul16.c
+[v ___wmul __wmul `(ui  1 e 2 0 ]
+"4 C:\Program Files\Microchip\xc8\v2.20\pic\sources\c90\common\Umul8.c
+[v ___bmul __bmul `(uc  1 e 1 0 ]
 "4 C:\Program Files\Microchip\xc8\v2.20\pic\sources\c90\common\Umul8_16.c
 [v __Umul8_16 _Umul8_16 `(ui  1 e 2 0 ]
 "6 C:\Program Files\Microchip\xc8\v2.20\pic\sources\c90\pic\__eeprom.c
 [v ___eecpymem __eecpymem `(v  1 e 1 0 ]
 "39
 [v ___memcpyee __memcpyee `(v  1 e 1 0 ]
+"52 C:/Users/Carlo/OneDrive/Documentos/Quinto Semestre/Digital2/Pjct1_D2.X/main.c
+[v _POT1_U POT1_U `uc  1 e 1 0 ]
+"53
+[v _POT1_D POT1_D `uc  1 e 1 0 ]
+"54
+[v _POT1_C POT1_C `uc  1 e 1 0 ]
+"58
+[v _temp2 temp2 `uc  1 e 1 0 ]
+"59
+[v _lec_ADC lec_ADC `uc  1 e 1 0 ]
 "59 C:\Program Files\Microchip\xc8\v2.20\pic\include\proc\pic16f887.h
 [v _TMR0 TMR0 `VEuc  1 e 1 @1 ]
 "166
 [v _PORTA PORTA `VEuc  1 e 1 @5 ]
 "228
 [v _PORTB PORTB `VEuc  1 e 1 @6 ]
-[s S341 . 1 `uc 1 RB0 1 0 :1:0 
+[s S368 . 1 `uc 1 RB0 1 0 :1:0 
 `uc 1 RB1 1 0 :1:1 
 `uc 1 RB2 1 0 :1:2 
 `uc 1 RB3 1 0 :1:3 
@@ -99,11 +121,11 @@ SPI_ACTIVE_2_IDLE 64
 `uc 1 RB7 1 0 :1:7 
 ]
 "245
-[u S350 . 1 `S341 1 . 1 0 ]
-[v _PORTBbits PORTBbits `VES350  1 e 1 @6 ]
+[u S377 . 1 `S368 1 . 1 0 ]
+[v _PORTBbits PORTBbits `VES377  1 e 1 @6 ]
 "290
 [v _PORTC PORTC `VEuc  1 e 1 @7 ]
-[s S110 . 1 `uc 1 RC0 1 0 :1:0 
+[s S118 . 1 `uc 1 RC0 1 0 :1:0 
 `uc 1 RC1 1 0 :1:1 
 `uc 1 RC2 1 0 :1:2 
 `uc 1 RC3 1 0 :1:3 
@@ -113,11 +135,11 @@ SPI_ACTIVE_2_IDLE 64
 `uc 1 RC7 1 0 :1:7 
 ]
 "307
-[u S119 . 1 `S110 1 . 1 0 ]
-[v _PORTCbits PORTCbits `VES119  1 e 1 @7 ]
+[u S127 . 1 `S118 1 . 1 0 ]
+[v _PORTCbits PORTCbits `VES127  1 e 1 @7 ]
 "352
 [v _PORTD PORTD `VEuc  1 e 1 @8 ]
-[s S131 . 1 `uc 1 RBIF 1 0 :1:0 
+[s S139 . 1 `uc 1 RBIF 1 0 :1:0 
 `uc 1 INTF 1 0 :1:1 
 `uc 1 T0IF 1 0 :1:2 
 `uc 1 RBIE 1 0 :1:3 
@@ -127,14 +149,14 @@ SPI_ACTIVE_2_IDLE 64
 `uc 1 GIE 1 0 :1:7 
 ]
 "482
-[s S140 . 1 `uc 1 . 1 0 :2:0 
+[s S148 . 1 `uc 1 . 1 0 :2:0 
 `uc 1 TMR0IF 1 0 :1:2 
 `uc 1 . 1 0 :2:3 
 `uc 1 TMR0IE 1 0 :1:5 
 ]
-[u S145 . 1 `S131 1 . 1 0 `S140 1 . 1 0 ]
-[v _INTCONbits INTCONbits `VES145  1 e 1 @11 ]
-[s S163 . 1 `uc 1 TMR1IF 1 0 :1:0 
+[u S153 . 1 `S139 1 . 1 0 `S148 1 . 1 0 ]
+[v _INTCONbits INTCONbits `VES153  1 e 1 @11 ]
+[s S171 . 1 `uc 1 TMR1IF 1 0 :1:0 
 `uc 1 TMR2IF 1 0 :1:1 
 `uc 1 CCP1IF 1 0 :1:2 
 `uc 1 SSPIF 1 0 :1:3 
@@ -143,13 +165,13 @@ SPI_ACTIVE_2_IDLE 64
 `uc 1 ADIF 1 0 :1:6 
 ]
 "553
-[u S171 . 1 `S163 1 . 1 0 ]
-[v _PIR1bits PIR1bits `VES171  1 e 1 @12 ]
+[u S179 . 1 `S171 1 . 1 0 ]
+[v _PIR1bits PIR1bits `VES179  1 e 1 @12 ]
 "843
 [v _SSPBUF SSPBUF `VEuc  1 e 1 @19 ]
 "850
 [v _SSPCON SSPCON `VEuc  1 e 1 @20 ]
-[s S490 . 1 `uc 1 RX9D 1 0 :1:0 
+[s S517 . 1 `uc 1 RX9D 1 0 :1:0 
 `uc 1 OERR 1 0 :1:1 
 `uc 1 FERR 1 0 :1:2 
 `uc 1 ADDEN 1 0 :1:3 
@@ -159,25 +181,25 @@ SPI_ACTIVE_2_IDLE 64
 `uc 1 SPEN 1 0 :1:7 
 ]
 "1068
-[s S499 . 1 `uc 1 RCD8 1 0 :1:0 
+[s S526 . 1 `uc 1 RCD8 1 0 :1:0 
 `uc 1 . 1 0 :5:1 
 `uc 1 RC9 1 0 :1:6 
 ]
-[s S503 . 1 `uc 1 . 1 0 :6:0 
+[s S530 . 1 `uc 1 . 1 0 :6:0 
 `uc 1 nRC8 1 0 :1:6 
 ]
-[s S506 . 1 `uc 1 . 1 0 :6:0 
+[s S533 . 1 `uc 1 . 1 0 :6:0 
 `uc 1 RC8_9 1 0 :1:6 
 ]
-[u S509 . 1 `S490 1 . 1 0 `S499 1 . 1 0 `S503 1 . 1 0 `S506 1 . 1 0 ]
-[v _RCSTAbits RCSTAbits `VES509  1 e 1 @24 ]
-[s S275 . 1 `uc 1 ADON 1 0 :1:0 
+[u S536 . 1 `S517 1 . 1 0 `S526 1 . 1 0 `S530 1 . 1 0 `S533 1 . 1 0 ]
+[v _RCSTAbits RCSTAbits `VES536  1 e 1 @24 ]
+[s S302 . 1 `uc 1 ADON 1 0 :1:0 
 `uc 1 GO_nDONE 1 0 :1:1 
 `uc 1 CHS 1 0 :4:2 
 `uc 1 ADCS 1 0 :2:6 
 ]
 "1276
-[s S280 . 1 `uc 1 . 1 0 :1:0 
+[s S307 . 1 `uc 1 . 1 0 :1:0 
 `uc 1 GO 1 0 :1:1 
 `uc 1 CHS0 1 0 :1:2 
 `uc 1 CHS1 1 0 :1:3 
@@ -186,14 +208,14 @@ SPI_ACTIVE_2_IDLE 64
 `uc 1 ADCS0 1 0 :1:6 
 `uc 1 ADCS1 1 0 :1:7 
 ]
-[s S289 . 1 `uc 1 . 1 0 :1:0 
+[s S316 . 1 `uc 1 . 1 0 :1:0 
 `uc 1 nDONE 1 0 :1:1 
 ]
-[s S292 . 1 `uc 1 . 1 0 :1:0 
+[s S319 . 1 `uc 1 . 1 0 :1:0 
 `uc 1 GO_DONE 1 0 :1:1 
 ]
-[u S295 . 1 `S275 1 . 1 0 `S280 1 . 1 0 `S289 1 . 1 0 `S292 1 . 1 0 ]
-[v _ADCON0bits ADCON0bits `VES295  1 e 1 @31 ]
+[u S322 . 1 `S302 1 . 1 0 `S307 1 . 1 0 `S316 1 . 1 0 `S319 1 . 1 0 ]
+[v _ADCON0bits ADCON0bits `VES322  1 e 1 @31 ]
 "1346
 [v _OPTION_REG OPTION_REG `VEuc  1 e 1 @129 ]
 "1416
@@ -204,7 +226,7 @@ SPI_ACTIVE_2_IDLE 64
 [v _TRISC TRISC `VEuc  1 e 1 @135 ]
 "1602
 [v _TRISD TRISD `VEuc  1 e 1 @136 ]
-[s S183 . 1 `uc 1 TMR1IE 1 0 :1:0 
+[s S191 . 1 `uc 1 TMR1IE 1 0 :1:0 
 `uc 1 TMR2IE 1 0 :1:1 
 `uc 1 CCP1IE 1 0 :1:2 
 `uc 1 SSPIE 1 0 :1:3 
@@ -213,25 +235,25 @@ SPI_ACTIVE_2_IDLE 64
 `uc 1 ADIE 1 0 :1:6 
 ]
 "1718
-[u S191 . 1 `S183 1 . 1 0 ]
-[v _PIE1bits PIE1bits `VES191  1 e 1 @140 ]
-[s S393 . 1 `uc 1 SCS 1 0 :1:0 
+[u S199 . 1 `S191 1 . 1 0 ]
+[v _PIE1bits PIE1bits `VES199  1 e 1 @140 ]
+[s S420 . 1 `uc 1 SCS 1 0 :1:0 
 `uc 1 LTS 1 0 :1:1 
 `uc 1 HTS 1 0 :1:2 
 `uc 1 OSTS 1 0 :1:3 
 `uc 1 IRCF 1 0 :3:4 
 ]
 "1882
-[s S399 . 1 `uc 1 . 1 0 :4:0 
+[s S426 . 1 `uc 1 . 1 0 :4:0 
 `uc 1 IRCF0 1 0 :1:4 
 `uc 1 IRCF1 1 0 :1:5 
 `uc 1 IRCF2 1 0 :1:6 
 ]
-[u S404 . 1 `S393 1 . 1 0 `S399 1 . 1 0 ]
-[v _OSCCONbits OSCCONbits `VES404  1 e 1 @143 ]
+[u S431 . 1 `S420 1 . 1 0 `S426 1 . 1 0 ]
+[v _OSCCONbits OSCCONbits `VES431  1 e 1 @143 ]
 "2177
 [v _SSPSTAT SSPSTAT `VEuc  1 e 1 @148 ]
-[s S579 . 1 `uc 1 BF 1 0 :1:0 
+[s S606 . 1 `uc 1 BF 1 0 :1:0 
 `uc 1 UA 1 0 :1:1 
 `uc 1 R_nW 1 0 :1:2 
 `uc 1 S 1 0 :1:3 
@@ -241,40 +263,40 @@ SPI_ACTIVE_2_IDLE 64
 `uc 1 SMP 1 0 :1:7 
 ]
 "2231
-[s S588 . 1 `uc 1 . 1 0 :2:0 
+[s S615 . 1 `uc 1 . 1 0 :2:0 
 `uc 1 R 1 0 :1:2 
 `uc 1 . 1 0 :2:3 
 `uc 1 D 1 0 :1:5 
 ]
-[s S593 . 1 `uc 1 . 1 0 :2:0 
+[s S620 . 1 `uc 1 . 1 0 :2:0 
 `uc 1 I2C_READ 1 0 :1:2 
 `uc 1 I2C_START 1 0 :1:3 
 `uc 1 I2C_STOP 1 0 :1:4 
 `uc 1 I2C_DATA 1 0 :1:5 
 ]
-[s S599 . 1 `uc 1 . 1 0 :2:0 
+[s S626 . 1 `uc 1 . 1 0 :2:0 
 `uc 1 nW 1 0 :1:2 
 `uc 1 . 1 0 :2:3 
 `uc 1 nA 1 0 :1:5 
 ]
-[s S604 . 1 `uc 1 . 1 0 :2:0 
+[s S631 . 1 `uc 1 . 1 0 :2:0 
 `uc 1 nWRITE 1 0 :1:2 
 `uc 1 . 1 0 :2:3 
 `uc 1 nADDRESS 1 0 :1:5 
 ]
-[s S609 . 1 `uc 1 . 1 0 :2:0 
+[s S636 . 1 `uc 1 . 1 0 :2:0 
 `uc 1 R_W 1 0 :1:2 
 `uc 1 . 1 0 :2:3 
 `uc 1 D_A 1 0 :1:5 
 ]
-[s S614 . 1 `uc 1 . 1 0 :2:0 
+[s S641 . 1 `uc 1 . 1 0 :2:0 
 `uc 1 READ_WRITE 1 0 :1:2 
 `uc 1 . 1 0 :2:3 
 `uc 1 DATA_ADDRESS 1 0 :1:5 
 ]
-[u S619 . 1 `S579 1 . 1 0 `S588 1 . 1 0 `S593 1 . 1 0 `S599 1 . 1 0 `S604 1 . 1 0 `S609 1 . 1 0 `S614 1 . 1 0 ]
-[v _SSPSTATbits SSPSTATbits `VES619  1 e 1 @148 ]
-[s S430 . 1 `uc 1 TX9D 1 0 :1:0 
+[u S646 . 1 `S606 1 . 1 0 `S615 1 . 1 0 `S620 1 . 1 0 `S626 1 . 1 0 `S631 1 . 1 0 `S636 1 . 1 0 `S641 1 . 1 0 ]
+[v _SSPSTATbits SSPSTATbits `VES646  1 e 1 @148 ]
+[s S457 . 1 `uc 1 TX9D 1 0 :1:0 
 `uc 1 TRMT 1 0 :1:1 
 `uc 1 BRGH 1 0 :1:2 
 `uc 1 SENDB 1 0 :1:3 
@@ -284,22 +306,22 @@ SPI_ACTIVE_2_IDLE 64
 `uc 1 CSRC 1 0 :1:7 
 ]
 "2582
-[s S439 . 1 `uc 1 TXD8 1 0 :1:0 
+[s S466 . 1 `uc 1 TXD8 1 0 :1:0 
 `uc 1 . 1 0 :5:1 
 `uc 1 nTX8 1 0 :1:6 
 ]
-[s S443 . 1 `uc 1 . 1 0 :6:0 
+[s S470 . 1 `uc 1 . 1 0 :6:0 
 `uc 1 TX8_9 1 0 :1:6 
 ]
-[u S446 . 1 `S430 1 . 1 0 `S439 1 . 1 0 `S443 1 . 1 0 ]
-[v _TXSTAbits TXSTAbits `VES446  1 e 1 @152 ]
+[u S473 . 1 `S457 1 . 1 0 `S466 1 . 1 0 `S470 1 . 1 0 ]
+[v _TXSTAbits TXSTAbits `VES473  1 e 1 @152 ]
 "2642
 [v _SPBRG SPBRG `VEuc  1 e 1 @153 ]
 "2704
 [v _SPBRGH SPBRGH `VEuc  1 e 1 @154 ]
 "2977
 [v _ADCON1 ADCON1 `VEuc  1 e 1 @159 ]
-[s S467 . 1 `uc 1 ABDEN 1 0 :1:0 
+[s S494 . 1 `uc 1 ABDEN 1 0 :1:0 
 `uc 1 WUE 1 0 :1:1 
 `uc 1 . 1 0 :1:2 
 `uc 1 BRG16 1 0 :1:3 
@@ -309,11 +331,11 @@ SPI_ACTIVE_2_IDLE 64
 `uc 1 ABDOVF 1 0 :1:7 
 ]
 "3352
-[u S476 . 1 `S467 1 . 1 0 ]
-[v _BAUDCTLbits BAUDCTLbits `VES476  1 e 1 @391 ]
+[u S503 . 1 `S494 1 . 1 0 ]
+[v _BAUDCTLbits BAUDCTLbits `VES503  1 e 1 @391 ]
 "3387
 [v _ANSEL ANSEL `VEuc  1 e 1 @392 ]
-[s S85 . 1 `uc 1 ANS0 1 0 :1:0 
+[s S93 . 1 `uc 1 ANS0 1 0 :1:0 
 `uc 1 ANS1 1 0 :1:1 
 `uc 1 ANS2 1 0 :1:2 
 `uc 1 ANS3 1 0 :1:3 
@@ -323,18 +345,18 @@ SPI_ACTIVE_2_IDLE 64
 `uc 1 ANS7 1 0 :1:7 
 ]
 "3404
-[u S94 . 1 `S85 1 . 1 0 ]
-[v _ANSELbits ANSELbits `VES94  1 e 1 @392 ]
+[u S102 . 1 `S93 1 . 1 0 ]
+[v _ANSELbits ANSELbits `VES102  1 e 1 @392 ]
 "3449
 [v _ANSELH ANSELH `VEuc  1 e 1 @393 ]
 "4457
 [v _TRISC3 TRISC3 `VEb  1 e 0 @1083 ]
 "4463
 [v _TRISC5 TRISC5 `VEb  1 e 0 @1085 ]
-"68 C:/Users/Carlo/OneDrive/Documentos/Quinto Semestre/Digital2/Pjct1_D2.X/main.c
+"81 C:/Users/Carlo/OneDrive/Documentos/Quinto Semestre/Digital2/Pjct1_D2.X/main.c
 [v _main main `(v  1 e 1 0 ]
 {
-"86
+"100
 } 0
 "12 C:/Users/Carlo/OneDrive/Documentos/Quinto Semestre/Digital2/Pjct1_D2.X/SPI.c
 [v _spiInit spiInit `(v  1 e 1 0 ]
@@ -348,10 +370,10 @@ SPI_ACTIVE_2_IDLE 64
 [v spiInit@sType sType `E1265  1 a 1 5 ]
 "27
 } 0
-"129 C:/Users/Carlo/OneDrive/Documentos/Quinto Semestre/Digital2/Pjct1_D2.X/main.c
+"143 C:/Users/Carlo/OneDrive/Documentos/Quinto Semestre/Digital2/Pjct1_D2.X/main.c
 [v _slave1 slave1 `(v  1 e 1 0 ]
 {
-"139
+"152
 } 0
 "34 C:/Users/Carlo/OneDrive/Documentos/Quinto Semestre/Digital2/Pjct1_D2.X/SPI.c
 [v _spiWrite spiWrite `(v  1 e 1 0 ]
@@ -372,6 +394,55 @@ SPI_ACTIVE_2_IDLE 64
 {
 "32
 } 0
+"156 C:/Users/Carlo/OneDrive/Documentos/Quinto Semestre/Digital2/Pjct1_D2.X/main.c
+[v _map_pot1 map_pot1 `(v  1 e 1 0 ]
+{
+"165
+} 0
+"3 C:/Users/Carlo/OneDrive/Documentos/Quinto Semestre/Digital2/Libs/ASCII_NUM.c
+[v _num_ascii num_ascii `(uc  1 e 1 0 ]
+{
+[v num_ascii@num num `uc  1 a 1 wreg ]
+[v num_ascii@num num `uc  1 a 1 wreg ]
+[v num_ascii@num num `uc  1 a 1 2 ]
+"49
+} 0
+"15 C:\Program Files\Microchip\xc8\v2.20\pic\sources\c90\common\Umul16.c
+[v ___wmul __wmul `(ui  1 e 2 0 ]
+{
+"17
+[v ___wmul@product product `ui  1 a 2 6 ]
+"15
+[v ___wmul@multiplier multiplier `ui  1 p 2 2 ]
+[v ___wmul@multiplicand multiplicand `ui  1 p 2 4 ]
+"53
+} 0
+"4 C:\Program Files\Microchip\xc8\v2.20\pic\sources\c90\common\Umul8.c
+[v ___bmul __bmul `(uc  1 e 1 0 ]
+{
+[v ___bmul@multiplier multiplier `uc  1 a 1 wreg ]
+"6
+[v ___bmul@product product `uc  1 a 1 3 ]
+"4
+[v ___bmul@multiplier multiplier `uc  1 a 1 wreg ]
+[v ___bmul@multiplicand multiplicand `uc  1 p 1 2 ]
+"6
+[v ___bmul@multiplier multiplier `uc  1 a 1 4 ]
+"51
+} 0
+"5 C:\Program Files\Microchip\xc8\v2.20\pic\sources\c90\common\awdiv.c
+[v ___awdiv __awdiv `(i  1 e 2 0 ]
+{
+"10
+[v ___awdiv@quotient quotient `i  1 a 2 6 ]
+"11
+[v ___awdiv@sign sign `uc  1 a 1 5 ]
+[v ___awdiv@counter counter `uc  1 a 1 4 ]
+"5
+[v ___awdiv@divisor divisor `i  1 p 2 0 ]
+[v ___awdiv@dividend dividend `i  1 p 2 2 ]
+"41
+} 0
 "7 C:/Users/Carlo/OneDrive/Documentos/Quinto Semestre/Digital2/Libs/Osc.c
 [v _initOsc initOsc `(v  1 e 1 0 ]
 {
@@ -380,21 +451,25 @@ SPI_ACTIVE_2_IDLE 64
 [v initOsc@frec frec `uc  1 a 1 2 ]
 "39
 } 0
-"91 C:/Users/Carlo/OneDrive/Documentos/Quinto Semestre/Digital2/Pjct1_D2.X/main.c
+"171 C:/Users/Carlo/OneDrive/Documentos/Quinto Semestre/Digital2/Pjct1_D2.X/main.c
+[v _conver conver `(*.4DCuc  1 e 1 0 ]
+{
+"172
+[v conver@temporal temporal `[16]uc  1 a 16 0 ]
+"190
+} 0
+"105
 [v _Setup Setup `(v  1 e 1 0 ]
 {
-"125
+"139
 } 0
 "63 C:/Users/Carlo/OneDrive/Documentos/Quinto Semestre/Digital2/Libs/LCD8BIT.c
 [v _Lcd_Write_String Lcd_Write_String `(v  1 e 1 0 ]
 {
-[v Lcd_Write_String@a a `*.24uc  1 a 1 wreg ]
 "65
-[v Lcd_Write_String@i i `i  1 a 2 5 ]
+[v Lcd_Write_String@i i `i  1 a 2 16 ]
 "63
-[v Lcd_Write_String@a a `*.24uc  1 a 1 wreg ]
-"66
-[v Lcd_Write_String@a a `*.24uc  1 a 1 7 ]
+[v Lcd_Write_String@a a `*.26uc  1 p 2 5 ]
 "68
 } 0
 "53
@@ -443,8 +518,8 @@ SPI_ACTIVE_2_IDLE 64
 [v Lcd_Port@a a `uc  1 a 1 2 ]
 "8
 } 0
-"60 C:/Users/Carlo/OneDrive/Documentos/Quinto Semestre/Digital2/Pjct1_D2.X/main.c
+"73 C:/Users/Carlo/OneDrive/Documentos/Quinto Semestre/Digital2/Pjct1_D2.X/main.c
 [v _ISR ISR `II(v  1 e 1 0 ]
 {
-"63
+"76
 } 0
