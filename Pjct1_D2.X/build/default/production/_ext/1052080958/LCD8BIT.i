@@ -2596,20 +2596,30 @@ PORTD = a;
 
 void Lcd_Init()
 {
+_delay((unsigned long)((15)*(40000000/4000.0)));
+Lcd_Port(0x00);
+_delay((unsigned long)((20)*(40000000/4000.0)));
+Lcd_Cmd(0x30);
+_delay((unsigned long)((5)*(40000000/4000.0)));
+Lcd_Cmd(0x30);
+_delay((unsigned long)((160)*(40000000/4000000.0)));
+Lcd_Cmd(0x30);
+
 Lcd_Cmd(0x38);
-Lcd_Cmd(0x0c);
+Lcd_Cmd(0x10);
+Lcd_Cmd(0x01);
 Lcd_Cmd(0x06);
-Lcd_Cmd(0x80);
+
+Lcd_Cmd(0x0C);
 
 }
 
 void Lcd_Cmd(char a)
 {
-
-Lcd_Port(a);
 PORTBbits.RB1 = 0;
+Lcd_Port(a);
 PORTBbits.RB0 = 1;
-_delay((unsigned long)((5)*(40000000/4000.0)));
+_delay((unsigned long)((10)*(40000000/4000.0)));
 PORTBbits.RB0 = 0;
 }
 

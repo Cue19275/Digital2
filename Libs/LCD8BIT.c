@@ -9,21 +9,31 @@ void Lcd_Port(char a)
 
 void Lcd_Init()
 {
-    Lcd_Cmd(0x38);
-    Lcd_Cmd(0x0c);
-    Lcd_Cmd(0x06);
-    Lcd_Cmd(0x80);
+    __delay_ms(15);
+    Lcd_Port(0x00);
+    __delay_ms(20);
+    Lcd_Cmd(0x30);
+    __delay_ms(5);
+    Lcd_Cmd(0x30);
+    __delay_us(160);
+    Lcd_Cmd(0x30);
+    //**************************************************************************
+    Lcd_Cmd(0x38);  //2 LINEAS | 5x8
+    Lcd_Cmd(0x10);  
+    Lcd_Cmd(0x01);
+    Lcd_Cmd(0x06);  //INCREMENTO | DESPLAZAMIENTO DESACTIVADO
+    //Lcd_Cmd(0x0F);
+    Lcd_Cmd(0x0C);
 
 }
 
 void Lcd_Cmd(char a)
 {
-	             // => RS = 0
+	RS = 0;     // => RS = 0
 	Lcd_Port(a);
-    RS = 0;
-	EN  = 1;             // => E = 1
-    __delay_ms(5);
-    EN  = 0;             // => E = 0
+	EN  = 1;    // => E = 1
+    __delay_ms(10);
+    EN  = 0;    // => E = 0
 }
 
 void Lcd_Clear(void)

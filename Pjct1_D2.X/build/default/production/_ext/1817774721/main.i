@@ -2668,20 +2668,46 @@ char POT1_C = 0x30;
 char POT2_U = 0x30;
 char POT2_D = 0x30;
 char POT2_C = 0x30;
+char SIGN = 0X30;
+uint8_t CONT = 0;
 uint8_t temp2 = 0;
+uint8_t temp3 = 0;
+uint8_t pot2 = 0;
+uint8_t var = 0;
 uint8_t lec_ADC = 0;
+uint8_t toggleS = 0;
+uint8_t toggleTX = 0;
 
 
 
 
 void Setup(void);
 void slave1(void);
+void slave3(void);
+void slave2(void);
 void map_pot1(void);
+void map_pot2(void);
+void map_cont(void);
 const char* conver(void);
+void slaveT (void);
+void envio(void);
 
-# 73
+# 86
 void __interrupt() ISR(void) {
-
+if (PIR1bits.TXIF == 1){
+toggleTX++;
+envio();
+PIE1bits.TXIE = 0;
+}
+if (INTCONbits.TMR0IF == 1){
+INTCONbits.TMR0IF = 0;
+TMR0 = 100;
+var++;
+if(var == 2){
+PIE1bits.TXIE=1;
+var = 0;
+}
+}
 
 }
 
@@ -2692,20 +2718,26 @@ void main(void) {
 TRISD = 0x00;
 initOsc(20);
 Setup();
+USARTconf();
 spiInit(SPI_MASTER_OSC_DIV4, SPI_DATA_SAMPLE_MIDDLE, SPI_CLOCK_IDLE_LOW, SPI_IDLE_2_ACTIVE);
 
+
+
 Lcd_Init();
-Lcd_Cmd(0x8A);
+
 while(1){
+toggleS++;
+
 Lcd_Set_Cursor(1,1);
 Lcd_Write_String("S1    S2    S3");
 Lcd_Set_Cursor(2,1);
 Lcd_Write_String(conver());
 map_pot1();
-slave1();
+map_cont();
+map_pot2();
+slaveT();
 
-
-
+# 135
 }
 }
 
@@ -2734,17 +2766,16 @@ INTCONbits.RBIF = 0;
 OPTION_REG = 0b11010111;
 
 
-INTCONbits.GIE = 0;
-INTCONbits.PEIE = 0;
-
-INTCONbits.RBIE = 0;
-PIE1bits.ADIE = 1;
+INTCONbits.GIE = 1;
+INTCONbits.PEIE = 1;
 INTCONbits.T0IE = 1;
-TMR0 = 236;
+TMR0 = 250;
+
+
 
 PIE1bits.TXIE = 1;
 
-PIE1bits.SSPIE = 1;
+
 
 }
 
@@ -2763,6 +2794,32 @@ PORTCbits.RC2 = 1;
 
 
 
+void slave3(void){
+PORTCbits.RC0 = 0;
+_delay((unsigned long)((1)*(40000000/4000.0)));
+
+spiWrite(basura);
+CONT = spiRead();
+
+_delay((unsigned long)((1)*(40000000/4000.0)));
+PORTCbits.RC0 = 1;
+}
+
+
+
+void slave2(void){
+PORTCbits.RC1 = 0;
+_delay((unsigned long)((1)*(40000000/4000.0)));
+
+spiWrite(basura);
+pot2 = spiRead();
+
+_delay((unsigned long)((1)*(40000000/4000.0)));
+PORTCbits.RC1 = 1;
+}
+
+
+
 void map_pot1(void){
 temp2 = lec_ADC;
 POT1_C = ((temp2*100)/51)/100;
@@ -2774,7 +2831,47 @@ POT1_U = num_ascii(POT1_U);
 
 }
 
-# 171
+
+
+void map_pot2(void){
+temp3 = pot2;
+if(temp3 >= 69){
+temp3 = ((temp3-69)*150)/186;
+POT2_C = (temp3/100);
+POT2_D = (temp3-(POT2_C*100))/10;
+POT2_U = (temp3-(POT2_C*100)-(POT2_D*10));
+POT2_C = num_ascii(POT2_C);
+POT2_D = num_ascii(POT2_D);
+POT2_U = num_ascii(POT2_U);
+SIGN = 0x20;
+}
+else{
+temp3 = -((temp3-69)*55)/69;
+POT2_C = (temp3/100);
+POT2_D = (temp3-(POT2_C*100))/10;
+POT2_U = (temp3-(POT2_C*100)-(POT2_D*10));
+POT2_C = num_ascii(POT2_C);
+POT2_D = num_ascii(POT2_D);
+POT2_U = num_ascii(POT2_U);
+SIGN = 0x2D;
+}
+
+}
+
+
+
+void map_cont(void){
+CONT_C = CONT/100;
+CONT_D = (CONT-(CONT_C*100))/10;
+CONT_U = (CONT-(CONT_C*100)-(CONT_D*10));
+CONT_C = num_ascii(CONT_C);
+CONT_D = num_ascii(CONT_D);
+CONT_U = num_ascii(CONT_U);
+}
+
+
+
+
 const char* conver(void){
 char temporal[16];
 temporal[0] = CONT_C;
@@ -2788,10 +2885,81 @@ temporal[7] = POT1_D;
 temporal[8] = POT1_U;
 temporal[9] = 0x76;
 temporal[10] = 0x20;
-temporal[11] = POT2_C;
-temporal[12] = 0x2E;
+temporal[11] = SIGN;
+temporal[12] = POT2_C;
 temporal[13] = POT2_D;
 temporal[14] = POT2_U;
-temporal[15] = 0x76;
+temporal[15] = 67;
 return temporal;
+}
+
+
+
+void slaveT(void){
+if(toggleS == 1){
+slave1();
+}
+if(toggleS == 3){
+slave2();
+}
+if(toggleS == 5){
+slave3();
+toggleS = 0;
+}
+}
+
+
+
+void envio(void){
+if (toggleTX == 1){
+TXREG = CONT_C;
+}
+if (toggleTX == 2){
+TXREG = CONT_D;
+}
+if (toggleTX == 3){
+TXREG = CONT_U;
+}
+if (toggleTX == 4){
+TXREG = 0x2C;
+}
+if (toggleTX == 5){
+TXREG = 0x20;
+}
+if (toggleTX == 6){
+TXREG = POT1_C;
+}
+if (toggleTX == 7){
+TXREG = 0x2E;
+}
+if (toggleTX == 8){
+TXREG = POT1_D;
+}
+if (toggleTX == 9){
+TXREG = POT1_U;
+}
+if (toggleTX == 10){
+TXREG = 0x2C;
+}
+if (toggleTX == 11){
+TXREG = 0x20;
+}
+if (toggleTX == 12){
+TXREG = SIGN;
+}
+if (toggleTX == 13){
+TXREG = POT2_C;
+}
+if (toggleTX == 14){
+TXREG = POT2_D;
+}
+if (toggleTX == 15){
+TXREG = POT2_U;
+}
+if (toggleTX == 16){
+TXREG = 13;
+toggleTX = 0;
+}
+
+
 }

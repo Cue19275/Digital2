@@ -1,4 +1,4 @@
-__S0 18C 0 ABS 0
+__S0 188 0 ABS 0
 __S1 7A 0 ABS 0
 __S2 0 0 ABS 0
 __S3 0 0 ABS 0
@@ -28,7 +28,7 @@ wtemp0 7E 0 ABS 0
 interrupt_function 4 0 CODE 0
 __Hconfig 2009 0 CONFIG 4
 __Lconfig 0 0 CONFIG 4
-_spiWrite 186 0 CODE 0
+_spiWrite 182 0 CODE 0
 __Hram 0 0 ABS 0
 __Lram 0 0 ABS 0
 __size_of_isr 0 0 ABS 0
@@ -62,7 +62,7 @@ __Hsfr2 0 0 ABS 0
 __Lsfr2 0 0 ABS 0
 __Hsfr3 0 0 ABS 0
 __Lsfr3 0 0 ABS 0
-__end_of_spiWrite 18C 0 CODE 0
+__end_of_spiWrite 188 0 CODE 0
 ___stackhi 0 0 ABS 0
 _go_adc 79 0 COMMON 1
 __Hcode 0 0 ABS 0
@@ -70,13 +70,13 @@ __Lcode 0 0 ABS 0
 saved_w 7E 0 ABS 0
 __Hinit 10 0 CODE 0
 __Linit 10 0 CODE 0
-__end_of_main 165 0 CODE 0
+__end_of_main 161 0 CODE 0
 __Htext 0 0 ABS 0
 __Ltext 0 0 ABS 0
 __end_of_initOsc EE 0 CODE 0
 end_of_initialization 15 0 CODE 0
 ___stacklo 0 0 ABS 0
-__end_of_spiInit 17B 0 CODE 0
+__end_of_spiInit 177 0 CODE 0
 __size_of_ADCinit 0 0 ABS 0
 _TRISAbits 85 0 ABS 0
 _RCSTAbits 18 0 ABS 0
@@ -102,11 +102,11 @@ __Lpowerup 0 0 CODE 0
 __ptext1 BF 0 CODE 0
 __ptext2 EE 0 CODE 0
 __end_of_Setup 11C 0 CODE 0
-__ptext3 165 0 CODE 0
+__ptext3 161 0 CODE 0
 __ptext4 19 0 CODE 0
-__ptext5 17B 0 CODE 0
+__ptext5 177 0 CODE 0
 __ptext6 11C 0 CODE 0
-__ptext7 186 0 CODE 0
+__ptext7 182 0 CODE 0
 __Hclrtext 0 0 ABS 0
 __Lclrtext 0 0 ABS 0
 __end_of__initialization 15 0 CODE 0
@@ -114,16 +114,16 @@ _BAUDCTLbits 187 0 ABS 0
 ADCinit@vel 77 0 COMMON 1
 _SSPSTATbits 94 0 ABS 0
 _initOsc BF 0 CODE 0
-__end_of_ADC_LEER 186 0 CODE 0
+__end_of_ADC_LEER 182 0 CODE 0
 __Hstack 0 0 STACK 2
 __Lstack 0 0 STACK 2
-__Hspace_0 18C 0 ABS 0
+__Hspace_0 188 0 ABS 0
 __Lspace_0 0 0 ABS 0
 __end_of_isr 146 0 CODE 0
 __Hspace_1 7A 0 ABS 0
 __Lspace_1 0 0 ABS 0
 _ADCinit 19 0 CODE 0
-_spiInit 165 0 CODE 0
+_spiInit 161 0 CODE 0
 __Hspace_2 0 0 ABS 0
 __Lspace_2 0 0 ABS 0
 __Hcinit 19 0 CODE 0
@@ -146,7 +146,7 @@ __Hend_init 13 0 CODE 0
 __Lend_init 10 0 CODE 0
 __Hreset_vec 3 0 CODE 0
 __Lreset_vec 0 0 CODE 0
-_ADC_LEER 17B 0 CODE 0
+_ADC_LEER 177 0 CODE 0
 intlevel0 0 0 ENTRY 0
 intlevel1 0 0 ENTRY 0
 intlevel2 0 0 ENTRY 0
@@ -168,11 +168,11 @@ __initialization 13 0 CODE 0
 __end_of_ADCinit BF 0 CODE 0
 %segments
 reset_vec 0 5 CODE 0 0
-intentry 8 317 CODE 8 0
+intentry 8 30F CODE 8 0
 cstackCOMMON 70 79 COMMON 70 1
 %locals
 dist/default/production\P1S1.X.production.o
-C:\Users\Carlo\AppData\Local\Temp\sfu0.s
+C:\Users\Carlo\AppData\Local\Temp\sm3c.s
 1434 13 0 CODE 0
 1437 13 0 CODE 0
 1451 13 0 CODE 0
@@ -187,7 +187,6 @@ C:/Users/Carlo/OneDrive/Documentos/Quinto Semestre/Digital2/P1S1.X/main.c
 83 151 0 CODE 0
 87 158 0 CODE 0
 88 158 0 CODE 0
-89 15D 0 CODE 0
 C:/Users/Carlo/OneDrive/Documentos/Quinto Semestre/Digital2/P1S1.X/Osc.c
 7 BF 0 CODE 0
 8 C0 0 CODE 0
@@ -237,17 +236,17 @@ C:/Users/Carlo/OneDrive/Documentos/Quinto Semestre/Digital2/P1S1.X/main.c
 121 112 0 CODE 0
 124 11B 0 CODE 0
 C:/Users/Carlo/OneDrive/Documentos/Quinto Semestre/Digital2/P1S1.X/SPI.c
-12 165 0 CODE 0
-14 166 0 CODE 0
-15 169 0 CODE 0
-17 16D 0 CODE 0
-18 16F 0 CODE 0
-19 170 0 CODE 0
-22 171 0 CODE 0
-23 174 0 CODE 0
-24 175 0 CODE 0
-26 175 0 CODE 0
-27 17A 0 CODE 0
+12 161 0 CODE 0
+14 162 0 CODE 0
+15 165 0 CODE 0
+17 169 0 CODE 0
+18 16B 0 CODE 0
+19 16C 0 CODE 0
+22 16D 0 CODE 0
+23 170 0 CODE 0
+24 171 0 CODE 0
+26 171 0 CODE 0
+27 176 0 CODE 0
 C:/Users/Carlo/OneDrive/Documentos/Quinto Semestre/Digital2/P1S1.X/ADCLIB.c
 9 19 0 CODE 0
 10 1A 0 CODE 0
@@ -358,11 +357,11 @@ C:/Users/Carlo/OneDrive/Documentos/Quinto Semestre/Digital2/P1S1.X/ADCLIB.c
 117 BB 0 CODE 0
 119 BE 0 CODE 0
 C:/Users/Carlo/OneDrive/Documentos/Quinto Semestre/Digital2/P1S1.X/main.c
-128 17B 0 CODE 0
-129 17B 0 CODE 0
-130 181 0 CODE 0
-131 182 0 CODE 0
-133 185 0 CODE 0
+128 177 0 CODE 0
+129 177 0 CODE 0
+130 17D 0 CODE 0
+131 17E 0 CODE 0
+133 181 0 CODE 0
 61 11C 0 CODE 0
 62 11C 0 CODE 0
 63 120 0 CODE 0
@@ -377,6 +376,6 @@ C:/Users/Carlo/OneDrive/Documentos/Quinto Semestre/Digital2/P1S1.X/main.c
 75 13D 0 CODE 0
 61 4 0 CODE 0
 C:/Users/Carlo/OneDrive/Documentos/Quinto Semestre/Digital2/P1S1.X/SPI.c
-34 186 0 CODE 0
-36 187 0 CODE 0
-37 18B 0 CODE 0
+34 182 0 CODE 0
+36 183 0 CODE 0
+37 187 0 CODE 0

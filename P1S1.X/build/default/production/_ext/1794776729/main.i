@@ -2803,7 +2803,7 @@ void __attribute__((picinterrupt(("")))) isr(void){
 
     while(1){
         ADC_LEER();
-        PORTD = lec_ADC;
+
 
     }
     return;
@@ -2819,7 +2819,7 @@ void Setup(void) {
     TRISA = 1;
     TRISB = 0;
     TRISD = 0;
-    TRISC = 0b00011000;
+    TRISC = 0b00001000;
     PORTB = 0;
     PORTD = 0;
 

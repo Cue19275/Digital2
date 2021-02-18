@@ -15,17 +15,17 @@ $dist/default/production\P1S1.X.production.o
 cinit CODE 0 13 13 6 2
 text1 CODE 0 BF BF 2F 2
 text2 CODE 0 EE EE 2E 2
-text3 CODE 0 165 165 16 2
+text3 CODE 0 161 161 16 2
 text4 CODE 0 19 19 A6 2
-text5 CODE 0 17B 17B B 2
+text5 CODE 0 177 177 B 2
 text6 CODE 0 11C 11C 2A 2
-text7 CODE 0 186 186 6 2
-maintext CODE 0 146 146 1F 2
+text7 CODE 0 182 182 6 2
+maintext CODE 0 146 146 1B 2
 cstackCOMMON COMMON 1 70 70 8 1
 intentry CODE 0 4 4 C 2
 bssCOMMON COMMON 1 78 78 2 1
 config CONFIG 4 2007 2007 2 2
-$C:\Users\Carlo\AppData\Local\Temp\sfu0.o
+$C:\Users\Carlo\AppData\Local\Temp\sm3c.o
 reset_vec CODE 0 0 0 3 2
 end_init CODE 0 10 10 3 2
 config CONFIG 4 2007 2007 2 2
@@ -44,13 +44,13 @@ BANK1 A0-EF 1
 BANK2 110-16F 1
 BANK3 190-1EF 1
 CONST 3-3 2
-CONST 18C-1FFF 2
+CONST 188-1FFF 2
 ENTRY 3-3 2
-ENTRY 18C-1FFF 2
+ENTRY 188-1FFF 2
 IDLOC 2000-2003 2
 STACK 110-16F 1
 CODE 3-3 2
-CODE 18C-1FFF 2
+CODE 188-1FFF 2
 SFR0 0-1F 1
 SFR1 80-9F 1
 SFR2 100-10F 1
@@ -58,9 +58,9 @@ SFR3 180-18F 1
 COMMON 7A-7D 1
 EEDATA 2100-21FF 2
 STRCODE 3-3 2
-STRCODE 18C-1FFF 2
+STRCODE 188-1FFF 2
 STRING 3-3 2
-STRING 18C-1FFF 2
+STRING 188-1FFF 2
 # %LINETAB Section
 # This section enumerates the file/line to address mappings.
 # The beginning of the section is indicated by %LINETAB.
@@ -75,17 +75,17 @@ STRING 18C-1FFF 2
 # All other numeric values are in decimal.
 %LINETAB
 $dist/default/production\P1S1.X.production.o
-13 cinit CODE >1434:C:\Users\Carlo\AppData\Local\Temp\sfu0.s
-13 cinit CODE >1437:C:\Users\Carlo\AppData\Local\Temp\sfu0.s
-13 cinit CODE >1451:C:\Users\Carlo\AppData\Local\Temp\sfu0.s
-14 cinit CODE >1452:C:\Users\Carlo\AppData\Local\Temp\sfu0.s
-15 cinit CODE >1458:C:\Users\Carlo\AppData\Local\Temp\sfu0.s
-15 cinit CODE >1460:C:\Users\Carlo\AppData\Local\Temp\sfu0.s
-16 cinit CODE >1461:C:\Users\Carlo\AppData\Local\Temp\sfu0.s
+13 cinit CODE >1434:C:\Users\Carlo\AppData\Local\Temp\sm3c.s
+13 cinit CODE >1437:C:\Users\Carlo\AppData\Local\Temp\sm3c.s
+13 cinit CODE >1451:C:\Users\Carlo\AppData\Local\Temp\sm3c.s
+14 cinit CODE >1452:C:\Users\Carlo\AppData\Local\Temp\sm3c.s
+15 cinit CODE >1458:C:\Users\Carlo\AppData\Local\Temp\sm3c.s
+15 cinit CODE >1460:C:\Users\Carlo\AppData\Local\Temp\sm3c.s
+16 cinit CODE >1461:C:\Users\Carlo\AppData\Local\Temp\sm3c.s
 4 intentry CODE >61:C:/Users/Carlo/OneDrive/Documentos/Quinto Semestre/Digital2/P1S1.X/main.c
-186 text7 CODE >34:C:/Users/Carlo/OneDrive/Documentos/Quinto Semestre/Digital2/P1S1.X/SPI.c
-187 text7 CODE >36:C:/Users/Carlo/OneDrive/Documentos/Quinto Semestre/Digital2/P1S1.X/SPI.c
-18B text7 CODE >37:C:/Users/Carlo/OneDrive/Documentos/Quinto Semestre/Digital2/P1S1.X/SPI.c
+182 text7 CODE >34:C:/Users/Carlo/OneDrive/Documentos/Quinto Semestre/Digital2/P1S1.X/SPI.c
+183 text7 CODE >36:C:/Users/Carlo/OneDrive/Documentos/Quinto Semestre/Digital2/P1S1.X/SPI.c
+187 text7 CODE >37:C:/Users/Carlo/OneDrive/Documentos/Quinto Semestre/Digital2/P1S1.X/SPI.c
 11C text6 CODE >61:C:/Users/Carlo/OneDrive/Documentos/Quinto Semestre/Digital2/P1S1.X/main.c
 11C text6 CODE >62:C:/Users/Carlo/OneDrive/Documentos/Quinto Semestre/Digital2/P1S1.X/main.c
 120 text6 CODE >63:C:/Users/Carlo/OneDrive/Documentos/Quinto Semestre/Digital2/P1S1.X/main.c
@@ -98,11 +98,11 @@ $dist/default/production\P1S1.X.production.o
 137 text6 CODE >72:C:/Users/Carlo/OneDrive/Documentos/Quinto Semestre/Digital2/P1S1.X/main.c
 139 text6 CODE >73:C:/Users/Carlo/OneDrive/Documentos/Quinto Semestre/Digital2/P1S1.X/main.c
 13D text6 CODE >75:C:/Users/Carlo/OneDrive/Documentos/Quinto Semestre/Digital2/P1S1.X/main.c
-17B text5 CODE >128:C:/Users/Carlo/OneDrive/Documentos/Quinto Semestre/Digital2/P1S1.X/main.c
-17B text5 CODE >129:C:/Users/Carlo/OneDrive/Documentos/Quinto Semestre/Digital2/P1S1.X/main.c
-181 text5 CODE >130:C:/Users/Carlo/OneDrive/Documentos/Quinto Semestre/Digital2/P1S1.X/main.c
-182 text5 CODE >131:C:/Users/Carlo/OneDrive/Documentos/Quinto Semestre/Digital2/P1S1.X/main.c
-185 text5 CODE >133:C:/Users/Carlo/OneDrive/Documentos/Quinto Semestre/Digital2/P1S1.X/main.c
+177 text5 CODE >128:C:/Users/Carlo/OneDrive/Documentos/Quinto Semestre/Digital2/P1S1.X/main.c
+177 text5 CODE >129:C:/Users/Carlo/OneDrive/Documentos/Quinto Semestre/Digital2/P1S1.X/main.c
+17D text5 CODE >130:C:/Users/Carlo/OneDrive/Documentos/Quinto Semestre/Digital2/P1S1.X/main.c
+17E text5 CODE >131:C:/Users/Carlo/OneDrive/Documentos/Quinto Semestre/Digital2/P1S1.X/main.c
+181 text5 CODE >133:C:/Users/Carlo/OneDrive/Documentos/Quinto Semestre/Digital2/P1S1.X/main.c
 19 text4 CODE >9:C:/Users/Carlo/OneDrive/Documentos/Quinto Semestre/Digital2/P1S1.X/ADCLIB.c
 1A text4 CODE >10:C:/Users/Carlo/OneDrive/Documentos/Quinto Semestre/Digital2/P1S1.X/ADCLIB.c
 1B text4 CODE >11:C:/Users/Carlo/OneDrive/Documentos/Quinto Semestre/Digital2/P1S1.X/ADCLIB.c
@@ -211,17 +211,17 @@ B9 text4 CODE >115:C:/Users/Carlo/OneDrive/Documentos/Quinto Semestre/Digital2/P
 BA text4 CODE >116:C:/Users/Carlo/OneDrive/Documentos/Quinto Semestre/Digital2/P1S1.X/ADCLIB.c
 BB text4 CODE >117:C:/Users/Carlo/OneDrive/Documentos/Quinto Semestre/Digital2/P1S1.X/ADCLIB.c
 BE text4 CODE >119:C:/Users/Carlo/OneDrive/Documentos/Quinto Semestre/Digital2/P1S1.X/ADCLIB.c
-165 text3 CODE >12:C:/Users/Carlo/OneDrive/Documentos/Quinto Semestre/Digital2/P1S1.X/SPI.c
-166 text3 CODE >14:C:/Users/Carlo/OneDrive/Documentos/Quinto Semestre/Digital2/P1S1.X/SPI.c
-169 text3 CODE >15:C:/Users/Carlo/OneDrive/Documentos/Quinto Semestre/Digital2/P1S1.X/SPI.c
-16D text3 CODE >17:C:/Users/Carlo/OneDrive/Documentos/Quinto Semestre/Digital2/P1S1.X/SPI.c
-16F text3 CODE >18:C:/Users/Carlo/OneDrive/Documentos/Quinto Semestre/Digital2/P1S1.X/SPI.c
-170 text3 CODE >19:C:/Users/Carlo/OneDrive/Documentos/Quinto Semestre/Digital2/P1S1.X/SPI.c
-171 text3 CODE >22:C:/Users/Carlo/OneDrive/Documentos/Quinto Semestre/Digital2/P1S1.X/SPI.c
-174 text3 CODE >23:C:/Users/Carlo/OneDrive/Documentos/Quinto Semestre/Digital2/P1S1.X/SPI.c
-175 text3 CODE >24:C:/Users/Carlo/OneDrive/Documentos/Quinto Semestre/Digital2/P1S1.X/SPI.c
-175 text3 CODE >26:C:/Users/Carlo/OneDrive/Documentos/Quinto Semestre/Digital2/P1S1.X/SPI.c
-17A text3 CODE >27:C:/Users/Carlo/OneDrive/Documentos/Quinto Semestre/Digital2/P1S1.X/SPI.c
+161 text3 CODE >12:C:/Users/Carlo/OneDrive/Documentos/Quinto Semestre/Digital2/P1S1.X/SPI.c
+162 text3 CODE >14:C:/Users/Carlo/OneDrive/Documentos/Quinto Semestre/Digital2/P1S1.X/SPI.c
+165 text3 CODE >15:C:/Users/Carlo/OneDrive/Documentos/Quinto Semestre/Digital2/P1S1.X/SPI.c
+169 text3 CODE >17:C:/Users/Carlo/OneDrive/Documentos/Quinto Semestre/Digital2/P1S1.X/SPI.c
+16B text3 CODE >18:C:/Users/Carlo/OneDrive/Documentos/Quinto Semestre/Digital2/P1S1.X/SPI.c
+16C text3 CODE >19:C:/Users/Carlo/OneDrive/Documentos/Quinto Semestre/Digital2/P1S1.X/SPI.c
+16D text3 CODE >22:C:/Users/Carlo/OneDrive/Documentos/Quinto Semestre/Digital2/P1S1.X/SPI.c
+170 text3 CODE >23:C:/Users/Carlo/OneDrive/Documentos/Quinto Semestre/Digital2/P1S1.X/SPI.c
+171 text3 CODE >24:C:/Users/Carlo/OneDrive/Documentos/Quinto Semestre/Digital2/P1S1.X/SPI.c
+171 text3 CODE >26:C:/Users/Carlo/OneDrive/Documentos/Quinto Semestre/Digital2/P1S1.X/SPI.c
+176 text3 CODE >27:C:/Users/Carlo/OneDrive/Documentos/Quinto Semestre/Digital2/P1S1.X/SPI.c
 EE text2 CODE >98:C:/Users/Carlo/OneDrive/Documentos/Quinto Semestre/Digital2/P1S1.X/main.c
 EE text2 CODE >99:C:/Users/Carlo/OneDrive/Documentos/Quinto Semestre/Digital2/P1S1.X/main.c
 F1 text2 CODE >100:C:/Users/Carlo/OneDrive/Documentos/Quinto Semestre/Digital2/P1S1.X/main.c
@@ -274,7 +274,6 @@ ED text1 CODE >39:C:/Users/Carlo/OneDrive/Documentos/Quinto Semestre/Digital2/P1
 151 maintext CODE >83:C:/Users/Carlo/OneDrive/Documentos/Quinto Semestre/Digital2/P1S1.X/main.c
 158 maintext CODE >87:C:/Users/Carlo/OneDrive/Documentos/Quinto Semestre/Digital2/P1S1.X/main.c
 158 maintext CODE >88:C:/Users/Carlo/OneDrive/Documentos/Quinto Semestre/Digital2/P1S1.X/main.c
-15D maintext CODE >89:C:/Users/Carlo/OneDrive/Documentos/Quinto Semestre/Digital2/P1S1.X/main.c
 # %SYMTAB Section
 # An enumeration of all symbols in the program.
 # The beginning of the section is indicated by %SYMTAB.
@@ -288,7 +287,7 @@ ED text1 CODE >39:C:/Users/Carlo/OneDrive/Documentos/Quinto Semestre/Digital2/P1
 # is the name of the object file in which the symbol was defined.
 %SYMTAB
 ___latbits 2 0 ABS 0 - dist/default/production\P1S1.X.production.o
-__Hspace_0 18C 0 ABS 0 - -
+__Hspace_0 188 0 ABS 0 - -
 __Hspace_1 7A 0 ABS 0 - -
 __Hspace_2 0 0 ABS 0 - -
 __Hspace_3 0 0 ABS 0 - -
@@ -297,20 +296,20 @@ spiInit@sTransmitEdge 76 0 COMMON 1 cstackCOMMON dist/default/production\P1S1.X.
 __Heeprom_data 0 0 EEDATA 3 eeprom_data -
 __Hstrings 0 0 ABS 0 strings -
 _TMR0 1 0 ABS 0 - dist/default/production\P1S1.X.production.o
-___sp 0 0 STACK 2 stack C:\Users\Carlo\AppData\Local\Temp\sfu0.o
+___sp 0 0 STACK 2 stack C:\Users\Carlo\AppData\Local\Temp\sm3c.o
 _main 28C 0 CODE 0 maintext dist/default/production\P1S1.X.production.o
 btemp 7E 0 ABS 0 - dist/default/production\P1S1.X.production.o
-start 20 0 CODE 0 init C:\Users\Carlo\AppData\Local\Temp\sfu0.o
+start 20 0 CODE 0 init C:\Users\Carlo\AppData\Local\Temp\sm3c.o
 __size_of_main 0 0 ABS 0 - dist/default/production\P1S1.X.production.o
 __HbssCOMMON 0 0 ABS 0 bssCOMMON -
 __Hpowerup 0 0 CODE 0 powerup -
 __size_of_ADC_LEER 0 0 ABS 0 - dist/default/production\P1S1.X.production.o
-intlevel0 0 0 ENTRY 0 functab C:\Users\Carlo\AppData\Local\Temp\sfu0.o
-intlevel1 0 0 ENTRY 0 functab C:\Users\Carlo\AppData\Local\Temp\sfu0.o
-intlevel2 0 0 ENTRY 0 functab C:\Users\Carlo\AppData\Local\Temp\sfu0.o
-intlevel3 0 0 ENTRY 0 functab C:\Users\Carlo\AppData\Local\Temp\sfu0.o
-intlevel4 0 0 ENTRY 0 functab C:\Users\Carlo\AppData\Local\Temp\sfu0.o
-intlevel5 0 0 ENTRY 0 functab C:\Users\Carlo\AppData\Local\Temp\sfu0.o
+intlevel0 0 0 ENTRY 0 functab C:\Users\Carlo\AppData\Local\Temp\sm3c.o
+intlevel1 0 0 ENTRY 0 functab C:\Users\Carlo\AppData\Local\Temp\sm3c.o
+intlevel2 0 0 ENTRY 0 functab C:\Users\Carlo\AppData\Local\Temp\sm3c.o
+intlevel3 0 0 ENTRY 0 functab C:\Users\Carlo\AppData\Local\Temp\sm3c.o
+intlevel4 0 0 ENTRY 0 functab C:\Users\Carlo\AppData\Local\Temp\sm3c.o
+intlevel5 0 0 ENTRY 0 functab C:\Users\Carlo\AppData\Local\Temp\sm3c.o
 __LbssCOMMON 0 0 ABS 0 bssCOMMON -
 _OSCCONbits 8F 0 ABS 0 - dist/default/production\P1S1.X.production.o
 wtemp0 7E 0 ABS 0 - dist/default/production\P1S1.X.production.o
@@ -323,11 +322,11 @@ ADCinit@chan 74 0 COMMON 1 cstackCOMMON dist/default/production\P1S1.X.productio
 __size_of_initOsc 0 0 ABS 0 - dist/default/production\P1S1.X.production.o
 __size_of_spiInit 0 0 ABS 0 - dist/default/production\P1S1.X.production.o
 __Lmaintext 0 0 ABS 0 maintext -
-_ADC_LEER 2F6 0 CODE 0 text5 dist/default/production\P1S1.X.production.o
+_ADC_LEER 2EE 0 CODE 0 text5 dist/default/production\P1S1.X.production.o
 _OPTION_REG 81 0 ABS 0 - dist/default/production\P1S1.X.production.o
-__end_of_ADC_LEER 30C 0 CODE 0 text5 dist/default/production\P1S1.X.production.o
-___stackhi 0 0 ABS 0 - C:\Users\Carlo\AppData\Local\Temp\sfu0.o
-___stacklo 0 0 ABS 0 - C:\Users\Carlo\AppData\Local\Temp\sfu0.o
+__end_of_ADC_LEER 304 0 CODE 0 text5 dist/default/production\P1S1.X.production.o
+___stackhi 0 0 ABS 0 - C:\Users\Carlo\AppData\Local\Temp\sm3c.o
+___stacklo 0 0 ABS 0 - C:\Users\Carlo\AppData\Local\Temp\sm3c.o
 _BAUDCTLbits 187 0 ABS 0 - dist/default/production\P1S1.X.production.o
 __size_of_Setup 0 0 ABS 0 - dist/default/production\P1S1.X.production.o
 ADCinit@vel 77 0 COMMON 1 cstackCOMMON dist/default/production\P1S1.X.production.o
@@ -341,7 +340,7 @@ _SSPCON 14 0 ABS 0 - dist/default/production\P1S1.X.production.o
 _TRISC3 43B 0 ABS 0 - dist/default/production\P1S1.X.production.o
 _TRISC5 43D 0 ABS 0 - dist/default/production\P1S1.X.production.o
 __end_of_initOsc 1DC 0 CODE 0 text1 dist/default/production\P1S1.X.production.o
-___int_sp 0 0 STACK 2 stack C:\Users\Carlo\AppData\Local\Temp\sfu0.o
+___int_sp 0 0 STACK 2 stack C:\Users\Carlo\AppData\Local\Temp\sm3c.o
 __Hbank0 0 0 ABS 0 bank0 -
 __Hbank1 0 0 ABS 0 bank1 -
 __Hbank2 0 0 ABS 0 bank2 -
@@ -349,7 +348,7 @@ __Hbank3 0 0 ABS 0 bank3 -
 __Hcinit 32 0 CODE 0 cinit -
 __Hstack 0 0 STACK 2 stack -
 __Hmaintext 0 0 ABS 0 maintext -
-__end_of_spiInit 2F6 0 CODE 0 text3 dist/default/production\P1S1.X.production.o
+__end_of_spiInit 2EE 0 CODE 0 text3 dist/default/production\P1S1.X.production.o
 __Hcommon 0 0 ABS 0 common -
 __Hconfig 4012 0 CONFIG 4 config -
 __Lbank0 0 0 ABS 0 bank0 -
@@ -377,7 +376,7 @@ __Lsfr2 0 0 ABS 0 sfr2 -
 __Lsfr3 0 0 ABS 0 sfr3 -
 __Ltext 0 0 ABS 0 text -
 __HcstackCOMMON 0 0 ABS 0 cstackCOMMON -
-__S0 18C 0 ABS 0 - -
+__S0 188 0 ABS 0 - -
 __S1 7A 0 ABS 0 - -
 __S2 0 0 ABS 0 - -
 __S3 0 0 ABS 0 - -
@@ -386,7 +385,7 @@ saved_w 7E 0 ABS 0 - dist/default/production\P1S1.X.production.o
 __end_of_isr 28C 0 CODE 0 text6 dist/default/production\P1S1.X.production.o
 _go_adc 79 0 COMMON 1 bssCOMMON dist/default/production\P1S1.X.production.o
 __Lintentry 8 0 CODE 0 intentry -
-reset_vec 0 0 CODE 0 reset_vec C:\Users\Carlo\AppData\Local\Temp\sfu0.o
+reset_vec 0 0 CODE 0 reset_vec C:\Users\Carlo\AppData\Local\Temp\sm3c.o
 initOsc@frec 76 0 COMMON 1 cstackCOMMON dist/default/production\P1S1.X.production.o
 _lec_ADC 78 0 COMMON 1 bssCOMMON dist/default/production\P1S1.X.production.o
 _RCSTAbits 18 0 ABS 0 - dist/default/production\P1S1.X.production.o
@@ -411,12 +410,12 @@ __Hreset_vec 6 0 CODE 0 reset_vec -
 _initOsc 17E 0 CODE 0 text1 dist/default/production\P1S1.X.production.o
 __ptext1 17E 0 CODE 0 text1 dist/default/production\P1S1.X.production.o
 __ptext2 1DC 0 CODE 0 text2 dist/default/production\P1S1.X.production.o
-__ptext3 2CA 0 CODE 0 text3 dist/default/production\P1S1.X.production.o
+__ptext3 2C2 0 CODE 0 text3 dist/default/production\P1S1.X.production.o
 __ptext4 32 0 CODE 0 text4 dist/default/production\P1S1.X.production.o
-__ptext5 2F6 0 CODE 0 text5 dist/default/production\P1S1.X.production.o
+__ptext5 2EE 0 CODE 0 text5 dist/default/production\P1S1.X.production.o
 __ptext6 238 0 CODE 0 text6 dist/default/production\P1S1.X.production.o
-__ptext7 30C 0 CODE 0 text7 dist/default/production\P1S1.X.production.o
-_spiInit 2CA 0 CODE 0 text3 dist/default/production\P1S1.X.production.o
+__ptext7 304 0 CODE 0 text7 dist/default/production\P1S1.X.production.o
+_spiInit 2C2 0 CODE 0 text3 dist/default/production\P1S1.X.production.o
 __size_of_ADCinit 0 0 ABS 0 - dist/default/production\P1S1.X.production.o
 spiWrite@dat 70 0 COMMON 1 cstackCOMMON dist/default/production\P1S1.X.production.o
 __Lpowerup 0 0 CODE 0 powerup -
@@ -432,7 +431,7 @@ __pcstackCOMMON 70 0 COMMON 1 cstackCOMMON dist/default/production\P1S1.X.produc
 _TXSTAbits 98 0 ABS 0 - dist/default/production\P1S1.X.production.o
 _SSPSTAT 94 0 ABS 0 - dist/default/production\P1S1.X.production.o
 __Hend_init 26 0 CODE 0 end_init -
-__end_of_main 2CA 0 CODE 0 maintext dist/default/production\P1S1.X.production.o
+__end_of_main 2C2 0 CODE 0 maintext dist/default/production\P1S1.X.production.o
 __end_of_Setup 238 0 CODE 0 text2 dist/default/production\P1S1.X.production.o
 _ANSEL 188 0 ABS 0 - dist/default/production\P1S1.X.production.o
 _PORTB 6 0 ABS 0 - dist/default/production\P1S1.X.production.o
@@ -452,9 +451,9 @@ __pintentry 8 0 CODE 0 intentry dist/default/production\P1S1.X.production.o
 __size_of_isr 0 0 ABS 0 - dist/default/production\P1S1.X.production.o
 spiInit@sClockIdle 75 0 COMMON 1 cstackCOMMON dist/default/production\P1S1.X.production.o
 __initialization 26 0 CODE 0 cinit dist/default/production\P1S1.X.production.o
-_spiWrite 30C 0 CODE 0 text7 dist/default/production\P1S1.X.production.o
+_spiWrite 304 0 CODE 0 text7 dist/default/production\P1S1.X.production.o
 __end_of_ADCinit 17E 0 CODE 0 text4 dist/default/production\P1S1.X.production.o
-__end_of_spiWrite 318 0 CODE 0 text7 dist/default/production\P1S1.X.production.o
+__end_of_spiWrite 310 0 CODE 0 text7 dist/default/production\P1S1.X.production.o
 # %SPLITSTAB Section
 # This section enumerates all the psect splits performed by the assembler.
 # The beginning of the section is indicated by %SPLITSTAB.
@@ -481,7 +480,7 @@ __end_of_spiWrite 318 0 CODE 0 text7 dist/default/production\P1S1.X.production.o
 # All other numeric quantities are in decimal.
 %SEGMENTS
 cstackCOMMON 1 70 70 A 1
-intentry 0 4 8 188 2
+intentry 0 4 8 184 2
 reset_vec 0 0 0 3 2
 # %NOTES Section
 # This section contains data of all the note-psects.  The beginning of the section

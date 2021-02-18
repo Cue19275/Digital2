@@ -5,7 +5,7 @@ Linker command line:
 -W-3 --edf=C:\Program Files\Microchip\xc8\v2.20\pic\dat\en_msgs.txt -cn \
   -h+dist/default/production\P1S1.X.production.sym \
   --cmf=dist/default/production\P1S1.X.production.cmf -z -Q16F887 \
-  -oC:\Users\Carlo\AppData\Local\Temp\sfu0.2 --defsym=__MPLAB_BUILD=1 \
+  -oC:\Users\Carlo\AppData\Local\Temp\sm3c.2 --defsym=__MPLAB_BUILD=1 \
   -Mdist/default/production/P1S1.X.production.map -E1 -ver=XC8 Compiler \
   --acfsm=1493 -ASTACK=0110h-016Fh -pstack=STACK -ACODE=00h-07FFhx4 \
   -ASTRCODE=00h-01FFFh -ASTRING=00h-0FFhx32 -ACONST=00h-0FFhx32 \
@@ -18,7 +18,7 @@ Linker command line:
   -preset_vec=00h,intentry=04h,init,end_init -ppowerup=CODE -pcinit=CODE \
   -pfunctab=ENTRY -AEEDATA=00h-0FFh/02100h -peeprom_data=EEDATA -DEEDATA=2 \
   -DCODE=2 -DSTRCODE=2 -DSTRING=2 -DCONST=2 -DENTRY=2 -k \
-  C:\Users\Carlo\AppData\Local\Temp\sfu0.o \
+  C:\Users\Carlo\AppData\Local\Temp\sm3c.o \
   dist/default/production\P1S1.X.production.o 
 
 Object code version is 3.11
@@ -28,7 +28,7 @@ Machine type is 16F887
 
 
                 Name                               Link     Load   Length Selector   Space Scale
-C:\Users\Carlo\AppData\Local\Temp\sfu0.o
+C:\Users\Carlo\AppData\Local\Temp\sm3c.o
                 end_init                             10       10        3        8       0
                 reset_vec                             0        0        3        0       0
                 config                             2007     2007        2        0       4
@@ -36,14 +36,14 @@ dist/default/production\P1S1.X.production.o
                 cinit                                13       13        6        8       0
                 intentry                              4        4        C        8       0
                 config                             2007     2007        2        0       4
-                text7                               186      186        6        8       0
+                text7                               182      182        6        8       0
                 text6                               11C      11C       2A        8       0
-                text5                               17B      17B        B        8       0
+                text5                               177      177        B        8       0
                 text4                                19       19       A6        8       0
-                text3                               165      165       16        8       0
+                text3                               161      161       16        8       0
                 text2                                EE       EE       2E        8       0
                 text1                                BF       BF       2F        8       0
-                maintext                            146      146       1F        8       0
+                maintext                            146      146       1B        8       0
                 cstackCOMMON                         70       70        8       70       1
                 bssCOMMON                            78       78        2       70       1
 
@@ -55,14 +55,14 @@ TOTAL           Name                               Link     Load   Length     Sp
                 cinit                                13       13        6         0
                 intentry                              4        4        C         0
                 reset_vec                             0        0        3         0
-                text7                               186      186        6         0
+                text7                               182      182        6         0
                 text6                               11C      11C       2A         0
-                text5                               17B      17B        B         0
+                text5                               177      177        B         0
                 text4                                19       19       A6         0
-                text3                               165      165       16         0
+                text3                               161      161       16         0
                 text2                                EE       EE       2E         0
                 text1                                BF       BF       2F         0
-                maintext                            146      146       1F         0
+                maintext                            146      146       1B         0
 
         CLASS   STRCODE        
 
@@ -109,7 +109,7 @@ TOTAL           Name                               Link     Load   Length     Sp
 SEGMENTS        Name                           Load    Length   Top    Selector   Space  Class     Delta
 
                 reset_vec                      000000  000003  000003         0       0  CODE        2
-                intentry                       000004  000188  00018C         8       0  CODE        2
+                intentry                       000004  000184  000188         8       0  CODE        2
                 cstackCOMMON                   000070  00000A  00007A        70       1  COMMON      1
 
 
@@ -121,13 +121,13 @@ UNUSED ADDRESS RANGES
         BANK2            0110-016F             60           1
         BANK3            0190-01EF             60           1
         CODE             0003-0003              1           2
-                         018C-1FFF            800
+                         0188-1FFF            800
         COMMON           007A-007D              4           1
         CONST            0003-0003              1           2
-                         018C-1FFF            100
+                         0188-1FFF            100
         EEDATA           2100-21FF            100           2
         ENTRY            0003-0003              1           2
-                         018C-1FFF            100
+                         0188-1FFF            100
         IDLOC            2000-2003              4           2
         RAM              0020-006F             50           1
                          00A0-00EF             50
@@ -139,9 +139,9 @@ UNUSED ADDRESS RANGES
         SFR3             0180-018F             10           1
         STACK            0110-016F             60           1
         STRCODE          0003-0003              1           2
-                         018C-1FFF           1E74
+                         0188-1FFF           1E78
         STRING           0003-0003              1           2
-                         018C-1FFF            100
+                         0188-1FFF            100
 
                                   Symbol Table
 
@@ -149,7 +149,7 @@ ADCinit@chan             cstackCOMMON 0074
 ADCinit@vel              cstackCOMMON 0077
 _ADCON0bits              (abs)        001F
 _ADCON1                  (abs)        009F
-_ADC_LEER                text5        017B
+_ADC_LEER                text5        0177
 _ADCinit                 text4        0019
 _ADRESH                  (abs)        001E
 _ANSEL                   (abs)        0188
@@ -207,7 +207,7 @@ __Hsfr0                  sfr0         0000
 __Hsfr1                  sfr1         0000
 __Hsfr2                  sfr2         0000
 __Hsfr3                  sfr3         0000
-__Hspace_0               (abs)        018C
+__Hspace_0               (abs)        0188
 __Hspace_1               (abs)        007A
 __Hspace_2               (abs)        0000
 __Hspace_3               (abs)        0000
@@ -248,7 +248,7 @@ __Lspace_4               (abs)        0000
 __Lstack                 stack        0000
 __Lstrings               strings      0000
 __Ltext                  text         0000
-__S0                     (abs)        018C
+__S0                     (abs)        0188
 __S1                     (abs)        007A
 __S2                     (abs)        0000
 __S3                     (abs)        0000
@@ -257,15 +257,15 @@ ___latbits               (abs)        0002
 ___sp                    stack        0000
 ___stackhi               (abs)        0000
 ___stacklo               (abs)        0000
-__end_of_ADC_LEER        text5        0186
+__end_of_ADC_LEER        text5        0182
 __end_of_ADCinit         text4        00BF
 __end_of_Setup           text2        011C
 __end_of__initialization cinit        0015
 __end_of_initOsc         text1        00EE
 __end_of_isr             text6        0146
-__end_of_main            maintext     0165
-__end_of_spiInit         text3        017B
-__end_of_spiWrite        text7        018C
+__end_of_main            maintext     0161
+__end_of_spiInit         text3        0177
+__end_of_spiWrite        text7        0188
 __initialization         cinit        0013
 __pbssCOMMON             bssCOMMON    0078
 __pcstackCOMMON          cstackCOMMON 0070
@@ -273,11 +273,11 @@ __pintentry              intentry     0004
 __pmaintext              maintext     0146
 __ptext1                 text1        00BF
 __ptext2                 text2        00EE
-__ptext3                 text3        0165
+__ptext3                 text3        0161
 __ptext4                 text4        0019
-__ptext5                 text5        017B
+__ptext5                 text5        0177
 __ptext6                 text6        011C
-__ptext7                 text7        0186
+__ptext7                 text7        0182
 __size_of_ADC_LEER       (abs)        0000
 __size_of_ADCinit        (abs)        0000
 __size_of_Setup          (abs)        0000
@@ -291,8 +291,8 @@ _initOsc                 text1        00BF
 _isr                     text6        011C
 _lec_ADC                 bssCOMMON    0078
 _main                    maintext     0146
-_spiInit                 text3        0165
-_spiWrite                text7        0186
+_spiInit                 text3        0161
+_spiWrite                text7        0182
 btemp                    (abs)        007E
 end_of_initialization    cinit        0015
 initOsc@frec             cstackCOMMON 0076
@@ -567,12 +567,12 @@ MODULE INFORMATION
 
 Module		Function		Class		Link	Load	Size
 C:/Users/Carlo/OneDrive/Documentos/Quinto Semestre/Digital2/P1S1.X/main.c
-		_main          		CODE           	0146	0000	32
+		_main          		CODE           	0146	0000	28
 		_Setup         		CODE           	00EE	0000	47
-		_ADC_LEER      		CODE           	017B	0000	12
+		_ADC_LEER      		CODE           	0177	0000	12
 		_isr           		CODE           	011C	0000	43
 
-C:/Users/Carlo/OneDrive/Documentos/Quinto Semestre/Digital2/P1S1.X/main.c estimated size: 134
+C:/Users/Carlo/OneDrive/Documentos/Quinto Semestre/Digital2/P1S1.X/main.c estimated size: 130
 
 C:/Users/Carlo/OneDrive/Documentos/Quinto Semestre/Digital2/P1S1.X/ADCLIB.c
 		_ADCinit       		CODE           	0019	0000	167
@@ -585,8 +585,8 @@ shared
 shared estimated size: 3
 
 C:/Users/Carlo/OneDrive/Documentos/Quinto Semestre/Digital2/P1S1.X/SPI.c
-		_spiWrite      		CODE           	0186	0000	7
-		_spiInit       		CODE           	0165	0000	23
+		_spiWrite      		CODE           	0182	0000	7
+		_spiInit       		CODE           	0161	0000	23
 
 C:/Users/Carlo/OneDrive/Documentos/Quinto Semestre/Digital2/P1S1.X/SPI.c estimated size: 30
 

@@ -307,7 +307,7 @@ SPI_ACTIVE_2_IDLE 64
 [v _BAUDCTLbits BAUDCTLbits `VES231  1 e 1 @391 ]
 "3387
 [v _ANSEL ANSEL `VEuc  1 e 1 @392 ]
-[s S385 . 1 `uc 1 ANS0 1 0 :1:0 
+[s S384 . 1 `uc 1 ANS0 1 0 :1:0 
 `uc 1 ANS1 1 0 :1:1 
 `uc 1 ANS2 1 0 :1:2 
 `uc 1 ANS3 1 0 :1:3 
@@ -317,8 +317,8 @@ SPI_ACTIVE_2_IDLE 64
 `uc 1 ANS7 1 0 :1:7 
 ]
 "3404
-[u S394 . 1 `S385 1 . 1 0 ]
-[v _ANSELbits ANSELbits `VES394  1 e 1 @392 ]
+[u S393 . 1 `S384 1 . 1 0 ]
+[v _ANSELbits ANSELbits `VES393  1 e 1 @392 ]
 "3449
 [v _ANSELH ANSELH `VEuc  1 e 1 @393 ]
 "4277

@@ -4,6 +4,9 @@
     <logicalFolder name="HeaderFiles"
                    displayName="Header Files"
                    projectFiles="true">
+      <itemPath>C:/Users/Carlo/OneDrive/Documentos/Quinto Semestre/Digital2/P1S2TEMP.X/ADCLIB.h</itemPath>
+      <itemPath>C:/Users/Carlo/OneDrive/Documentos/Quinto Semestre/Digital2/P1S2TEMP.X/Osc.h</itemPath>
+      <itemPath>C:/Users/Carlo/OneDrive/Documentos/Quinto Semestre/Digital2/P1S2TEMP.X/SPI.h</itemPath>
     </logicalFolder>
     <logicalFolder name="LinkerScript"
                    displayName="Linker Files"
@@ -12,6 +15,10 @@
     <logicalFolder name="SourceFiles"
                    displayName="Source Files"
                    projectFiles="true">
+      <itemPath>C:/Users/Carlo/OneDrive/Documentos/Quinto Semestre/Digital2/P1S2TEMP.X/main.c</itemPath>
+      <itemPath>C:/Users/Carlo/OneDrive/Documentos/Quinto Semestre/Digital2/P1S2TEMP.X/ADCLIB.c</itemPath>
+      <itemPath>C:/Users/Carlo/OneDrive/Documentos/Quinto Semestre/Digital2/P1S2TEMP.X/Osc.c</itemPath>
+      <itemPath>C:/Users/Carlo/OneDrive/Documentos/Quinto Semestre/Digital2/P1S2TEMP.X/SPI.c</itemPath>
     </logicalFolder>
     <logicalFolder name="ExternalFiles"
                    displayName="Important Files"
@@ -19,6 +26,9 @@
       <itemPath>Makefile</itemPath>
     </logicalFolder>
   </logicalFolder>
+  <sourceRootList>
+    <Elem>C:\Users\Carlo\OneDrive\Documentos\Quinto Semestre\Digital2\P1S2TEMP.X</Elem>
+  </sourceRootList>
   <projectmakefile>Makefile</projectmakefile>
   <confs>
     <conf name="default" type="2">
