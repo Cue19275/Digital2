@@ -1,7 +1,7 @@
 
 
 Microchip MPLAB XC8 Assembler V2.20 build 20200408173844 
-                                                                                               Tue Feb 16 00:19:41 2021
+                                                                                               Thu Feb 18 02:40:37 2021
 
 Microchip MPLAB XC8 C Compiler v2.20 (Free license) build 20200408173844 Og1 
      1                           	processor	16F887
@@ -680,7 +680,7 @@ Microchip MPLAB XC8 C Compiler v2.20 (Free license) build 20200408173844 Og1
    660                           
    661                           ;C:/Users/Carlo/OneDrive/Documentos/Quinto Semestre/Digital2/P1S2TEMP.X/main.c: 89:     
       +                          spiInit(SPI_SLAVE_SS_EN, SPI_DATA_SAMPLE_MIDDLE, SPI_CLOCK_IDLE_LOW, SPI_IDLE_2_ACTIVE);
-   662  00D9  3028               	movlw	40
+   662  00D9  3064               	movlw	100
    663  00DA  0277               	subwf	_flt,w
    664  00DB  1803               	skipnc
    665  00DC  28DE               	goto	u171
@@ -698,7 +698,7 @@ Microchip MPLAB XC8 C Compiler v2.20 (Free license) build 20200408173844 Og1
    677                           
    678                           
    679                           ;C:/Users/Carlo/OneDrive/Documentos/Quinto Semestre/Digital2/P1S2TEMP.X/main.c: 92: }
-   680  00E1  3028               	movlw	40
+   680  00E1  3064               	movlw	100
    681  00E2  0277               	subwf	_flt,w
    682  00E3  1C03               	skipc
    683  00E4  28E6               	goto	u181
@@ -707,7 +707,7 @@ Microchip MPLAB XC8 C Compiler v2.20 (Free license) build 20200408173844 Og1
    686  00E6  28EF               	goto	l69
    687  00E7                     u180:
    688  00E7                     l1162:
-   689  00E7  302F               	movlw	47
+   689  00E7  3073               	movlw	115
    690  00E8  0277               	subwf	_flt,w
    691  00E9  1803               	skipnc
    692  00EA  28EC               	goto	u191
@@ -725,7 +725,7 @@ Microchip MPLAB XC8 C Compiler v2.20 (Free license) build 20200408173844 Og1
    704                           
    705                           
    706                           ;C:/Users/Carlo/OneDrive/Documentos/Quinto Semestre/Digital2/P1S2TEMP.X/main.c: 95: 
-   707  00EF  302F               	movlw	47
+   707  00EF  3073               	movlw	115
    708  00F0  0277               	subwf	_flt,w
    709  00F1  1C03               	skipc
    710  00F2  28F4               	goto	u201
@@ -2147,7 +2147,7 @@ DATA                 0      0       B      12        0.0%
 
 
 Microchip Technology PIC Macro Assembler V2.20 build 20200408173844 
-Symbol Table                                                                                   Tue Feb 16 00:19:41 2021
+Symbol Table                                                                                   Thu Feb 18 02:40:37 2021
 
             _SSPSTATbits 0094                       l80 01AA                       l90 0021  
                      l91 0024                       l67 00CC                       l92 0027  

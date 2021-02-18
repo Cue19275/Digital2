@@ -26,7 +26,7 @@ cstackBANK0 BANK0 1 20 20 1 1
 intentry CODE 0 4 4 C 2
 bssCOMMON COMMON 1 77 77 3 1
 config CONFIG 4 2007 2007 2 2
-$C:\Users\Carlo\AppData\Local\Temp\s2m4.o
+$C:\Users\Carlo\AppData\Local\Temp\s8s4.o
 reset_vec CODE 0 0 0 3 2
 end_init CODE 0 10 10 3 2
 config CONFIG 4 2007 2007 2 2
@@ -76,14 +76,14 @@ STRING 1B1-1FFF 2
 # All other numeric values are in decimal.
 %LINETAB
 $dist/default/production\P1S2TEMP.X.production.o
-13 cinit CODE >955:C:\Users\Carlo\AppData\Local\Temp\s2m4.s
-13 cinit CODE >958:C:\Users\Carlo\AppData\Local\Temp\s2m4.s
-13 cinit CODE >975:C:\Users\Carlo\AppData\Local\Temp\s2m4.s
-14 cinit CODE >976:C:\Users\Carlo\AppData\Local\Temp\s2m4.s
-15 cinit CODE >977:C:\Users\Carlo\AppData\Local\Temp\s2m4.s
-16 cinit CODE >983:C:\Users\Carlo\AppData\Local\Temp\s2m4.s
-16 cinit CODE >985:C:\Users\Carlo\AppData\Local\Temp\s2m4.s
-17 cinit CODE >986:C:\Users\Carlo\AppData\Local\Temp\s2m4.s
+13 cinit CODE >955:C:\Users\Carlo\AppData\Local\Temp\s8s4.s
+13 cinit CODE >958:C:\Users\Carlo\AppData\Local\Temp\s8s4.s
+13 cinit CODE >975:C:\Users\Carlo\AppData\Local\Temp\s8s4.s
+14 cinit CODE >976:C:\Users\Carlo\AppData\Local\Temp\s8s4.s
+15 cinit CODE >977:C:\Users\Carlo\AppData\Local\Temp\s8s4.s
+16 cinit CODE >983:C:\Users\Carlo\AppData\Local\Temp\s8s4.s
+16 cinit CODE >985:C:\Users\Carlo\AppData\Local\Temp\s8s4.s
+17 cinit CODE >986:C:\Users\Carlo\AppData\Local\Temp\s8s4.s
 4 intentry CODE >59:C:/Users/Carlo/OneDrive/Documentos/Quinto Semestre/Digital2/P1S2TEMP.X/main.c
 1AB text7 CODE >34:C:/Users/Carlo/OneDrive/Documentos/Quinto Semestre/Digital2/P1S2TEMP.X/SPI.c
 1AC text7 CODE >36:C:/Users/Carlo/OneDrive/Documentos/Quinto Semestre/Digital2/P1S2TEMP.X/SPI.c
@@ -308,20 +308,20 @@ spiInit@sTransmitEdge 76 0 COMMON 1 cstackCOMMON dist/default/production\P1S2TEM
 __Heeprom_data 0 0 EEDATA 3 eeprom_data -
 __Hstrings 0 0 ABS 0 strings -
 _TMR0 1 0 ABS 0 - dist/default/production\P1S2TEMP.X.production.o
-___sp 0 0 STACK 2 stack C:\Users\Carlo\AppData\Local\Temp\s2m4.o
+___sp 0 0 STACK 2 stack C:\Users\Carlo\AppData\Local\Temp\s8s4.o
 _main 174 0 CODE 0 maintext dist/default/production\P1S2TEMP.X.production.o
 btemp 7E 0 ABS 0 - dist/default/production\P1S2TEMP.X.production.o
-start 20 0 CODE 0 init C:\Users\Carlo\AppData\Local\Temp\s2m4.o
+start 20 0 CODE 0 init C:\Users\Carlo\AppData\Local\Temp\s8s4.o
 __size_of_main 0 0 ABS 0 - dist/default/production\P1S2TEMP.X.production.o
 __HbssCOMMON 0 0 ABS 0 bssCOMMON -
 __Hpowerup 0 0 CODE 0 powerup -
 __size_of_ADC_LEER 0 0 ABS 0 - dist/default/production\P1S2TEMP.X.production.o
-intlevel0 0 0 ENTRY 0 functab C:\Users\Carlo\AppData\Local\Temp\s2m4.o
-intlevel1 0 0 ENTRY 0 functab C:\Users\Carlo\AppData\Local\Temp\s2m4.o
-intlevel2 0 0 ENTRY 0 functab C:\Users\Carlo\AppData\Local\Temp\s2m4.o
-intlevel3 0 0 ENTRY 0 functab C:\Users\Carlo\AppData\Local\Temp\s2m4.o
-intlevel4 0 0 ENTRY 0 functab C:\Users\Carlo\AppData\Local\Temp\s2m4.o
-intlevel5 0 0 ENTRY 0 functab C:\Users\Carlo\AppData\Local\Temp\s2m4.o
+intlevel0 0 0 ENTRY 0 functab C:\Users\Carlo\AppData\Local\Temp\s8s4.o
+intlevel1 0 0 ENTRY 0 functab C:\Users\Carlo\AppData\Local\Temp\s8s4.o
+intlevel2 0 0 ENTRY 0 functab C:\Users\Carlo\AppData\Local\Temp\s8s4.o
+intlevel3 0 0 ENTRY 0 functab C:\Users\Carlo\AppData\Local\Temp\s8s4.o
+intlevel4 0 0 ENTRY 0 functab C:\Users\Carlo\AppData\Local\Temp\s8s4.o
+intlevel5 0 0 ENTRY 0 functab C:\Users\Carlo\AppData\Local\Temp\s8s4.o
 __LbssCOMMON 0 0 ABS 0 bssCOMMON -
 _OSCCONbits 8F 0 ABS 0 - dist/default/production\P1S2TEMP.X.production.o
 wtemp0 7E 0 ABS 0 - dist/default/production\P1S2TEMP.X.production.o
@@ -337,8 +337,8 @@ __Lmaintext 0 0 ABS 0 maintext -
 _ADC_LEER 340 0 CODE 0 text5 dist/default/production\P1S2TEMP.X.production.o
 _OPTION_REG 81 0 ABS 0 - dist/default/production\P1S2TEMP.X.production.o
 __end_of_ADC_LEER 356 0 CODE 0 text5 dist/default/production\P1S2TEMP.X.production.o
-___stackhi 0 0 ABS 0 - C:\Users\Carlo\AppData\Local\Temp\s2m4.o
-___stacklo 0 0 ABS 0 - C:\Users\Carlo\AppData\Local\Temp\s2m4.o
+___stackhi 0 0 ABS 0 - C:\Users\Carlo\AppData\Local\Temp\s8s4.o
+___stacklo 0 0 ABS 0 - C:\Users\Carlo\AppData\Local\Temp\s8s4.o
 __size_of_Setup 0 0 ABS 0 - dist/default/production\P1S2TEMP.X.production.o
 ADCinit@vel 20 0 BANK0 1 cstackBANK0 dist/default/production\P1S2TEMP.X.production.o
 spiInit@sDataSample 74 0 COMMON 1 cstackCOMMON dist/default/production\P1S2TEMP.X.production.o
@@ -351,7 +351,7 @@ _SSPCON 14 0 ABS 0 - dist/default/production\P1S2TEMP.X.production.o
 _TRISC3 43B 0 ABS 0 - dist/default/production\P1S2TEMP.X.production.o
 _TRISC5 43D 0 ABS 0 - dist/default/production\P1S2TEMP.X.production.o
 __end_of_initOsc 254 0 CODE 0 text1 dist/default/production\P1S2TEMP.X.production.o
-___int_sp 0 0 STACK 2 stack C:\Users\Carlo\AppData\Local\Temp\s2m4.o
+___int_sp 0 0 STACK 2 stack C:\Users\Carlo\AppData\Local\Temp\s8s4.o
 __Hbank0 0 0 ABS 0 bank0 -
 __Hbank1 0 0 ABS 0 bank1 -
 __Hbank2 0 0 ABS 0 bank2 -
@@ -397,7 +397,7 @@ saved_w 7E 0 ABS 0 - dist/default/production\P1S2TEMP.X.production.o
 __end_of_isr 304 0 CODE 0 text6 dist/default/production\P1S2TEMP.X.production.o
 _go_adc 79 0 COMMON 1 bssCOMMON dist/default/production\P1S2TEMP.X.production.o
 __Lintentry 8 0 CODE 0 intentry -
-reset_vec 0 0 CODE 0 reset_vec C:\Users\Carlo\AppData\Local\Temp\s2m4.o
+reset_vec 0 0 CODE 0 reset_vec C:\Users\Carlo\AppData\Local\Temp\s8s4.o
 initOsc@frec 76 0 COMMON 1 cstackCOMMON dist/default/production\P1S2TEMP.X.production.o
 _lec_ADC 78 0 COMMON 1 bssCOMMON dist/default/production\P1S2TEMP.X.production.o
 _PIE1bits 8C 0 ABS 0 - dist/default/production\P1S2TEMP.X.production.o

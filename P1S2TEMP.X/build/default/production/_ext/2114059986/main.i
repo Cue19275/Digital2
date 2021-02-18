@@ -2761,13 +2761,13 @@ void __attribute__((picinterrupt(("")))) isr(void){
         ADC_LEER();
         PORTB = lec_ADC;
         flt = lec_ADC;
-        if(flt < 40){
+        if(flt < 100){
             PORTD=1;
         }
-        if(flt >= 40 && flt <= 46){
+        if(flt >= 100 && flt <= 114){
             PORTD=2;
         }
-        if(flt > 46){
+        if(flt > 114){
             PORTD=4;
         }
 

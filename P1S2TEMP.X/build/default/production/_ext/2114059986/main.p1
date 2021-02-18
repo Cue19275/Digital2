@@ -523,7 +523,7 @@ Version 4.0 HI-TECH Software Intermediate Code
 [e = _flt _lec_ADC ]
 "89
 [; ;C:/Users/Carlo/OneDrive/Documentos/Quinto Semestre/Digital2/P1S2TEMP.X/main.c: 89:     spiInit(SPI_SLAVE_SS_EN, SPI_DATA_SAMPLE_MIDDLE, SPI_CLOCK_IDLE_LOW, SPI_IDLE_2_ACTIVE);
-[e $ ! < -> _flt `i -> 40 `i 146  ]
+[e $ ! < -> _flt `i -> 100 `i 146  ]
 {
 "90
 [; ;C:/Users/Carlo/OneDrive/Documentos/Quinto Semestre/Digital2/P1S2TEMP.X/main.c: 90: 
@@ -534,7 +534,7 @@ Version 4.0 HI-TECH Software Intermediate Code
 [e :U 146 ]
 "92
 [; ;C:/Users/Carlo/OneDrive/Documentos/Quinto Semestre/Digital2/P1S2TEMP.X/main.c: 92: }
-[e $ ! && >= -> _flt `i -> 40 `i <= -> _flt `i -> 46 `i 147  ]
+[e $ ! && >= -> _flt `i -> 100 `i <= -> _flt `i -> 114 `i 147  ]
 {
 "93
 [; ;C:/Users/Carlo/OneDrive/Documentos/Quinto Semestre/Digital2/P1S2TEMP.X/main.c: 93: 
@@ -545,7 +545,7 @@ Version 4.0 HI-TECH Software Intermediate Code
 [e :U 147 ]
 "95
 [; ;C:/Users/Carlo/OneDrive/Documentos/Quinto Semestre/Digital2/P1S2TEMP.X/main.c: 95: 
-[e $ ! > -> _flt `i -> 46 `i 148  ]
+[e $ ! > -> _flt `i -> 114 `i 148  ]
 {
 "96
 [; ;C:/Users/Carlo/OneDrive/Documentos/Quinto Semestre/Digital2/P1S2TEMP.X/main.c: 96: void ADC_LEER(void){
