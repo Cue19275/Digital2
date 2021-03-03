@@ -2760,7 +2760,9 @@ uint8_t ano = 0;
 uint8_t anoD = 0;
 uint8_t anoU = 0;
 uint8_t basura = 0;
+uint8_t DecenasH = 0;
 uint8_t toggleTX = 0;
+uint8_t dato_esp = 0;
 
 
 
@@ -2789,6 +2791,9 @@ void __attribute__((picinterrupt(("")))) ISR(void) {
            var = 0;
        }
    }
+   if (PIR1bits.RCIF == 1){
+       dato_esp = RCREG;
+   }
 }
 
 
@@ -2798,12 +2803,19 @@ void main(void) {
     initOsc(20);
     Setup();
     USARTconf();
-    escribir_tiempo();
+
     while(1){
-        PORTB = 1;
+
           recibir_tiempo();
         _delay((unsigned long)((200)*(4000000/4000.0)));
         convertirBCD();
+
+        if (dato_esp == 1){
+            PORTB = 1;
+        }
+        else {
+            PORTB = 0;
+        }
     }
 }
 
@@ -2812,6 +2824,7 @@ void main(void) {
 void Setup(void) {
 
     PORTA = 0;
+    PORTB = 0;
     TRISB = 0;
     TRISC = 0;
     ANSEL = 0;
@@ -2824,6 +2837,7 @@ void Setup(void) {
     INTCONbits.T0IE = 1;
     TMR0 = 250;
     PIE1bits.TXIE = 1;
+    PIE1bits.RCIE = 1;
 
     I2C_Master_Init(100000);
 
@@ -2836,12 +2850,12 @@ void escribir_tiempo(void){
     I2C_Master_Write(0xD0);
     I2C_Master_Write(0);
     I2C_Master_Write(0b00000000);
-    I2C_Master_Write(0b00000000);
-    I2C_Master_Write(0b00000001);
+    I2C_Master_Write(0x35);
+    I2C_Master_Write(0x01);
     I2C_Master_Write(1);
-    I2C_Master_Write(1);
-    I2C_Master_Write(2);
-    I2C_Master_Write(0x3);
+    I2C_Master_Write(0x1);
+    I2C_Master_Write(0x03);
+    I2C_Master_Write(0x21);
     I2C_Master_Stop();
 
 }
@@ -2870,17 +2884,17 @@ void recibir_tiempo(void){
 
 void convertirBCD(void){
     segU = num_ascii(seg & 0b00001111);
-    segD = num_ascii(seg & 0b11110000);
+    segD = num_ascii((seg & 0b11110000)>>4);
     minU = num_ascii(min & 0b00001111);
-    minD = num_ascii(min & 0b11110000);
-    horaU = num_ascii(hora & 0b00001111);
-    horaD = num_ascii(hora & 0b11110000);
+    minD = num_ascii((min & 0b11110000)>>4);
+    horaU = num_ascii((hora & 0b00001111));
+    horaD = num_ascii((hora & 0b00110000)>>4);
     diaU = num_ascii(dia & 0b00001111);
-    diaD = num_ascii(dia & 0b11110000);
+    diaD = num_ascii((dia & 0b11110000)>>4);
     mesU = num_ascii(mes & 0b00001111);
-    mesD = num_ascii(mes & 0b11110000);
+    mesD = num_ascii((mes & 0b11110000)>>4);
     anoU = num_ascii(ano & 0b00001111);
-    anoD = num_ascii(ano & 0b11110000);
+    anoD = num_ascii((ano & 0b11110000)>>4);
 }
 
 

@@ -17,19 +17,17 @@
 [v _I2C_Master_Write I2C_Master_Write `(v  1 e 1 0 ]
 "74
 [v _I2C_Master_Read I2C_Master_Read `(us  1 e 2 0 ]
-"82 C:/Users/Carlo/OneDrive/Documentos/Quinto Semestre/Digital2/Proyecto2/I2CPJ2.X/main.c
+"84 C:/Users/Carlo/OneDrive/Documentos/Quinto Semestre/Digital2/Proyecto2/I2CPJ2.X/main.c
 [v _ISR ISR `II(v  1 e 1 0 ]
-"102
+"107
 [v _main main `(v  1 e 1 0 ]
-"117
+"129
 [v _Setup Setup `(v  1 e 1 0 ]
-"139
-[v _escribir_tiempo escribir_tiempo `(v  1 e 1 0 ]
-"156
+"170
 [v _recibir_tiempo recibir_tiempo `(v  1 e 1 0 ]
-"176
+"190
 [v _convertirBCD convertirBCD `(v  1 e 1 0 ]
-"193
+"207
 [v _envio envio `(v  1 e 1 0 ]
 "7 C:/Users/Carlo/OneDrive/Documentos/Quinto Semestre/Digital2/Proyecto2/I2CPJ2.X/Osc.c
 [v _initOsc initOsc `(v  1 e 1 0 ]
@@ -85,8 +83,10 @@
 [v _anoU anoU `uc  1 e 1 0 ]
 "67
 [v _basura basura `uc  1 e 1 0 ]
-"68
+"69
 [v _toggleTX toggleTX `uc  1 e 1 0 ]
+"70
+[v _dato_esp dato_esp `uc  1 e 1 0 ]
 "59 C:\Program Files\Microchip\xc8\v2.20\pic\include\proc\pic16f887.h
 [v _TMR0 TMR0 `VEuc  1 e 1 @1 ]
 "166
@@ -125,7 +125,7 @@
 [v _SSPBUF SSPBUF `VEuc  1 e 1 @19 ]
 "850
 [v _SSPCON SSPCON `VEuc  1 e 1 @20 ]
-[s S406 . 1 `uc 1 RX9D 1 0 :1:0 
+[s S405 . 1 `uc 1 RX9D 1 0 :1:0 
 `uc 1 OERR 1 0 :1:1 
 `uc 1 FERR 1 0 :1:2 
 `uc 1 ADDEN 1 0 :1:3 
@@ -135,27 +135,29 @@
 `uc 1 SPEN 1 0 :1:7 
 ]
 "1068
-[s S415 . 1 `uc 1 RCD8 1 0 :1:0 
+[s S414 . 1 `uc 1 RCD8 1 0 :1:0 
 `uc 1 . 1 0 :5:1 
 `uc 1 RC9 1 0 :1:6 
 ]
-[s S419 . 1 `uc 1 . 1 0 :6:0 
+[s S418 . 1 `uc 1 . 1 0 :6:0 
 `uc 1 nRC8 1 0 :1:6 
 ]
-[s S422 . 1 `uc 1 . 1 0 :6:0 
+[s S421 . 1 `uc 1 . 1 0 :6:0 
 `uc 1 RC8_9 1 0 :1:6 
 ]
-[u S425 . 1 `S406 1 . 1 0 `S415 1 . 1 0 `S419 1 . 1 0 `S422 1 . 1 0 ]
-[v _RCSTAbits RCSTAbits `VES425  1 e 1 @24 ]
+[u S424 . 1 `S405 1 . 1 0 `S414 1 . 1 0 `S418 1 . 1 0 `S421 1 . 1 0 ]
+[v _RCSTAbits RCSTAbits `VES424  1 e 1 @24 ]
 "1133
 [v _TXREG TXREG `VEuc  1 e 1 @25 ]
+"1140
+[v _RCREG RCREG `VEuc  1 e 1 @26 ]
 "1346
 [v _OPTION_REG OPTION_REG `VEuc  1 e 1 @129 ]
 "1478
 [v _TRISB TRISB `VEuc  1 e 1 @134 ]
 "1540
 [v _TRISC TRISC `VEuc  1 e 1 @135 ]
-[s S230 . 1 `uc 1 TRISC0 1 0 :1:0 
+[s S229 . 1 `uc 1 TRISC0 1 0 :1:0 
 `uc 1 TRISC1 1 0 :1:1 
 `uc 1 TRISC2 1 0 :1:2 
 `uc 1 TRISC3 1 0 :1:3 
@@ -165,8 +167,8 @@
 `uc 1 TRISC7 1 0 :1:7 
 ]
 "1557
-[u S239 . 1 `S230 1 . 1 0 ]
-[v _TRISCbits TRISCbits `VES239  1 e 1 @135 ]
+[u S238 . 1 `S229 1 . 1 0 ]
+[v _TRISCbits TRISCbits `VES238  1 e 1 @135 ]
 [s S41 . 1 `uc 1 TMR1IE 1 0 :1:0 
 `uc 1 TMR2IE 1 0 :1:1 
 `uc 1 CCP1IE 1 0 :1:2 
@@ -178,23 +180,23 @@
 "1718
 [u S49 . 1 `S41 1 . 1 0 ]
 [v _PIE1bits PIE1bits `VES49  1 e 1 @140 ]
-[s S309 . 1 `uc 1 SCS 1 0 :1:0 
+[s S308 . 1 `uc 1 SCS 1 0 :1:0 
 `uc 1 LTS 1 0 :1:1 
 `uc 1 HTS 1 0 :1:2 
 `uc 1 OSTS 1 0 :1:3 
 `uc 1 IRCF 1 0 :3:4 
 ]
 "1882
-[s S315 . 1 `uc 1 . 1 0 :4:0 
+[s S314 . 1 `uc 1 . 1 0 :4:0 
 `uc 1 IRCF0 1 0 :1:4 
 `uc 1 IRCF1 1 0 :1:5 
 `uc 1 IRCF2 1 0 :1:6 
 ]
-[u S320 . 1 `S309 1 . 1 0 `S315 1 . 1 0 ]
-[v _OSCCONbits OSCCONbits `VES320  1 e 1 @143 ]
+[u S319 . 1 `S308 1 . 1 0 `S314 1 . 1 0 ]
+[v _OSCCONbits OSCCONbits `VES319  1 e 1 @143 ]
 "1979
 [v _SSPCON2 SSPCON2 `VEuc  1 e 1 @145 ]
-[s S251 . 1 `uc 1 SEN 1 0 :1:0 
+[s S250 . 1 `uc 1 SEN 1 0 :1:0 
 `uc 1 RSEN 1 0 :1:1 
 `uc 1 PEN 1 0 :1:2 
 `uc 1 RCEN 1 0 :1:3 
@@ -204,13 +206,13 @@
 `uc 1 GCEN 1 0 :1:7 
 ]
 "1996
-[u S260 . 1 `S251 1 . 1 0 ]
-[v _SSPCON2bits SSPCON2bits `VES260  1 e 1 @145 ]
+[u S259 . 1 `S250 1 . 1 0 ]
+[v _SSPCON2bits SSPCON2bits `VES259  1 e 1 @145 ]
 "2048
 [v _SSPADD SSPADD `VEuc  1 e 1 @147 ]
 "2177
 [v _SSPSTAT SSPSTAT `VEuc  1 e 1 @148 ]
-[s S346 . 1 `uc 1 TX9D 1 0 :1:0 
+[s S345 . 1 `uc 1 TX9D 1 0 :1:0 
 `uc 1 TRMT 1 0 :1:1 
 `uc 1 BRGH 1 0 :1:2 
 `uc 1 SENDB 1 0 :1:3 
@@ -220,20 +222,20 @@
 `uc 1 CSRC 1 0 :1:7 
 ]
 "2582
-[s S355 . 1 `uc 1 TXD8 1 0 :1:0 
+[s S354 . 1 `uc 1 TXD8 1 0 :1:0 
 `uc 1 . 1 0 :5:1 
 `uc 1 nTX8 1 0 :1:6 
 ]
-[s S359 . 1 `uc 1 . 1 0 :6:0 
+[s S358 . 1 `uc 1 . 1 0 :6:0 
 `uc 1 TX8_9 1 0 :1:6 
 ]
-[u S362 . 1 `S346 1 . 1 0 `S355 1 . 1 0 `S359 1 . 1 0 ]
-[v _TXSTAbits TXSTAbits `VES362  1 e 1 @152 ]
+[u S361 . 1 `S345 1 . 1 0 `S354 1 . 1 0 `S358 1 . 1 0 ]
+[v _TXSTAbits TXSTAbits `VES361  1 e 1 @152 ]
 "2642
 [v _SPBRG SPBRG `VEuc  1 e 1 @153 ]
 "2704
 [v _SPBRGH SPBRGH `VEuc  1 e 1 @154 ]
-[s S383 . 1 `uc 1 ABDEN 1 0 :1:0 
+[s S382 . 1 `uc 1 ABDEN 1 0 :1:0 
 `uc 1 WUE 1 0 :1:1 
 `uc 1 . 1 0 :1:2 
 `uc 1 BRG16 1 0 :1:3 
@@ -243,8 +245,8 @@
 `uc 1 ABDOVF 1 0 :1:7 
 ]
 "3352
-[u S392 . 1 `S383 1 . 1 0 ]
-[v _BAUDCTLbits BAUDCTLbits `VES392  1 e 1 @391 ]
+[u S391 . 1 `S382 1 . 1 0 ]
+[v _BAUDCTLbits BAUDCTLbits `VES391  1 e 1 @391 ]
 "3387
 [v _ANSEL ANSEL `VEuc  1 e 1 @392 ]
 "3449
@@ -261,37 +263,15 @@
 [v _TRISC3 TRISC3 `VEb  1 e 0 @1083 ]
 "4460
 [v _TRISC4 TRISC4 `VEb  1 e 0 @1084 ]
-"102 C:/Users/Carlo/OneDrive/Documentos/Quinto Semestre/Digital2/Proyecto2/I2CPJ2.X/main.c
+"107 C:/Users/Carlo/OneDrive/Documentos/Quinto Semestre/Digital2/Proyecto2/I2CPJ2.X/main.c
 [v _main main `(v  1 e 1 0 ]
 {
-"113
+"125
 } 0
-"156
+"170
 [v _recibir_tiempo recibir_tiempo `(v  1 e 1 0 ]
 {
-"172
-} 0
-"74 C:/Users/Carlo/OneDrive/Documentos/Quinto Semestre/Digital2/Proyecto2/I2CPJ2.X/I2C.c
-[v _I2C_Master_Read I2C_Master_Read `(us  1 e 2 0 ]
-{
-"76
-[v I2C_Master_Read@temp temp `us  1 a 2 4 ]
-"74
-[v I2C_Master_Read@a a `us  1 p 2 0 ]
-"89
-} 0
-"7 C:/Users/Carlo/OneDrive/Documentos/Quinto Semestre/Digital2/Proyecto2/I2CPJ2.X/Osc.c
-[v _initOsc initOsc `(v  1 e 1 0 ]
-{
-[v initOsc@frec frec `uc  1 a 1 wreg ]
-[v initOsc@frec frec `uc  1 a 1 wreg ]
-[v initOsc@frec frec `uc  1 a 1 2 ]
-"39
-} 0
-"139 C:/Users/Carlo/OneDrive/Documentos/Quinto Semestre/Digital2/Proyecto2/I2CPJ2.X/main.c
-[v _escribir_tiempo escribir_tiempo `(v  1 e 1 0 ]
-{
-"152
+"186
 } 0
 "65 C:/Users/Carlo/OneDrive/Documentos/Quinto Semestre/Digital2/Proyecto2/I2CPJ2.X/I2C.c
 [v _I2C_Master_Write I2C_Master_Write `(v  1 e 1 0 ]
@@ -309,15 +289,32 @@
 {
 "43
 } 0
+"74
+[v _I2C_Master_Read I2C_Master_Read `(us  1 e 2 0 ]
+{
+"76
+[v I2C_Master_Read@temp temp `us  1 a 2 4 ]
+"74
+[v I2C_Master_Read@a a `us  1 p 2 0 ]
+"89
+} 0
 "32
 [v _I2C_Master_Wait I2C_Master_Wait `(v  1 e 1 0 ]
 {
 "35
 } 0
-"176 C:/Users/Carlo/OneDrive/Documentos/Quinto Semestre/Digital2/Proyecto2/I2CPJ2.X/main.c
+"7 C:/Users/Carlo/OneDrive/Documentos/Quinto Semestre/Digital2/Proyecto2/I2CPJ2.X/Osc.c
+[v _initOsc initOsc `(v  1 e 1 0 ]
+{
+[v initOsc@frec frec `uc  1 a 1 wreg ]
+[v initOsc@frec frec `uc  1 a 1 wreg ]
+[v initOsc@frec frec `uc  1 a 1 2 ]
+"39
+} 0
+"190 C:/Users/Carlo/OneDrive/Documentos/Quinto Semestre/Digital2/Proyecto2/I2CPJ2.X/main.c
 [v _convertirBCD convertirBCD `(v  1 e 1 0 ]
 {
-"189
+"203
 } 0
 "3 C:/Users/Carlo/OneDrive/Documentos/Quinto Semestre/Digital2/Proyecto2/I2CPJ2.X/ASCII_NUM.c
 [v _num_ascii num_ascii `(uc  1 e 1 0 ]
@@ -332,10 +329,10 @@
 {
 "19
 } 0
-"117 C:/Users/Carlo/OneDrive/Documentos/Quinto Semestre/Digital2/Proyecto2/I2CPJ2.X/main.c
+"129 C:/Users/Carlo/OneDrive/Documentos/Quinto Semestre/Digital2/Proyecto2/I2CPJ2.X/main.c
 [v _Setup Setup `(v  1 e 1 0 ]
 {
-"135
+"149
 } 0
 "16 C:/Users/Carlo/OneDrive/Documentos/Quinto Semestre/Digital2/Proyecto2/I2CPJ2.X/I2C.c
 [v _I2C_Master_Init I2C_Master_Init `(v  1 e 1 0 ]
@@ -355,13 +352,13 @@
 [v ___lldiv@dividend dividend `ul  1 p 4 4 ]
 "30
 } 0
-"82 C:/Users/Carlo/OneDrive/Documentos/Quinto Semestre/Digital2/Proyecto2/I2CPJ2.X/main.c
+"84 C:/Users/Carlo/OneDrive/Documentos/Quinto Semestre/Digital2/Proyecto2/I2CPJ2.X/main.c
 [v _ISR ISR `II(v  1 e 1 0 ]
 {
-"97
+"102
 } 0
-"193
+"207
 [v _envio envio `(v  1 e 1 0 ]
 {
-"253
+"267
 } 0
