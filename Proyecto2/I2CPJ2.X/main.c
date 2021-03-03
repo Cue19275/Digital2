@@ -118,12 +118,28 @@ void main(void) {
         convertirBCD();
         
         if (dato_esp == 1){
-            PORTB = 1;
+            PORTBbits.RB7 = 1;
             PIE1bits.TXIE = 1;
         }
         if (dato_esp == 0){
-            PORTB = 0;
+            PORTBbits.RB7 = 0;
             PIE1bits.TXIE = 0;
+        }
+        if(dato_esp == 2){
+           PORTBbits.RB0 = 0;
+           PORTBbits.RB1 = 0;
+        }
+        if(dato_esp == 3){
+           PORTBbits.RB0 = 1;
+           PORTBbits.RB1 = 0; 
+        }
+        if(dato_esp == 4){
+           PORTBbits.RB0 = 0;
+           PORTBbits.RB1 = 1;
+        }
+        if(dato_esp == 5){
+           PORTBbits.RB0 = 1;
+           PORTBbits.RB1 = 1;
         }
     }
 }

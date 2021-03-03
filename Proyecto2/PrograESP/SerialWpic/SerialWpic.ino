@@ -1,5 +1,6 @@
   int cont = 0;
   int cont2 = 0;
+  int sw = 0;
   String lectura;
   char tiempo[17];
   char tiempo2[17];
@@ -10,11 +11,12 @@
   char sep [] = " ";
   char *ptr;
   char *ptr2;
-  int bandada = 0;
+  int bandLED = 0;
   #include "config.h"
   
   AdafruitIO_Feed *serialm = io.feed("serialm");
   AdafruitIO_Feed *serialh = io.feed("serialh");
+  AdafruitIO_Feed *sld = io.feed("sld");
   
 void setup(){
   Serial.begin(9600); //Inicio la comunicación serial con la compu, este seria el Serial 0 de mi ESP
@@ -22,12 +24,13 @@ void setup(){
   Serial2.begin(9600, SERIAL_8N1, 16, 17); //Estoy activando el pin 16 y 17 para usar su función serial
                                                //Los argumentos son baudrate, protocolo y pines.
  io.connect();
-
+  sld->onMessage(handleMessage);
   // wait for a connection
   while(io.status() < AIO_CONNECTED) {
     Serial.print(".");
     delay(500);
 }
+sld->get();
 }
 
 void loop(){
@@ -52,6 +55,7 @@ void loop(){
  fecha.concat(tiempo[7]);*/
 
     Serial2.write(0);
+    
    
 
   }
@@ -64,6 +68,8 @@ void loop(){
   hora = ptr2;
   Serial.println(fecha2);
   Serial.println(hora);
+  Serial.println(bandLED);
+  Serial2.write(bandLED);
 
 if (hora != NULL){
     serialm->save(hora);
@@ -74,4 +80,23 @@ if (fecha2 != NULL){
     delay(4000);
     
  
+}
+void handleMessage(AdafruitIO_Data *data) {
+
+  sw = data->toInt();
+  switch (sw){
+    case 0:
+    bandLED = 2;
+    break;
+    case 1:
+    bandLED = 3;
+    break;
+    case 2:
+    bandLED = 4;
+    break;
+    case 3:
+    bandLED = 5;
+    break;
+  }
+
 }
