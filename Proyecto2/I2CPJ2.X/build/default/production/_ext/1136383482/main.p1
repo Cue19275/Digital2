@@ -24,7 +24,7 @@ Version 4.0 HI-TECH Software Intermediate Code
 [; ;C:\Program Files\Microchip\xc8\v2.20\pic\include\proc\pic16f887.h: 1718: extern volatile PIE1bits_t PIE1bits __attribute__((address(0x08C)));
 [v _PIE1bits `VS62 ~T0 @X0 0 e@140 ]
 "78 C:/Users/Carlo/OneDrive/Documentos/Quinto Semestre/Digital2/Proyecto2/I2CPJ2.X/main.c
-[; ;C:/Users/Carlo/OneDrive/Documentos/Quinto Semestre/Digital2/Proyecto2/I2CPJ2.X/main.c: 78:         else {
+[; ;C:/Users/Carlo/OneDrive/Documentos/Quinto Semestre/Digital2/Proyecto2/I2CPJ2.X/main.c: 78:             PORTB = 1;
 [v _envio `(v ~T0 @X0 0 ef ]
 "465 C:\Program Files\Microchip\xc8\v2.20\pic\include\proc\pic16f887.h
 [; ;C:\Program Files\Microchip\xc8\v2.20\pic\include\proc\pic16f887.h: 465:     struct {
@@ -52,20 +52,20 @@ Version 4.0 HI-TECH Software Intermediate Code
 [; ;C:/Users/Carlo/OneDrive/Documentos/Quinto Semestre/Digital2/Proyecto2/I2CPJ2.X/Osc.h: 23: void initOsc(uint8_t frec);
 [v _initOsc `(v ~T0 @X0 0 ef1`uc ]
 "74 C:/Users/Carlo/OneDrive/Documentos/Quinto Semestre/Digital2/Proyecto2/I2CPJ2.X/main.c
-[; ;C:/Users/Carlo/OneDrive/Documentos/Quinto Semestre/Digital2/Proyecto2/I2CPJ2.X/main.c: 74: 
+[; ;C:/Users/Carlo/OneDrive/Documentos/Quinto Semestre/Digital2/Proyecto2/I2CPJ2.X/main.c: 74:         _delay((unsigned long)((200)*(4000000/4000.0)));
 [v _Setup `(v ~T0 @X0 0 ef ]
 "6 C:/Users/Carlo/OneDrive/Documentos/Quinto Semestre/Digital2/Proyecto2/I2CPJ2.X/usart.h
 [; ;C:/Users/Carlo/OneDrive/Documentos/Quinto Semestre/Digital2/Proyecto2/I2CPJ2.X/usart.h: 6: void USARTconf(void);
 [v _USARTconf `(v ~T0 @X0 0 ef ]
 "76 C:/Users/Carlo/OneDrive/Documentos/Quinto Semestre/Digital2/Proyecto2/I2CPJ2.X/main.c
-[; ;C:/Users/Carlo/OneDrive/Documentos/Quinto Semestre/Digital2/Proyecto2/I2CPJ2.X/main.c: 76:             PORTB = 1;
+[; ;C:/Users/Carlo/OneDrive/Documentos/Quinto Semestre/Digital2/Proyecto2/I2CPJ2.X/main.c: 76: 
 [v _recibir_tiempo `(v ~T0 @X0 0 ef ]
 [v F1256 `(v ~T0 @X0 1 tf1`ul ]
 "92 C:\Program Files\Microchip\xc8\v2.20\pic\include\pic.h
 [v __delay `JF1256 ~T0 @X0 0 e ]
 [p i __delay ]
 "77 C:/Users/Carlo/OneDrive/Documentos/Quinto Semestre/Digital2/Proyecto2/I2CPJ2.X/main.c
-[; ;C:/Users/Carlo/OneDrive/Documentos/Quinto Semestre/Digital2/Proyecto2/I2CPJ2.X/main.c: 77:         }
+[; ;C:/Users/Carlo/OneDrive/Documentos/Quinto Semestre/Digital2/Proyecto2/I2CPJ2.X/main.c: 77:         if (dato_esp == 1){
 [v _convertirBCD `(v ~T0 @X0 0 ef ]
 "228 C:\Program Files\Microchip\xc8\v2.20\pic\include\proc\pic16f887.h
 [; ;C:\Program Files\Microchip\xc8\v2.20\pic\include\proc\pic16f887.h: 228: extern volatile unsigned char PORTB __attribute__((address(0x006)));
@@ -382,85 +382,85 @@ Version 4.0 HI-TECH Software Intermediate Code
 [; ;C:/Users/Carlo/OneDrive/Documentos/Quinto Semestre/Digital2/Proyecto2/I2CPJ2.X/main.c: 41: void __attribute__((picinterrupt(("")))) ISR(void) {
 [p x WRT = OFF ]
 "48
-[; ;C:/Users/Carlo/OneDrive/Documentos/Quinto Semestre/Digital2/Proyecto2/I2CPJ2.X/main.c: 48:        INTCONbits.TMR0IF = 0;
+[; ;C:/Users/Carlo/OneDrive/Documentos/Quinto Semestre/Digital2/Proyecto2/I2CPJ2.X/main.c: 48:     }
 [v _var `uc ~T0 @X0 1 e ]
 [i _var
 -> -> 0 `i `uc
 ]
 "49
-[; ;C:/Users/Carlo/OneDrive/Documentos/Quinto Semestre/Digital2/Proyecto2/I2CPJ2.X/main.c: 49:        TMR0 = 100;
+[; ;C:/Users/Carlo/OneDrive/Documentos/Quinto Semestre/Digital2/Proyecto2/I2CPJ2.X/main.c: 49:    if (INTCONbits.TMR0IF == 1){
 [v _seg `uc ~T0 @X0 1 e ]
 [i _seg
 -> -> 0 `i `uc
 ]
 "50
-[; ;C:/Users/Carlo/OneDrive/Documentos/Quinto Semestre/Digital2/Proyecto2/I2CPJ2.X/main.c: 50:        var++;
+[; ;C:/Users/Carlo/OneDrive/Documentos/Quinto Semestre/Digital2/Proyecto2/I2CPJ2.X/main.c: 50:        INTCONbits.TMR0IF = 0;
 [v _segD `uc ~T0 @X0 1 e ]
 [i _segD
 -> -> 0 `i `uc
 ]
 "51
-[; ;C:/Users/Carlo/OneDrive/Documentos/Quinto Semestre/Digital2/Proyecto2/I2CPJ2.X/main.c: 51:        if(var == 2){
+[; ;C:/Users/Carlo/OneDrive/Documentos/Quinto Semestre/Digital2/Proyecto2/I2CPJ2.X/main.c: 51:        TMR0 = 100;
 [v _segU `uc ~T0 @X0 1 e ]
 [i _segU
 -> -> 0 `i `uc
 ]
 "52
-[; ;C:/Users/Carlo/OneDrive/Documentos/Quinto Semestre/Digital2/Proyecto2/I2CPJ2.X/main.c: 52:            PIE1bits.TXIE=1;
+[; ;C:/Users/Carlo/OneDrive/Documentos/Quinto Semestre/Digital2/Proyecto2/I2CPJ2.X/main.c: 52:        var++;
 [v _min `uc ~T0 @X0 1 e ]
 [i _min
 -> -> 0 `i `uc
 ]
 "53
-[; ;C:/Users/Carlo/OneDrive/Documentos/Quinto Semestre/Digital2/Proyecto2/I2CPJ2.X/main.c: 53:            var = 0;
+[; ;C:/Users/Carlo/OneDrive/Documentos/Quinto Semestre/Digital2/Proyecto2/I2CPJ2.X/main.c: 53:        if(var == 2){
 [v _minD `uc ~T0 @X0 1 e ]
 [i _minD
 -> -> 0 `i `uc
 ]
 "54
-[; ;C:/Users/Carlo/OneDrive/Documentos/Quinto Semestre/Digital2/Proyecto2/I2CPJ2.X/main.c: 54:        }
+[; ;C:/Users/Carlo/OneDrive/Documentos/Quinto Semestre/Digital2/Proyecto2/I2CPJ2.X/main.c: 54:            PIE1bits.TXIE=1;
 [v _minU `uc ~T0 @X0 1 e ]
 [i _minU
 -> -> 0 `i `uc
 ]
 "55
-[; ;C:/Users/Carlo/OneDrive/Documentos/Quinto Semestre/Digital2/Proyecto2/I2CPJ2.X/main.c: 55:    }
+[; ;C:/Users/Carlo/OneDrive/Documentos/Quinto Semestre/Digital2/Proyecto2/I2CPJ2.X/main.c: 55:            var = 0;
 [v _hora `uc ~T0 @X0 1 e ]
 [i _hora
 -> -> 0 `i `uc
 ]
 "56
-[; ;C:/Users/Carlo/OneDrive/Documentos/Quinto Semestre/Digital2/Proyecto2/I2CPJ2.X/main.c: 56:    if (PIR1bits.RCIF == 1){
+[; ;C:/Users/Carlo/OneDrive/Documentos/Quinto Semestre/Digital2/Proyecto2/I2CPJ2.X/main.c: 56:        }
 [v _horaD `uc ~T0 @X0 1 e ]
 [i _horaD
 -> -> 0 `i `uc
 ]
 "57
-[; ;C:/Users/Carlo/OneDrive/Documentos/Quinto Semestre/Digital2/Proyecto2/I2CPJ2.X/main.c: 57:        dato_esp = RCREG;
+[; ;C:/Users/Carlo/OneDrive/Documentos/Quinto Semestre/Digital2/Proyecto2/I2CPJ2.X/main.c: 57:    }
 [v _horaU `uc ~T0 @X0 1 e ]
 [i _horaU
 -> -> 0 `i `uc
 ]
 "58
-[; ;C:/Users/Carlo/OneDrive/Documentos/Quinto Semestre/Digital2/Proyecto2/I2CPJ2.X/main.c: 58:    }
+[; ;C:/Users/Carlo/OneDrive/Documentos/Quinto Semestre/Digital2/Proyecto2/I2CPJ2.X/main.c: 58:    if (PIR1bits.RCIF == 1){
 [v _dia `uc ~T0 @X0 1 e ]
 [i _dia
 -> -> 0 `i `uc
 ]
 "59
-[; ;C:/Users/Carlo/OneDrive/Documentos/Quinto Semestre/Digital2/Proyecto2/I2CPJ2.X/main.c: 59: }
+[; ;C:/Users/Carlo/OneDrive/Documentos/Quinto Semestre/Digital2/Proyecto2/I2CPJ2.X/main.c: 59:        dato_esp = RCREG;
 [v _diaD `uc ~T0 @X0 1 e ]
 [i _diaD
 -> -> 0 `i `uc
 ]
 "60
-[; ;C:/Users/Carlo/OneDrive/Documentos/Quinto Semestre/Digital2/Proyecto2/I2CPJ2.X/main.c: 60: 
+[; ;C:/Users/Carlo/OneDrive/Documentos/Quinto Semestre/Digital2/Proyecto2/I2CPJ2.X/main.c: 60:    }
 [v _diaU `uc ~T0 @X0 1 e ]
 [i _diaU
 -> -> 0 `i `uc
 ]
 "61
-[; ;C:/Users/Carlo/OneDrive/Documentos/Quinto Semestre/Digital2/Proyecto2/I2CPJ2.X/main.c: 61: 
+[; ;C:/Users/Carlo/OneDrive/Documentos/Quinto Semestre/Digital2/Proyecto2/I2CPJ2.X/main.c: 61: }
 [v _mes `uc ~T0 @X0 1 e ]
 [i _mes
 -> -> 0 `i `uc
@@ -478,37 +478,37 @@ Version 4.0 HI-TECH Software Intermediate Code
 -> -> 0 `i `uc
 ]
 "64
-[; ;C:/Users/Carlo/OneDrive/Documentos/Quinto Semestre/Digital2/Proyecto2/I2CPJ2.X/main.c: 64: void main(void) {
+[; ;C:/Users/Carlo/OneDrive/Documentos/Quinto Semestre/Digital2/Proyecto2/I2CPJ2.X/main.c: 64: 
 [v _ano `uc ~T0 @X0 1 e ]
 [i _ano
 -> -> 0 `i `uc
 ]
 "65
-[; ;C:/Users/Carlo/OneDrive/Documentos/Quinto Semestre/Digital2/Proyecto2/I2CPJ2.X/main.c: 65:     initOsc(20);
+[; ;C:/Users/Carlo/OneDrive/Documentos/Quinto Semestre/Digital2/Proyecto2/I2CPJ2.X/main.c: 65: 
 [v _anoD `uc ~T0 @X0 1 e ]
 [i _anoD
 -> -> 0 `i `uc
 ]
 "66
-[; ;C:/Users/Carlo/OneDrive/Documentos/Quinto Semestre/Digital2/Proyecto2/I2CPJ2.X/main.c: 66:     Setup();
+[; ;C:/Users/Carlo/OneDrive/Documentos/Quinto Semestre/Digital2/Proyecto2/I2CPJ2.X/main.c: 66: void main(void) {
 [v _anoU `uc ~T0 @X0 1 e ]
 [i _anoU
 -> -> 0 `i `uc
 ]
 "67
-[; ;C:/Users/Carlo/OneDrive/Documentos/Quinto Semestre/Digital2/Proyecto2/I2CPJ2.X/main.c: 67:     USARTconf();
+[; ;C:/Users/Carlo/OneDrive/Documentos/Quinto Semestre/Digital2/Proyecto2/I2CPJ2.X/main.c: 67:     initOsc(20);
 [v _basura `uc ~T0 @X0 1 e ]
 [i _basura
 -> -> 0 `i `uc
 ]
 "68
-[; ;C:/Users/Carlo/OneDrive/Documentos/Quinto Semestre/Digital2/Proyecto2/I2CPJ2.X/main.c: 68: 
+[; ;C:/Users/Carlo/OneDrive/Documentos/Quinto Semestre/Digital2/Proyecto2/I2CPJ2.X/main.c: 68:     Setup();
 [v _DecenasH `uc ~T0 @X0 1 e ]
 [i _DecenasH
 -> -> 0 `i `uc
 ]
 "69
-[; ;C:/Users/Carlo/OneDrive/Documentos/Quinto Semestre/Digital2/Proyecto2/I2CPJ2.X/main.c: 69:     while(1){
+[; ;C:/Users/Carlo/OneDrive/Documentos/Quinto Semestre/Digital2/Proyecto2/I2CPJ2.X/main.c: 69:     USARTconf();
 [v _toggleTX `uc ~T0 @X0 1 e ]
 [i _toggleTX
 -> -> 0 `i `uc
@@ -521,488 +521,502 @@ Version 4.0 HI-TECH Software Intermediate Code
 ]
 [v $root$_ISR `(v ~T0 @X0 0 e ]
 "84
-[; ;C:/Users/Carlo/OneDrive/Documentos/Quinto Semestre/Digital2/Proyecto2/I2CPJ2.X/main.c: 84: 
+[; ;C:/Users/Carlo/OneDrive/Documentos/Quinto Semestre/Digital2/Proyecto2/I2CPJ2.X/main.c: 84:         }
 [v _ISR `(v ~T1 @X0 1 ef ]
 {
 [e :U _ISR ]
 [f ]
 "85
-[; ;C:/Users/Carlo/OneDrive/Documentos/Quinto Semestre/Digital2/Proyecto2/I2CPJ2.X/main.c: 85: 
-[e $ ! == -> . . _PIR1bits 0 4 `i -> 1 `i 139  ]
+[; ;C:/Users/Carlo/OneDrive/Documentos/Quinto Semestre/Digital2/Proyecto2/I2CPJ2.X/main.c: 85:     }
+[e $ ! == -> _dato_esp `i -> 1 `i 139  ]
 {
 "86
-[; ;C:/Users/Carlo/OneDrive/Documentos/Quinto Semestre/Digital2/Proyecto2/I2CPJ2.X/main.c: 86: void Setup(void) {
-[e = . . _PIE1bits 0 4 -> -> 0 `i `uc ]
+[; ;C:/Users/Carlo/OneDrive/Documentos/Quinto Semestre/Digital2/Proyecto2/I2CPJ2.X/main.c: 86: }
+[e $ ! == -> . . _PIR1bits 0 4 `i -> 1 `i 140  ]
+{
 "87
 [; ;C:/Users/Carlo/OneDrive/Documentos/Quinto Semestre/Digital2/Proyecto2/I2CPJ2.X/main.c: 87: 
-[e ++ _toggleTX -> -> 1 `i `uc ]
+[e = . . _PIE1bits 0 4 -> -> 0 `i `uc ]
 "88
-[; ;C:/Users/Carlo/OneDrive/Documentos/Quinto Semestre/Digital2/Proyecto2/I2CPJ2.X/main.c: 88:     PORTA = 0;
-[e ( _envio ..  ]
+[; ;C:/Users/Carlo/OneDrive/Documentos/Quinto Semestre/Digital2/Proyecto2/I2CPJ2.X/main.c: 88: 
+[e ++ _toggleTX -> -> 1 `i `uc ]
 "89
-[; ;C:/Users/Carlo/OneDrive/Documentos/Quinto Semestre/Digital2/Proyecto2/I2CPJ2.X/main.c: 89:     PORTB = 0;
-}
-[e :U 139 ]
+[; ;C:/Users/Carlo/OneDrive/Documentos/Quinto Semestre/Digital2/Proyecto2/I2CPJ2.X/main.c: 89: 
+[e ( _envio ..  ]
 "90
-[; ;C:/Users/Carlo/OneDrive/Documentos/Quinto Semestre/Digital2/Proyecto2/I2CPJ2.X/main.c: 90:     TRISB = 0;
-[e $ ! == -> . . _INTCONbits 1 1 `i -> 1 `i 140  ]
-{
-"91
-[; ;C:/Users/Carlo/OneDrive/Documentos/Quinto Semestre/Digital2/Proyecto2/I2CPJ2.X/main.c: 91:     TRISC = 0;
-[e = . . _INTCONbits 1 1 -> -> 0 `i `uc ]
-"92
-[; ;C:/Users/Carlo/OneDrive/Documentos/Quinto Semestre/Digital2/Proyecto2/I2CPJ2.X/main.c: 92:     ANSEL = 0;
-[e = _TMR0 -> -> 100 `i `uc ]
-"93
-[; ;C:/Users/Carlo/OneDrive/Documentos/Quinto Semestre/Digital2/Proyecto2/I2CPJ2.X/main.c: 93:     ANSELH = 0;
-[e ++ _var -> -> 1 `i `uc ]
-"94
-[; ;C:/Users/Carlo/OneDrive/Documentos/Quinto Semestre/Digital2/Proyecto2/I2CPJ2.X/main.c: 94: 
-[e $ ! == -> _var `i -> 2 `i 141  ]
-{
-"95
-[; ;C:/Users/Carlo/OneDrive/Documentos/Quinto Semestre/Digital2/Proyecto2/I2CPJ2.X/main.c: 95:     INTCONbits.TMR0IF = 0;
-[e = . . _PIE1bits 0 4 -> -> 1 `i `uc ]
-"96
-[; ;C:/Users/Carlo/OneDrive/Documentos/Quinto Semestre/Digital2/Proyecto2/I2CPJ2.X/main.c: 96:     OPTION_REG = 0b11010111;
-[e = _var -> -> 0 `i `uc ]
-"97
-[; ;C:/Users/Carlo/OneDrive/Documentos/Quinto Semestre/Digital2/Proyecto2/I2CPJ2.X/main.c: 97:     INTCONbits.GIE = 1;
-}
-[e :U 141 ]
-"98
-[; ;C:/Users/Carlo/OneDrive/Documentos/Quinto Semestre/Digital2/Proyecto2/I2CPJ2.X/main.c: 98:     INTCONbits.PEIE = 1;
+[; ;C:/Users/Carlo/OneDrive/Documentos/Quinto Semestre/Digital2/Proyecto2/I2CPJ2.X/main.c: 90: void Setup(void) {
 }
 [e :U 140 ]
-"99
-[; ;C:/Users/Carlo/OneDrive/Documentos/Quinto Semestre/Digital2/Proyecto2/I2CPJ2.X/main.c: 99:     INTCONbits.T0IE = 1;
-[e $ ! == -> . . _PIR1bits 0 5 `i -> 1 `i 142  ]
+"91
+[; ;C:/Users/Carlo/OneDrive/Documentos/Quinto Semestre/Digital2/Proyecto2/I2CPJ2.X/main.c: 91: 
+}
+[e :U 139 ]
+"92
+[; ;C:/Users/Carlo/OneDrive/Documentos/Quinto Semestre/Digital2/Proyecto2/I2CPJ2.X/main.c: 92:     PORTA = 0;
+[e $ ! == -> . . _INTCONbits 1 1 `i -> 1 `i 141  ]
 {
-"100
-[; ;C:/Users/Carlo/OneDrive/Documentos/Quinto Semestre/Digital2/Proyecto2/I2CPJ2.X/main.c: 100:     TMR0 = 250;
-[e = _dato_esp _RCREG ]
-"101
-[; ;C:/Users/Carlo/OneDrive/Documentos/Quinto Semestre/Digital2/Proyecto2/I2CPJ2.X/main.c: 101:     PIE1bits.TXIE = 1;
+"93
+[; ;C:/Users/Carlo/OneDrive/Documentos/Quinto Semestre/Digital2/Proyecto2/I2CPJ2.X/main.c: 93:     PORTB = 0;
+[e = . . _INTCONbits 1 1 -> -> 0 `i `uc ]
+"94
+[; ;C:/Users/Carlo/OneDrive/Documentos/Quinto Semestre/Digital2/Proyecto2/I2CPJ2.X/main.c: 94:     TRISB = 0;
+[e = _TMR0 -> -> 100 `i `uc ]
+"95
+[; ;C:/Users/Carlo/OneDrive/Documentos/Quinto Semestre/Digital2/Proyecto2/I2CPJ2.X/main.c: 95:     TRISC = 0;
+[e ++ _var -> -> 1 `i `uc ]
+"96
+[; ;C:/Users/Carlo/OneDrive/Documentos/Quinto Semestre/Digital2/Proyecto2/I2CPJ2.X/main.c: 96:     ANSEL = 0;
+[e $ ! == -> _var `i -> 2 `i 142  ]
+{
+"97
+[; ;C:/Users/Carlo/OneDrive/Documentos/Quinto Semestre/Digital2/Proyecto2/I2CPJ2.X/main.c: 97:     ANSELH = 0;
+[e = . . _PIE1bits 0 4 -> -> 1 `i `uc ]
+"98
+[; ;C:/Users/Carlo/OneDrive/Documentos/Quinto Semestre/Digital2/Proyecto2/I2CPJ2.X/main.c: 98: 
+[e = _var -> -> 0 `i `uc ]
+"99
+[; ;C:/Users/Carlo/OneDrive/Documentos/Quinto Semestre/Digital2/Proyecto2/I2CPJ2.X/main.c: 99:     INTCONbits.TMR0IF = 0;
 }
 [e :U 142 ]
+"100
+[; ;C:/Users/Carlo/OneDrive/Documentos/Quinto Semestre/Digital2/Proyecto2/I2CPJ2.X/main.c: 100:     OPTION_REG = 0b11010111;
+}
+[e :U 141 ]
+"101
+[; ;C:/Users/Carlo/OneDrive/Documentos/Quinto Semestre/Digital2/Proyecto2/I2CPJ2.X/main.c: 101:     INTCONbits.GIE = 1;
+[e $ ! == -> . . _PIR1bits 0 5 `i -> 1 `i 143  ]
+{
 "102
-[; ;C:/Users/Carlo/OneDrive/Documentos/Quinto Semestre/Digital2/Proyecto2/I2CPJ2.X/main.c: 102:     PIE1bits.RCIE = 1;
+[; ;C:/Users/Carlo/OneDrive/Documentos/Quinto Semestre/Digital2/Proyecto2/I2CPJ2.X/main.c: 102:     INTCONbits.PEIE = 1;
+[e = _dato_esp _RCREG ]
+"103
+[; ;C:/Users/Carlo/OneDrive/Documentos/Quinto Semestre/Digital2/Proyecto2/I2CPJ2.X/main.c: 103:     INTCONbits.T0IE = 1;
+}
+[e :U 143 ]
+"104
+[; ;C:/Users/Carlo/OneDrive/Documentos/Quinto Semestre/Digital2/Proyecto2/I2CPJ2.X/main.c: 104:     TMR0 = 250;
 [e :UE 138 ]
 }
 [v $root$_main `(v ~T0 @X0 0 e ]
-"107
-[; ;C:/Users/Carlo/OneDrive/Documentos/Quinto Semestre/Digital2/Proyecto2/I2CPJ2.X/main.c: 107: 
+"109
+[; ;C:/Users/Carlo/OneDrive/Documentos/Quinto Semestre/Digital2/Proyecto2/I2CPJ2.X/main.c: 109: 
 [v _main `(v ~T0 @X0 1 ef ]
 {
 [e :U _main ]
 [f ]
-"108
-[; ;C:/Users/Carlo/OneDrive/Documentos/Quinto Semestre/Digital2/Proyecto2/I2CPJ2.X/main.c: 108: 
-[e ( _initOsc (1 -> -> 20 `i `uc ]
-"109
-[; ;C:/Users/Carlo/OneDrive/Documentos/Quinto Semestre/Digital2/Proyecto2/I2CPJ2.X/main.c: 109: 
-[e ( _Setup ..  ]
 "110
-[; ;C:/Users/Carlo/OneDrive/Documentos/Quinto Semestre/Digital2/Proyecto2/I2CPJ2.X/main.c: 110: void escribir_tiempo(void){
-[e ( _USARTconf ..  ]
+[; ;C:/Users/Carlo/OneDrive/Documentos/Quinto Semestre/Digital2/Proyecto2/I2CPJ2.X/main.c: 110: }
+[e ( _initOsc (1 -> -> 20 `i `uc ]
+"111
+[; ;C:/Users/Carlo/OneDrive/Documentos/Quinto Semestre/Digital2/Proyecto2/I2CPJ2.X/main.c: 111: 
+[e ( _Setup ..  ]
 "112
-[; ;C:/Users/Carlo/OneDrive/Documentos/Quinto Semestre/Digital2/Proyecto2/I2CPJ2.X/main.c: 112:     I2C_Master_Write(0xD0);
-[e :U 145 ]
-{
+[; ;C:/Users/Carlo/OneDrive/Documentos/Quinto Semestre/Digital2/Proyecto2/I2CPJ2.X/main.c: 112: 
+[e ( _USARTconf ..  ]
 "114
-[; ;C:/Users/Carlo/OneDrive/Documentos/Quinto Semestre/Digital2/Proyecto2/I2CPJ2.X/main.c: 114:     I2C_Master_Write(0b00000000);
-[e ( _recibir_tiempo ..  ]
-"115
-[; ;C:/Users/Carlo/OneDrive/Documentos/Quinto Semestre/Digital2/Proyecto2/I2CPJ2.X/main.c: 115:     I2C_Master_Write(0x35);
-[e ( __delay (1 -> * -> -> 200 `i `d / -> -> 4000000 `l `d .4000.0 `ul ]
+[; ;C:/Users/Carlo/OneDrive/Documentos/Quinto Semestre/Digital2/Proyecto2/I2CPJ2.X/main.c: 114: void escribir_tiempo(void){
+[e :U 146 ]
+{
 "116
-[; ;C:/Users/Carlo/OneDrive/Documentos/Quinto Semestre/Digital2/Proyecto2/I2CPJ2.X/main.c: 116:     I2C_Master_Write(0x01);
-[e ( _convertirBCD ..  ]
+[; ;C:/Users/Carlo/OneDrive/Documentos/Quinto Semestre/Digital2/Proyecto2/I2CPJ2.X/main.c: 116:     I2C_Master_Write(0xD0);
+[e ( _recibir_tiempo ..  ]
+"117
+[; ;C:/Users/Carlo/OneDrive/Documentos/Quinto Semestre/Digital2/Proyecto2/I2CPJ2.X/main.c: 117:     I2C_Master_Write(0);
+[e ( __delay (1 -> * -> -> 200 `i `d / -> -> 4000000 `l `d .4000.0 `ul ]
 "118
-[; ;C:/Users/Carlo/OneDrive/Documentos/Quinto Semestre/Digital2/Proyecto2/I2CPJ2.X/main.c: 118:     I2C_Master_Write(0x1);
-[e $ ! == -> _dato_esp `i -> 1 `i 147  ]
-{
-"119
-[; ;C:/Users/Carlo/OneDrive/Documentos/Quinto Semestre/Digital2/Proyecto2/I2CPJ2.X/main.c: 119:     I2C_Master_Write(0x03);
-[e = _PORTB -> -> 1 `i `uc ]
+[; ;C:/Users/Carlo/OneDrive/Documentos/Quinto Semestre/Digital2/Proyecto2/I2CPJ2.X/main.c: 118:     I2C_Master_Write(0b00000000);
+[e ( _convertirBCD ..  ]
 "120
-[; ;C:/Users/Carlo/OneDrive/Documentos/Quinto Semestre/Digital2/Proyecto2/I2CPJ2.X/main.c: 120:     I2C_Master_Write(0x21);
-}
-[e $U 148  ]
-"121
-[; ;C:/Users/Carlo/OneDrive/Documentos/Quinto Semestre/Digital2/Proyecto2/I2CPJ2.X/main.c: 121:     I2C_Master_Stop();
-[e :U 147 ]
+[; ;C:/Users/Carlo/OneDrive/Documentos/Quinto Semestre/Digital2/Proyecto2/I2CPJ2.X/main.c: 120:     I2C_Master_Write(0x01);
+[e $ ! == -> _dato_esp `i -> 1 `i 148  ]
 {
+"121
+[; ;C:/Users/Carlo/OneDrive/Documentos/Quinto Semestre/Digital2/Proyecto2/I2CPJ2.X/main.c: 121:     I2C_Master_Write(1);
+[e = _PORTB -> -> 1 `i `uc ]
 "122
-[; ;C:/Users/Carlo/OneDrive/Documentos/Quinto Semestre/Digital2/Proyecto2/I2CPJ2.X/main.c: 122: 
-[e = _PORTB -> -> 0 `i `uc ]
+[; ;C:/Users/Carlo/OneDrive/Documentos/Quinto Semestre/Digital2/Proyecto2/I2CPJ2.X/main.c: 122:     I2C_Master_Write(0x1);
+[e = . . _PIE1bits 0 4 -> -> 1 `i `uc ]
 "123
-[; ;C:/Users/Carlo/OneDrive/Documentos/Quinto Semestre/Digital2/Proyecto2/I2CPJ2.X/main.c: 123: }
+[; ;C:/Users/Carlo/OneDrive/Documentos/Quinto Semestre/Digital2/Proyecto2/I2CPJ2.X/main.c: 123:     I2C_Master_Write(0x03);
 }
 [e :U 148 ]
 "124
-[; ;C:/Users/Carlo/OneDrive/Documentos/Quinto Semestre/Digital2/Proyecto2/I2CPJ2.X/main.c: 124: 
-}
-[e :U 144 ]
-[e $U 145  ]
-[e :U 146 ]
+[; ;C:/Users/Carlo/OneDrive/Documentos/Quinto Semestre/Digital2/Proyecto2/I2CPJ2.X/main.c: 124:     I2C_Master_Write(0x21);
+[e $ ! == -> _dato_esp `i -> 0 `i 149  ]
+{
 "125
-[; ;C:/Users/Carlo/OneDrive/Documentos/Quinto Semestre/Digital2/Proyecto2/I2CPJ2.X/main.c: 125: 
-[e :UE 143 ]
+[; ;C:/Users/Carlo/OneDrive/Documentos/Quinto Semestre/Digital2/Proyecto2/I2CPJ2.X/main.c: 125:     I2C_Master_Stop();
+[e = _PORTB -> -> 0 `i `uc ]
+"126
+[; ;C:/Users/Carlo/OneDrive/Documentos/Quinto Semestre/Digital2/Proyecto2/I2CPJ2.X/main.c: 126: 
+[e = . . _PIE1bits 0 4 -> -> 0 `i `uc ]
+"127
+[; ;C:/Users/Carlo/OneDrive/Documentos/Quinto Semestre/Digital2/Proyecto2/I2CPJ2.X/main.c: 127: }
 }
+[e :U 149 ]
+"128
+[; ;C:/Users/Carlo/OneDrive/Documentos/Quinto Semestre/Digital2/Proyecto2/I2CPJ2.X/main.c: 128: 
+}
+[e :U 145 ]
+[e $U 146  ]
+[e :U 147 ]
 "129
-[; ;C:/Users/Carlo/OneDrive/Documentos/Quinto Semestre/Digital2/Proyecto2/I2CPJ2.X/main.c: 129:     I2C_Master_Write(0xD0);
+[; ;C:/Users/Carlo/OneDrive/Documentos/Quinto Semestre/Digital2/Proyecto2/I2CPJ2.X/main.c: 129: 
+[e :UE 144 ]
+}
+"133
+[; ;C:/Users/Carlo/OneDrive/Documentos/Quinto Semestre/Digital2/Proyecto2/I2CPJ2.X/main.c: 133:     I2C_Master_Write(0xD0);
 [v _Setup `(v ~T0 @X0 1 ef ]
 {
 [e :U _Setup ]
 [f ]
-"131
-[; ;C:/Users/Carlo/OneDrive/Documentos/Quinto Semestre/Digital2/Proyecto2/I2CPJ2.X/main.c: 131: 
-[e = _PORTA -> -> 0 `i `uc ]
-"132
-[; ;C:/Users/Carlo/OneDrive/Documentos/Quinto Semestre/Digital2/Proyecto2/I2CPJ2.X/main.c: 132:     I2C_Master_Start();
-[e = _PORTB -> -> 0 `i `uc ]
-"133
-[; ;C:/Users/Carlo/OneDrive/Documentos/Quinto Semestre/Digital2/Proyecto2/I2CPJ2.X/main.c: 133:     I2C_Master_Write(0xD1);
-[e = _TRISB -> -> 0 `i `uc ]
-"134
-[; ;C:/Users/Carlo/OneDrive/Documentos/Quinto Semestre/Digital2/Proyecto2/I2CPJ2.X/main.c: 134:     seg = I2C_Master_Read(1);
-[e = _TRISC -> -> 0 `i `uc ]
 "135
-[; ;C:/Users/Carlo/OneDrive/Documentos/Quinto Semestre/Digital2/Proyecto2/I2CPJ2.X/main.c: 135:     min = I2C_Master_Read(1);
-[e = _ANSEL -> -> 0 `i `uc ]
+[; ;C:/Users/Carlo/OneDrive/Documentos/Quinto Semestre/Digital2/Proyecto2/I2CPJ2.X/main.c: 135: 
+[e = _PORTA -> -> 0 `i `uc ]
 "136
-[; ;C:/Users/Carlo/OneDrive/Documentos/Quinto Semestre/Digital2/Proyecto2/I2CPJ2.X/main.c: 136:     hora = I2C_Master_Read(1);
-[e = _ANSELH -> -> 0 `i `uc ]
+[; ;C:/Users/Carlo/OneDrive/Documentos/Quinto Semestre/Digital2/Proyecto2/I2CPJ2.X/main.c: 136:     I2C_Master_Start();
+[e = _PORTB -> -> 0 `i `uc ]
+"137
+[; ;C:/Users/Carlo/OneDrive/Documentos/Quinto Semestre/Digital2/Proyecto2/I2CPJ2.X/main.c: 137:     I2C_Master_Write(0xD1);
+[e = _TRISB -> -> 0 `i `uc ]
 "138
-[; ;C:/Users/Carlo/OneDrive/Documentos/Quinto Semestre/Digital2/Proyecto2/I2CPJ2.X/main.c: 138:     dia = I2C_Master_Read(1);
-[e = . . _INTCONbits 1 1 -> -> 0 `i `uc ]
+[; ;C:/Users/Carlo/OneDrive/Documentos/Quinto Semestre/Digital2/Proyecto2/I2CPJ2.X/main.c: 138:     seg = I2C_Master_Read(1);
+[e = _TRISC -> -> 0 `i `uc ]
 "139
-[; ;C:/Users/Carlo/OneDrive/Documentos/Quinto Semestre/Digital2/Proyecto2/I2CPJ2.X/main.c: 139:     mes = I2C_Master_Read(1);
-[e = _OPTION_REG -> -> 215 `i `uc ]
+[; ;C:/Users/Carlo/OneDrive/Documentos/Quinto Semestre/Digital2/Proyecto2/I2CPJ2.X/main.c: 139:     min = I2C_Master_Read(1);
+[e = _ANSEL -> -> 0 `i `uc ]
 "140
-[; ;C:/Users/Carlo/OneDrive/Documentos/Quinto Semestre/Digital2/Proyecto2/I2CPJ2.X/main.c: 140:     ano = I2C_Master_Read(0);
-[e = . . _INTCONbits 0 7 -> -> 1 `i `uc ]
-"141
-[; ;C:/Users/Carlo/OneDrive/Documentos/Quinto Semestre/Digital2/Proyecto2/I2CPJ2.X/main.c: 141:     I2C_Master_Stop();
-[e = . . _INTCONbits 0 6 -> -> 1 `i `uc ]
+[; ;C:/Users/Carlo/OneDrive/Documentos/Quinto Semestre/Digital2/Proyecto2/I2CPJ2.X/main.c: 140:     hora = I2C_Master_Read(1);
+[e = _ANSELH -> -> 0 `i `uc ]
 "142
-[; ;C:/Users/Carlo/OneDrive/Documentos/Quinto Semestre/Digital2/Proyecto2/I2CPJ2.X/main.c: 142: 
-[e = . . _INTCONbits 0 5 -> -> 1 `i `uc ]
+[; ;C:/Users/Carlo/OneDrive/Documentos/Quinto Semestre/Digital2/Proyecto2/I2CPJ2.X/main.c: 142:     dia = I2C_Master_Read(1);
+[e = . . _INTCONbits 1 1 -> -> 0 `i `uc ]
 "143
-[; ;C:/Users/Carlo/OneDrive/Documentos/Quinto Semestre/Digital2/Proyecto2/I2CPJ2.X/main.c: 143: }
-[e = _TMR0 -> -> 250 `i `uc ]
+[; ;C:/Users/Carlo/OneDrive/Documentos/Quinto Semestre/Digital2/Proyecto2/I2CPJ2.X/main.c: 143:     mes = I2C_Master_Read(1);
+[e = _OPTION_REG -> -> 215 `i `uc ]
 "144
-[; ;C:/Users/Carlo/OneDrive/Documentos/Quinto Semestre/Digital2/Proyecto2/I2CPJ2.X/main.c: 144: 
-[e = . . _PIE1bits 0 4 -> -> 1 `i `uc ]
+[; ;C:/Users/Carlo/OneDrive/Documentos/Quinto Semestre/Digital2/Proyecto2/I2CPJ2.X/main.c: 144:     ano = I2C_Master_Read(0);
+[e = . . _INTCONbits 0 7 -> -> 1 `i `uc ]
 "145
-[; ;C:/Users/Carlo/OneDrive/Documentos/Quinto Semestre/Digital2/Proyecto2/I2CPJ2.X/main.c: 145: 
-[e = . . _PIE1bits 0 5 -> -> 1 `i `uc ]
+[; ;C:/Users/Carlo/OneDrive/Documentos/Quinto Semestre/Digital2/Proyecto2/I2CPJ2.X/main.c: 145:     I2C_Master_Stop();
+[e = . . _INTCONbits 0 6 -> -> 1 `i `uc ]
+"146
+[; ;C:/Users/Carlo/OneDrive/Documentos/Quinto Semestre/Digital2/Proyecto2/I2CPJ2.X/main.c: 146: 
+[e = . . _INTCONbits 0 5 -> -> 1 `i `uc ]
 "147
-[; ;C:/Users/Carlo/OneDrive/Documentos/Quinto Semestre/Digital2/Proyecto2/I2CPJ2.X/main.c: 147: void convertirBCD(void){
-[e ( _I2C_Master_Init (1 -> -> 100000 `l `ul ]
+[; ;C:/Users/Carlo/OneDrive/Documentos/Quinto Semestre/Digital2/Proyecto2/I2CPJ2.X/main.c: 147: }
+[e = _TMR0 -> -> 250 `i `uc ]
+"148
+[; ;C:/Users/Carlo/OneDrive/Documentos/Quinto Semestre/Digital2/Proyecto2/I2CPJ2.X/main.c: 148: 
+[e = . . _PIE1bits 0 4 -> -> 1 `i `uc ]
 "149
-[; ;C:/Users/Carlo/OneDrive/Documentos/Quinto Semestre/Digital2/Proyecto2/I2CPJ2.X/main.c: 149:     segD = num_ascii((seg & 0b11110000)>>4);
-[e :UE 149 ]
-}
+[; ;C:/Users/Carlo/OneDrive/Documentos/Quinto Semestre/Digital2/Proyecto2/I2CPJ2.X/main.c: 149: 
+[e = . . _PIE1bits 0 5 -> -> 1 `i `uc ]
+"151
+[; ;C:/Users/Carlo/OneDrive/Documentos/Quinto Semestre/Digital2/Proyecto2/I2CPJ2.X/main.c: 151: void convertirBCD(void){
+[e ( _I2C_Master_Init (1 -> -> 100000 `l `ul ]
 "153
-[; ;C:/Users/Carlo/OneDrive/Documentos/Quinto Semestre/Digital2/Proyecto2/I2CPJ2.X/main.c: 153:     horaD = num_ascii((hora & 0b00110000)>>4);
+[; ;C:/Users/Carlo/OneDrive/Documentos/Quinto Semestre/Digital2/Proyecto2/I2CPJ2.X/main.c: 153:     segD = num_ascii((seg & 0b11110000)>>4);
+[e :UE 150 ]
+}
+"157
+[; ;C:/Users/Carlo/OneDrive/Documentos/Quinto Semestre/Digital2/Proyecto2/I2CPJ2.X/main.c: 157:     horaD = num_ascii((hora & 0b00110000)>>4);
 [v _escribir_tiempo `(v ~T0 @X0 1 ef ]
 {
 [e :U _escribir_tiempo ]
 [f ]
-"154
-[; ;C:/Users/Carlo/OneDrive/Documentos/Quinto Semestre/Digital2/Proyecto2/I2CPJ2.X/main.c: 154:     diaU = num_ascii(dia & 0b00001111);
-[e ( _I2C_Master_Start ..  ]
-"155
-[; ;C:/Users/Carlo/OneDrive/Documentos/Quinto Semestre/Digital2/Proyecto2/I2CPJ2.X/main.c: 155:     diaD = num_ascii((dia & 0b11110000)>>4);
-[e ( _I2C_Master_Write (1 -> -> 208 `i `ui ]
-"156
-[; ;C:/Users/Carlo/OneDrive/Documentos/Quinto Semestre/Digital2/Proyecto2/I2CPJ2.X/main.c: 156:     mesU = num_ascii(mes & 0b00001111);
-[e ( _I2C_Master_Write (1 -> -> 0 `i `ui ]
-"157
-[; ;C:/Users/Carlo/OneDrive/Documentos/Quinto Semestre/Digital2/Proyecto2/I2CPJ2.X/main.c: 157:     mesD = num_ascii((mes & 0b11110000)>>4);
-[e ( _I2C_Master_Write (1 -> -> 0 `i `ui ]
 "158
-[; ;C:/Users/Carlo/OneDrive/Documentos/Quinto Semestre/Digital2/Proyecto2/I2CPJ2.X/main.c: 158:     anoU = num_ascii(ano & 0b00001111);
-[e ( _I2C_Master_Write (1 -> -> 53 `i `ui ]
+[; ;C:/Users/Carlo/OneDrive/Documentos/Quinto Semestre/Digital2/Proyecto2/I2CPJ2.X/main.c: 158:     diaU = num_ascii(dia & 0b00001111);
+[e ( _I2C_Master_Start ..  ]
 "159
-[; ;C:/Users/Carlo/OneDrive/Documentos/Quinto Semestre/Digital2/Proyecto2/I2CPJ2.X/main.c: 159:     anoD = num_ascii((ano & 0b11110000)>>4);
-[e ( _I2C_Master_Write (1 -> -> 1 `i `ui ]
+[; ;C:/Users/Carlo/OneDrive/Documentos/Quinto Semestre/Digital2/Proyecto2/I2CPJ2.X/main.c: 159:     diaD = num_ascii((dia & 0b11110000)>>4);
+[e ( _I2C_Master_Write (1 -> -> 208 `i `ui ]
 "160
-[; ;C:/Users/Carlo/OneDrive/Documentos/Quinto Semestre/Digital2/Proyecto2/I2CPJ2.X/main.c: 160: }
-[e ( _I2C_Master_Write (1 -> -> 1 `i `ui ]
+[; ;C:/Users/Carlo/OneDrive/Documentos/Quinto Semestre/Digital2/Proyecto2/I2CPJ2.X/main.c: 160:     mesU = num_ascii(mes & 0b00001111);
+[e ( _I2C_Master_Write (1 -> -> 0 `i `ui ]
 "161
-[; ;C:/Users/Carlo/OneDrive/Documentos/Quinto Semestre/Digital2/Proyecto2/I2CPJ2.X/main.c: 161: 
-[e ( _I2C_Master_Write (1 -> -> 1 `i `ui ]
+[; ;C:/Users/Carlo/OneDrive/Documentos/Quinto Semestre/Digital2/Proyecto2/I2CPJ2.X/main.c: 161:     mesD = num_ascii((mes & 0b11110000)>>4);
+[e ( _I2C_Master_Write (1 -> -> 0 `i `ui ]
 "162
-[; ;C:/Users/Carlo/OneDrive/Documentos/Quinto Semestre/Digital2/Proyecto2/I2CPJ2.X/main.c: 162: 
-[e ( _I2C_Master_Write (1 -> -> 3 `i `ui ]
+[; ;C:/Users/Carlo/OneDrive/Documentos/Quinto Semestre/Digital2/Proyecto2/I2CPJ2.X/main.c: 162:     anoU = num_ascii(ano & 0b00001111);
+[e ( _I2C_Master_Write (1 -> -> 53 `i `ui ]
 "163
-[; ;C:/Users/Carlo/OneDrive/Documentos/Quinto Semestre/Digital2/Proyecto2/I2CPJ2.X/main.c: 163: 
-[e ( _I2C_Master_Write (1 -> -> 33 `i `ui ]
+[; ;C:/Users/Carlo/OneDrive/Documentos/Quinto Semestre/Digital2/Proyecto2/I2CPJ2.X/main.c: 163:     anoD = num_ascii((ano & 0b11110000)>>4);
+[e ( _I2C_Master_Write (1 -> -> 1 `i `ui ]
 "164
-[; ;C:/Users/Carlo/OneDrive/Documentos/Quinto Semestre/Digital2/Proyecto2/I2CPJ2.X/main.c: 164: void envio (void){
-[e ( _I2C_Master_Stop ..  ]
+[; ;C:/Users/Carlo/OneDrive/Documentos/Quinto Semestre/Digital2/Proyecto2/I2CPJ2.X/main.c: 164: }
+[e ( _I2C_Master_Write (1 -> -> 1 `i `ui ]
+"165
+[; ;C:/Users/Carlo/OneDrive/Documentos/Quinto Semestre/Digital2/Proyecto2/I2CPJ2.X/main.c: 165: 
+[e ( _I2C_Master_Write (1 -> -> 1 `i `ui ]
 "166
-[; ;C:/Users/Carlo/OneDrive/Documentos/Quinto Semestre/Digital2/Proyecto2/I2CPJ2.X/main.c: 166:         case 1:
-[e :UE 150 ]
-}
+[; ;C:/Users/Carlo/OneDrive/Documentos/Quinto Semestre/Digital2/Proyecto2/I2CPJ2.X/main.c: 166: 
+[e ( _I2C_Master_Write (1 -> -> 3 `i `ui ]
+"167
+[; ;C:/Users/Carlo/OneDrive/Documentos/Quinto Semestre/Digital2/Proyecto2/I2CPJ2.X/main.c: 167: 
+[e ( _I2C_Master_Write (1 -> -> 33 `i `ui ]
+"168
+[; ;C:/Users/Carlo/OneDrive/Documentos/Quinto Semestre/Digital2/Proyecto2/I2CPJ2.X/main.c: 168: void envio (void){
+[e ( _I2C_Master_Stop ..  ]
 "170
-[; ;C:/Users/Carlo/OneDrive/Documentos/Quinto Semestre/Digital2/Proyecto2/I2CPJ2.X/main.c: 170:             TXREG = diaU;
+[; ;C:/Users/Carlo/OneDrive/Documentos/Quinto Semestre/Digital2/Proyecto2/I2CPJ2.X/main.c: 170:         case 1:
+[e :UE 151 ]
+}
+"174
+[; ;C:/Users/Carlo/OneDrive/Documentos/Quinto Semestre/Digital2/Proyecto2/I2CPJ2.X/main.c: 174:             TXREG = diaU;
 [v _recibir_tiempo `(v ~T0 @X0 1 ef ]
 {
 [e :U _recibir_tiempo ]
 [f ]
-"171
-[; ;C:/Users/Carlo/OneDrive/Documentos/Quinto Semestre/Digital2/Proyecto2/I2CPJ2.X/main.c: 171:             break;
-[e ( _I2C_Master_Start ..  ]
-"172
-[; ;C:/Users/Carlo/OneDrive/Documentos/Quinto Semestre/Digital2/Proyecto2/I2CPJ2.X/main.c: 172:         case 3:
-[e ( _I2C_Master_Write (1 -> -> 208 `i `ui ]
-"173
-[; ;C:/Users/Carlo/OneDrive/Documentos/Quinto Semestre/Digital2/Proyecto2/I2CPJ2.X/main.c: 173:             TXREG = 47;
-[e ( _I2C_Master_Write (1 -> -> 0 `i `ui ]
 "175
-[; ;C:/Users/Carlo/OneDrive/Documentos/Quinto Semestre/Digital2/Proyecto2/I2CPJ2.X/main.c: 175:         case 4:
+[; ;C:/Users/Carlo/OneDrive/Documentos/Quinto Semestre/Digital2/Proyecto2/I2CPJ2.X/main.c: 175:             break;
 [e ( _I2C_Master_Start ..  ]
 "176
-[; ;C:/Users/Carlo/OneDrive/Documentos/Quinto Semestre/Digital2/Proyecto2/I2CPJ2.X/main.c: 176:             TXREG = mesD;
-[e ( _I2C_Master_Write (1 -> -> 209 `i `ui ]
+[; ;C:/Users/Carlo/OneDrive/Documentos/Quinto Semestre/Digital2/Proyecto2/I2CPJ2.X/main.c: 176:         case 3:
+[e ( _I2C_Master_Write (1 -> -> 208 `i `ui ]
 "177
-[; ;C:/Users/Carlo/OneDrive/Documentos/Quinto Semestre/Digital2/Proyecto2/I2CPJ2.X/main.c: 177:             break;
-[e = _seg -> ( _I2C_Master_Read (1 -> -> 1 `i `us `uc ]
-"178
-[; ;C:/Users/Carlo/OneDrive/Documentos/Quinto Semestre/Digital2/Proyecto2/I2CPJ2.X/main.c: 178:         case 5:
-[e = _min -> ( _I2C_Master_Read (1 -> -> 1 `i `us `uc ]
+[; ;C:/Users/Carlo/OneDrive/Documentos/Quinto Semestre/Digital2/Proyecto2/I2CPJ2.X/main.c: 177:             TXREG = 47;
+[e ( _I2C_Master_Write (1 -> -> 0 `i `ui ]
 "179
-[; ;C:/Users/Carlo/OneDrive/Documentos/Quinto Semestre/Digital2/Proyecto2/I2CPJ2.X/main.c: 179:             TXREG = mesU;
-[e = _hora -> ( _I2C_Master_Read (1 -> -> 1 `i `us `uc ]
+[; ;C:/Users/Carlo/OneDrive/Documentos/Quinto Semestre/Digital2/Proyecto2/I2CPJ2.X/main.c: 179:         case 4:
+[e ( _I2C_Master_Start ..  ]
 "180
-[; ;C:/Users/Carlo/OneDrive/Documentos/Quinto Semestre/Digital2/Proyecto2/I2CPJ2.X/main.c: 180:             break;
-[e = _basura -> ( _I2C_Master_Read (1 -> -> 1 `i `us `uc ]
+[; ;C:/Users/Carlo/OneDrive/Documentos/Quinto Semestre/Digital2/Proyecto2/I2CPJ2.X/main.c: 180:             TXREG = mesD;
+[e ( _I2C_Master_Write (1 -> -> 209 `i `ui ]
 "181
-[; ;C:/Users/Carlo/OneDrive/Documentos/Quinto Semestre/Digital2/Proyecto2/I2CPJ2.X/main.c: 181:         case 6:
-[e = _dia -> ( _I2C_Master_Read (1 -> -> 1 `i `us `uc ]
+[; ;C:/Users/Carlo/OneDrive/Documentos/Quinto Semestre/Digital2/Proyecto2/I2CPJ2.X/main.c: 181:             break;
+[e = _seg -> ( _I2C_Master_Read (1 -> -> 1 `i `us `uc ]
 "182
-[; ;C:/Users/Carlo/OneDrive/Documentos/Quinto Semestre/Digital2/Proyecto2/I2CPJ2.X/main.c: 182:             TXREG = 47;
-[e = _mes -> ( _I2C_Master_Read (1 -> -> 1 `i `us `uc ]
+[; ;C:/Users/Carlo/OneDrive/Documentos/Quinto Semestre/Digital2/Proyecto2/I2CPJ2.X/main.c: 182:         case 5:
+[e = _min -> ( _I2C_Master_Read (1 -> -> 1 `i `us `uc ]
 "183
-[; ;C:/Users/Carlo/OneDrive/Documentos/Quinto Semestre/Digital2/Proyecto2/I2CPJ2.X/main.c: 183:             break;
-[e = _ano -> ( _I2C_Master_Read (1 -> -> 0 `i `us `uc ]
+[; ;C:/Users/Carlo/OneDrive/Documentos/Quinto Semestre/Digital2/Proyecto2/I2CPJ2.X/main.c: 183:             TXREG = mesU;
+[e = _hora -> ( _I2C_Master_Read (1 -> -> 1 `i `us `uc ]
 "184
-[; ;C:/Users/Carlo/OneDrive/Documentos/Quinto Semestre/Digital2/Proyecto2/I2CPJ2.X/main.c: 184:         case 7:
-[e ( _I2C_Master_Stop ..  ]
+[; ;C:/Users/Carlo/OneDrive/Documentos/Quinto Semestre/Digital2/Proyecto2/I2CPJ2.X/main.c: 184:             break;
+[e = _basura -> ( _I2C_Master_Read (1 -> -> 1 `i `us `uc ]
+"185
+[; ;C:/Users/Carlo/OneDrive/Documentos/Quinto Semestre/Digital2/Proyecto2/I2CPJ2.X/main.c: 185:         case 6:
+[e = _dia -> ( _I2C_Master_Read (1 -> -> 1 `i `us `uc ]
 "186
-[; ;C:/Users/Carlo/OneDrive/Documentos/Quinto Semestre/Digital2/Proyecto2/I2CPJ2.X/main.c: 186:             break;
-[e :UE 151 ]
-}
+[; ;C:/Users/Carlo/OneDrive/Documentos/Quinto Semestre/Digital2/Proyecto2/I2CPJ2.X/main.c: 186:             TXREG = 47;
+[e = _mes -> ( _I2C_Master_Read (1 -> -> 1 `i `us `uc ]
+"187
+[; ;C:/Users/Carlo/OneDrive/Documentos/Quinto Semestre/Digital2/Proyecto2/I2CPJ2.X/main.c: 187:             break;
+[e = _ano -> ( _I2C_Master_Read (1 -> -> 0 `i `us `uc ]
+"188
+[; ;C:/Users/Carlo/OneDrive/Documentos/Quinto Semestre/Digital2/Proyecto2/I2CPJ2.X/main.c: 188:         case 7:
+[e ( _I2C_Master_Stop ..  ]
 "190
-[; ;C:/Users/Carlo/OneDrive/Documentos/Quinto Semestre/Digital2/Proyecto2/I2CPJ2.X/main.c: 190:         case 9:
+[; ;C:/Users/Carlo/OneDrive/Documentos/Quinto Semestre/Digital2/Proyecto2/I2CPJ2.X/main.c: 190:             break;
+[e :UE 152 ]
+}
+"194
+[; ;C:/Users/Carlo/OneDrive/Documentos/Quinto Semestre/Digital2/Proyecto2/I2CPJ2.X/main.c: 194:         case 9:
 [v _convertirBCD `(v ~T0 @X0 1 ef ]
 {
 [e :U _convertirBCD ]
 [f ]
-"191
-[; ;C:/Users/Carlo/OneDrive/Documentos/Quinto Semestre/Digital2/Proyecto2/I2CPJ2.X/main.c: 191:             TXREG = 0x20;
-[e = _segU -> ( _num_ascii (1 -> & -> _seg `i -> 15 `i `uc `uc ]
-"192
-[; ;C:/Users/Carlo/OneDrive/Documentos/Quinto Semestre/Digital2/Proyecto2/I2CPJ2.X/main.c: 192:             break;
-[e = _segD -> ( _num_ascii (1 -> >> & -> _seg `i -> 240 `i -> 4 `i `uc `uc ]
-"193
-[; ;C:/Users/Carlo/OneDrive/Documentos/Quinto Semestre/Digital2/Proyecto2/I2CPJ2.X/main.c: 193:         case 10:
-[e = _minU -> ( _num_ascii (1 -> & -> _min `i -> 15 `i `uc `uc ]
-"194
-[; ;C:/Users/Carlo/OneDrive/Documentos/Quinto Semestre/Digital2/Proyecto2/I2CPJ2.X/main.c: 194:             TXREG = horaD;
-[e = _minD -> ( _num_ascii (1 -> >> & -> _min `i -> 240 `i -> 4 `i `uc `uc ]
 "195
-[; ;C:/Users/Carlo/OneDrive/Documentos/Quinto Semestre/Digital2/Proyecto2/I2CPJ2.X/main.c: 195:             break;
-[e = _horaU -> ( _num_ascii (1 -> & -> _hora `i -> 15 `i `uc `uc ]
+[; ;C:/Users/Carlo/OneDrive/Documentos/Quinto Semestre/Digital2/Proyecto2/I2CPJ2.X/main.c: 195:             TXREG = 0x20;
+[e = _segU -> ( _num_ascii (1 -> & -> _seg `i -> 15 `i `uc `uc ]
 "196
-[; ;C:/Users/Carlo/OneDrive/Documentos/Quinto Semestre/Digital2/Proyecto2/I2CPJ2.X/main.c: 196:         case 11:
-[e = _horaD -> ( _num_ascii (1 -> >> & -> _hora `i -> 48 `i -> 4 `i `uc `uc ]
+[; ;C:/Users/Carlo/OneDrive/Documentos/Quinto Semestre/Digital2/Proyecto2/I2CPJ2.X/main.c: 196:             break;
+[e = _segD -> ( _num_ascii (1 -> >> & -> _seg `i -> 240 `i -> 4 `i `uc `uc ]
 "197
-[; ;C:/Users/Carlo/OneDrive/Documentos/Quinto Semestre/Digital2/Proyecto2/I2CPJ2.X/main.c: 197:             TXREG = horaU;
-[e = _diaU -> ( _num_ascii (1 -> & -> _dia `i -> 15 `i `uc `uc ]
+[; ;C:/Users/Carlo/OneDrive/Documentos/Quinto Semestre/Digital2/Proyecto2/I2CPJ2.X/main.c: 197:         case 10:
+[e = _minU -> ( _num_ascii (1 -> & -> _min `i -> 15 `i `uc `uc ]
 "198
-[; ;C:/Users/Carlo/OneDrive/Documentos/Quinto Semestre/Digital2/Proyecto2/I2CPJ2.X/main.c: 198:             break;
-[e = _diaD -> ( _num_ascii (1 -> >> & -> _dia `i -> 240 `i -> 4 `i `uc `uc ]
+[; ;C:/Users/Carlo/OneDrive/Documentos/Quinto Semestre/Digital2/Proyecto2/I2CPJ2.X/main.c: 198:             TXREG = horaD;
+[e = _minD -> ( _num_ascii (1 -> >> & -> _min `i -> 240 `i -> 4 `i `uc `uc ]
 "199
-[; ;C:/Users/Carlo/OneDrive/Documentos/Quinto Semestre/Digital2/Proyecto2/I2CPJ2.X/main.c: 199:         case 12:
-[e = _mesU -> ( _num_ascii (1 -> & -> _mes `i -> 15 `i `uc `uc ]
+[; ;C:/Users/Carlo/OneDrive/Documentos/Quinto Semestre/Digital2/Proyecto2/I2CPJ2.X/main.c: 199:             break;
+[e = _horaU -> ( _num_ascii (1 -> & -> _hora `i -> 15 `i `uc `uc ]
 "200
-[; ;C:/Users/Carlo/OneDrive/Documentos/Quinto Semestre/Digital2/Proyecto2/I2CPJ2.X/main.c: 200:             TXREG = 58;
-[e = _mesD -> ( _num_ascii (1 -> >> & -> _mes `i -> 240 `i -> 4 `i `uc `uc ]
+[; ;C:/Users/Carlo/OneDrive/Documentos/Quinto Semestre/Digital2/Proyecto2/I2CPJ2.X/main.c: 200:         case 11:
+[e = _horaD -> ( _num_ascii (1 -> >> & -> _hora `i -> 48 `i -> 4 `i `uc `uc ]
 "201
-[; ;C:/Users/Carlo/OneDrive/Documentos/Quinto Semestre/Digital2/Proyecto2/I2CPJ2.X/main.c: 201:             break;
-[e = _anoU -> ( _num_ascii (1 -> & -> _ano `i -> 15 `i `uc `uc ]
+[; ;C:/Users/Carlo/OneDrive/Documentos/Quinto Semestre/Digital2/Proyecto2/I2CPJ2.X/main.c: 201:             TXREG = horaU;
+[e = _diaU -> ( _num_ascii (1 -> & -> _dia `i -> 15 `i `uc `uc ]
 "202
-[; ;C:/Users/Carlo/OneDrive/Documentos/Quinto Semestre/Digital2/Proyecto2/I2CPJ2.X/main.c: 202:         case 13:
-[e = _anoD -> ( _num_ascii (1 -> >> & -> _ano `i -> 240 `i -> 4 `i `uc `uc ]
+[; ;C:/Users/Carlo/OneDrive/Documentos/Quinto Semestre/Digital2/Proyecto2/I2CPJ2.X/main.c: 202:             break;
+[e = _diaD -> ( _num_ascii (1 -> >> & -> _dia `i -> 240 `i -> 4 `i `uc `uc ]
 "203
-[; ;C:/Users/Carlo/OneDrive/Documentos/Quinto Semestre/Digital2/Proyecto2/I2CPJ2.X/main.c: 203:             TXREG = minD;
-[e :UE 152 ]
-}
+[; ;C:/Users/Carlo/OneDrive/Documentos/Quinto Semestre/Digital2/Proyecto2/I2CPJ2.X/main.c: 203:         case 12:
+[e = _mesU -> ( _num_ascii (1 -> & -> _mes `i -> 15 `i `uc `uc ]
+"204
+[; ;C:/Users/Carlo/OneDrive/Documentos/Quinto Semestre/Digital2/Proyecto2/I2CPJ2.X/main.c: 204:             TXREG = 58;
+[e = _mesD -> ( _num_ascii (1 -> >> & -> _mes `i -> 240 `i -> 4 `i `uc `uc ]
+"205
+[; ;C:/Users/Carlo/OneDrive/Documentos/Quinto Semestre/Digital2/Proyecto2/I2CPJ2.X/main.c: 205:             break;
+[e = _anoU -> ( _num_ascii (1 -> & -> _ano `i -> 15 `i `uc `uc ]
+"206
+[; ;C:/Users/Carlo/OneDrive/Documentos/Quinto Semestre/Digital2/Proyecto2/I2CPJ2.X/main.c: 206:         case 13:
+[e = _anoD -> ( _num_ascii (1 -> >> & -> _ano `i -> 240 `i -> 4 `i `uc `uc ]
 "207
-[; ;C:/Users/Carlo/OneDrive/Documentos/Quinto Semestre/Digital2/Proyecto2/I2CPJ2.X/main.c: 207:             break;
+[; ;C:/Users/Carlo/OneDrive/Documentos/Quinto Semestre/Digital2/Proyecto2/I2CPJ2.X/main.c: 207:             TXREG = minD;
+[e :UE 153 ]
+}
+"211
+[; ;C:/Users/Carlo/OneDrive/Documentos/Quinto Semestre/Digital2/Proyecto2/I2CPJ2.X/main.c: 211:             break;
 [v _envio `(v ~T0 @X0 1 ef ]
 {
 [e :U _envio ]
 [f ]
-"208
-[; ;C:/Users/Carlo/OneDrive/Documentos/Quinto Semestre/Digital2/Proyecto2/I2CPJ2.X/main.c: 208:         case 15:
-[e $U 155  ]
-{
-"209
-[; ;C:/Users/Carlo/OneDrive/Documentos/Quinto Semestre/Digital2/Proyecto2/I2CPJ2.X/main.c: 209:             TXREG = 58;
-[e :U 156 ]
-"210
-[; ;C:/Users/Carlo/OneDrive/Documentos/Quinto Semestre/Digital2/Proyecto2/I2CPJ2.X/main.c: 210:             break;
-[e = _TXREG _diaD ]
-"211
-[; ;C:/Users/Carlo/OneDrive/Documentos/Quinto Semestre/Digital2/Proyecto2/I2CPJ2.X/main.c: 211:         case 16:
-[e $U 154  ]
 "212
-[; ;C:/Users/Carlo/OneDrive/Documentos/Quinto Semestre/Digital2/Proyecto2/I2CPJ2.X/main.c: 212:             TXREG = segD;
-[e :U 157 ]
+[; ;C:/Users/Carlo/OneDrive/Documentos/Quinto Semestre/Digital2/Proyecto2/I2CPJ2.X/main.c: 212:         case 15:
+[e $U 156  ]
+{
 "213
-[; ;C:/Users/Carlo/OneDrive/Documentos/Quinto Semestre/Digital2/Proyecto2/I2CPJ2.X/main.c: 213:             break;
-[e = _TXREG _diaU ]
+[; ;C:/Users/Carlo/OneDrive/Documentos/Quinto Semestre/Digital2/Proyecto2/I2CPJ2.X/main.c: 213:             TXREG = 58;
+[e :U 157 ]
 "214
-[; ;C:/Users/Carlo/OneDrive/Documentos/Quinto Semestre/Digital2/Proyecto2/I2CPJ2.X/main.c: 214:         case 17:
-[e $U 154  ]
+[; ;C:/Users/Carlo/OneDrive/Documentos/Quinto Semestre/Digital2/Proyecto2/I2CPJ2.X/main.c: 214:             break;
+[e = _TXREG _diaD ]
 "215
-[; ;C:/Users/Carlo/OneDrive/Documentos/Quinto Semestre/Digital2/Proyecto2/I2CPJ2.X/main.c: 215:             TXREG = segU;
-[e :U 158 ]
+[; ;C:/Users/Carlo/OneDrive/Documentos/Quinto Semestre/Digital2/Proyecto2/I2CPJ2.X/main.c: 215:         case 16:
+[e $U 155  ]
 "216
-[; ;C:/Users/Carlo/OneDrive/Documentos/Quinto Semestre/Digital2/Proyecto2/I2CPJ2.X/main.c: 216:             break;
-[e = _TXREG -> -> 47 `i `uc ]
+[; ;C:/Users/Carlo/OneDrive/Documentos/Quinto Semestre/Digital2/Proyecto2/I2CPJ2.X/main.c: 216:             TXREG = segD;
+[e :U 158 ]
 "217
-[; ;C:/Users/Carlo/OneDrive/Documentos/Quinto Semestre/Digital2/Proyecto2/I2CPJ2.X/main.c: 217:         case 18:
-[e $U 154  ]
+[; ;C:/Users/Carlo/OneDrive/Documentos/Quinto Semestre/Digital2/Proyecto2/I2CPJ2.X/main.c: 217:             break;
+[e = _TXREG _diaU ]
 "218
-[; ;C:/Users/Carlo/OneDrive/Documentos/Quinto Semestre/Digital2/Proyecto2/I2CPJ2.X/main.c: 218:             TXREG = 10;
-[e :U 159 ]
+[; ;C:/Users/Carlo/OneDrive/Documentos/Quinto Semestre/Digital2/Proyecto2/I2CPJ2.X/main.c: 218:         case 17:
+[e $U 155  ]
 "219
-[; ;C:/Users/Carlo/OneDrive/Documentos/Quinto Semestre/Digital2/Proyecto2/I2CPJ2.X/main.c: 219:             toggleTX = 0;
-[e = _TXREG _mesD ]
+[; ;C:/Users/Carlo/OneDrive/Documentos/Quinto Semestre/Digital2/Proyecto2/I2CPJ2.X/main.c: 219:             TXREG = segU;
+[e :U 159 ]
 "220
 [; ;C:/Users/Carlo/OneDrive/Documentos/Quinto Semestre/Digital2/Proyecto2/I2CPJ2.X/main.c: 220:             break;
-[e $U 154  ]
-"221
-[; ;C:/Users/Carlo/OneDrive/Documentos/Quinto Semestre/Digital2/Proyecto2/I2CPJ2.X/main.c: 221: 
-[e :U 160 ]
-"222
-[; ;C:/Users/Carlo/OneDrive/Documentos/Quinto Semestre/Digital2/Proyecto2/I2CPJ2.X/main.c: 222: 
-[e = _TXREG _mesU ]
-"223
-[; ;C:/Users/Carlo/OneDrive/Documentos/Quinto Semestre/Digital2/Proyecto2/I2CPJ2.X/main.c: 223:     }
-[e $U 154  ]
-"224
-[; ;C:/Users/Carlo/OneDrive/Documentos/Quinto Semestre/Digital2/Proyecto2/I2CPJ2.X/main.c: 224: }
-[e :U 161 ]
-"225
 [e = _TXREG -> -> 47 `i `uc ]
+"221
+[; ;C:/Users/Carlo/OneDrive/Documentos/Quinto Semestre/Digital2/Proyecto2/I2CPJ2.X/main.c: 221:         case 18:
+[e $U 155  ]
+"222
+[; ;C:/Users/Carlo/OneDrive/Documentos/Quinto Semestre/Digital2/Proyecto2/I2CPJ2.X/main.c: 222:             TXREG = 10;
+[e :U 160 ]
+"223
+[; ;C:/Users/Carlo/OneDrive/Documentos/Quinto Semestre/Digital2/Proyecto2/I2CPJ2.X/main.c: 223:             toggleTX = 0;
+[e = _TXREG _mesD ]
+"224
+[; ;C:/Users/Carlo/OneDrive/Documentos/Quinto Semestre/Digital2/Proyecto2/I2CPJ2.X/main.c: 224:             break;
+[e $U 155  ]
+"225
+[; ;C:/Users/Carlo/OneDrive/Documentos/Quinto Semestre/Digital2/Proyecto2/I2CPJ2.X/main.c: 225: 
+[e :U 161 ]
 "226
-[e $U 154  ]
+[; ;C:/Users/Carlo/OneDrive/Documentos/Quinto Semestre/Digital2/Proyecto2/I2CPJ2.X/main.c: 226: 
+[e = _TXREG _mesU ]
 "227
-[e :U 162 ]
+[; ;C:/Users/Carlo/OneDrive/Documentos/Quinto Semestre/Digital2/Proyecto2/I2CPJ2.X/main.c: 227:     }
+[e $U 155  ]
 "228
-[e = _TXREG _anoD ]
+[; ;C:/Users/Carlo/OneDrive/Documentos/Quinto Semestre/Digital2/Proyecto2/I2CPJ2.X/main.c: 228: }
+[e :U 162 ]
 "229
-[e $U 154  ]
+[e = _TXREG -> -> 47 `i `uc ]
 "230
-[e :U 163 ]
+[e $U 155  ]
 "231
-[e = _TXREG _anoU ]
+[e :U 163 ]
 "232
-[e $U 154  ]
+[e = _TXREG _anoD ]
 "233
-[e :U 164 ]
+[e $U 155  ]
 "234
-[e = _TXREG -> -> 32 `i `uc ]
+[e :U 164 ]
 "235
-[e $U 154  ]
+[e = _TXREG _anoU ]
 "236
-[e :U 165 ]
+[e $U 155  ]
 "237
-[e = _TXREG _horaD ]
+[e :U 165 ]
 "238
-[e $U 154  ]
+[e = _TXREG -> -> 32 `i `uc ]
 "239
-[e :U 166 ]
+[e $U 155  ]
 "240
-[e = _TXREG _horaU ]
+[e :U 166 ]
 "241
-[e $U 154  ]
+[e = _TXREG _horaD ]
 "242
-[e :U 167 ]
+[e $U 155  ]
 "243
-[e = _TXREG -> -> 58 `i `uc ]
+[e :U 167 ]
 "244
-[e $U 154  ]
+[e = _TXREG _horaU ]
 "245
-[e :U 168 ]
+[e $U 155  ]
 "246
-[e = _TXREG _minD ]
+[e :U 168 ]
 "247
-[e $U 154  ]
-"248
-[e :U 169 ]
-"249
-[e = _TXREG _minU ]
-"250
-[e $U 154  ]
-"251
-[e :U 170 ]
-"252
 [e = _TXREG -> -> 58 `i `uc ]
+"248
+[e $U 155  ]
+"249
+[e :U 169 ]
+"250
+[e = _TXREG _minD ]
+"251
+[e $U 155  ]
+"252
+[e :U 170 ]
 "253
-[e $U 154  ]
+[e = _TXREG _minU ]
 "254
-[e :U 171 ]
+[e $U 155  ]
 "255
-[e = _TXREG _segD ]
+[e :U 171 ]
 "256
-[e $U 154  ]
+[e = _TXREG -> -> 58 `i `uc ]
 "257
-[e :U 172 ]
+[e $U 155  ]
 "258
-[e = _TXREG _segU ]
+[e :U 172 ]
 "259
-[e $U 154  ]
+[e = _TXREG _segD ]
 "260
-[e :U 173 ]
+[e $U 155  ]
 "261
-[e = _TXREG -> -> 10 `i `uc ]
+[e :U 173 ]
 "262
-[e = _toggleTX -> -> 0 `i `uc ]
+[e = _TXREG _segU ]
 "263
-[e $U 154  ]
+[e $U 155  ]
+"264
+[e :U 174 ]
+"265
+[e = _TXREG -> -> 10 `i `uc ]
 "266
-}
-[e $U 154  ]
-[e :U 155 ]
-[e [\ -> _toggleTX `i , $ -> 1 `i 156
- , $ -> 2 `i 157
- , $ -> 3 `i 158
- , $ -> 4 `i 159
- , $ -> 5 `i 160
- , $ -> 6 `i 161
- , $ -> 7 `i 162
- , $ -> 8 `i 163
- , $ -> 9 `i 164
- , $ -> 10 `i 165
- , $ -> 11 `i 166
- , $ -> 12 `i 167
- , $ -> 13 `i 168
- , $ -> 14 `i 169
- , $ -> 15 `i 170
- , $ -> 16 `i 171
- , $ -> 17 `i 172
- , $ -> 18 `i 173
- 154 ]
-[e :U 154 ]
+[e = _toggleTX -> -> 0 `i `uc ]
 "267
-[e :UE 153 ]
+[e $U 155  ]
+"270
+}
+[e $U 155  ]
+[e :U 156 ]
+[e [\ -> _toggleTX `i , $ -> 1 `i 157
+ , $ -> 2 `i 158
+ , $ -> 3 `i 159
+ , $ -> 4 `i 160
+ , $ -> 5 `i 161
+ , $ -> 6 `i 162
+ , $ -> 7 `i 163
+ , $ -> 8 `i 164
+ , $ -> 9 `i 165
+ , $ -> 10 `i 166
+ , $ -> 11 `i 167
+ , $ -> 12 `i 168
+ , $ -> 13 `i 169
+ , $ -> 14 `i 170
+ , $ -> 15 `i 171
+ , $ -> 16 `i 172
+ , $ -> 17 `i 173
+ , $ -> 18 `i 174
+ 155 ]
+[e :U 155 ]
+"271
+[e :UE 154 ]
 }

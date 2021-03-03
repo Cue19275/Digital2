@@ -19,15 +19,15 @@
 [v _I2C_Master_Read I2C_Master_Read `(us  1 e 2 0 ]
 "84 C:/Users/Carlo/OneDrive/Documentos/Quinto Semestre/Digital2/Proyecto2/I2CPJ2.X/main.c
 [v _ISR ISR `II(v  1 e 1 0 ]
-"107
+"109
 [v _main main `(v  1 e 1 0 ]
-"129
+"133
 [v _Setup Setup `(v  1 e 1 0 ]
-"170
+"174
 [v _recibir_tiempo recibir_tiempo `(v  1 e 1 0 ]
-"190
+"194
 [v _convertirBCD convertirBCD `(v  1 e 1 0 ]
-"207
+"211
 [v _envio envio `(v  1 e 1 0 ]
 "7 C:/Users/Carlo/OneDrive/Documentos/Quinto Semestre/Digital2/Proyecto2/I2CPJ2.X/Osc.c
 [v _initOsc initOsc `(v  1 e 1 0 ]
@@ -263,15 +263,15 @@
 [v _TRISC3 TRISC3 `VEb  1 e 0 @1083 ]
 "4460
 [v _TRISC4 TRISC4 `VEb  1 e 0 @1084 ]
-"107 C:/Users/Carlo/OneDrive/Documentos/Quinto Semestre/Digital2/Proyecto2/I2CPJ2.X/main.c
+"109 C:/Users/Carlo/OneDrive/Documentos/Quinto Semestre/Digital2/Proyecto2/I2CPJ2.X/main.c
 [v _main main `(v  1 e 1 0 ]
 {
-"125
+"129
 } 0
-"170
+"174
 [v _recibir_tiempo recibir_tiempo `(v  1 e 1 0 ]
 {
-"186
+"190
 } 0
 "65 C:/Users/Carlo/OneDrive/Documentos/Quinto Semestre/Digital2/Proyecto2/I2CPJ2.X/I2C.c
 [v _I2C_Master_Write I2C_Master_Write `(v  1 e 1 0 ]
@@ -311,10 +311,10 @@
 [v initOsc@frec frec `uc  1 a 1 2 ]
 "39
 } 0
-"190 C:/Users/Carlo/OneDrive/Documentos/Quinto Semestre/Digital2/Proyecto2/I2CPJ2.X/main.c
+"194 C:/Users/Carlo/OneDrive/Documentos/Quinto Semestre/Digital2/Proyecto2/I2CPJ2.X/main.c
 [v _convertirBCD convertirBCD `(v  1 e 1 0 ]
 {
-"203
+"207
 } 0
 "3 C:/Users/Carlo/OneDrive/Documentos/Quinto Semestre/Digital2/Proyecto2/I2CPJ2.X/ASCII_NUM.c
 [v _num_ascii num_ascii `(uc  1 e 1 0 ]
@@ -329,10 +329,10 @@
 {
 "19
 } 0
-"129 C:/Users/Carlo/OneDrive/Documentos/Quinto Semestre/Digital2/Proyecto2/I2CPJ2.X/main.c
+"133 C:/Users/Carlo/OneDrive/Documentos/Quinto Semestre/Digital2/Proyecto2/I2CPJ2.X/main.c
 [v _Setup Setup `(v  1 e 1 0 ]
 {
-"149
+"153
 } 0
 "16 C:/Users/Carlo/OneDrive/Documentos/Quinto Semestre/Digital2/Proyecto2/I2CPJ2.X/I2C.c
 [v _I2C_Master_Init I2C_Master_Init `(v  1 e 1 0 ]
@@ -355,10 +355,10 @@
 "84 C:/Users/Carlo/OneDrive/Documentos/Quinto Semestre/Digital2/Proyecto2/I2CPJ2.X/main.c
 [v _ISR ISR `II(v  1 e 1 0 ]
 {
-"102
+"104
 } 0
-"207
+"211
 [v _envio envio `(v  1 e 1 0 ]
 {
-"267
+"271
 } 0

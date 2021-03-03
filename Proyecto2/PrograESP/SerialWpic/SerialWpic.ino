@@ -2,9 +2,19 @@
   int cont2 = 0;
   String lectura;
   char tiempo[17];
+  char tiempo2[17];
+  String fecha;
+  String basura;
+  String hora;
+  String fecha2;
+  char sep [] = " ";
+  char *ptr;
+  char *ptr2;
   int bandada = 0;
   #include "config.h"
+  
   AdafruitIO_Feed *serialm = io.feed("serialm");
+  AdafruitIO_Feed *serialh = io.feed("serialh");
   
 void setup(){
   Serial.begin(9600); //Inicio la comunicación serial con la compu, este seria el Serial 0 de mi ESP
@@ -29,44 +39,39 @@ void loop(){
        
     tiempo[cont]= Serial2.read();
     cont++;*/
+    
+    Serial2.write(1);
     Serial2.readBytesUntil(10, tiempo, 17);
-    Serial.println(tiempo);
+ /*fecha.concat(tiempo[0]);
+ fecha.concat(tiempo[1]);
+ fecha.concat(tiempo[2]);
+ fecha.concat(tiempo[3]);
+ fecha.concat(tiempo[4]);
+ fecha.concat(tiempo[5]);
+ fecha.concat(tiempo[6]);
+ fecha.concat(tiempo[7]);*/
+
+    Serial2.write(0);
+   
 
   }
-  /*
-  if (cont == 18){
-    cont = 0;
-    cont2++;
-    Serial.print(tiempo[0]);
-    Serial.print(tiempo[1]);
-    Serial.print(tiempo[2]);
-    Serial.print(tiempo[3]);
-    Serial.print(tiempo[4]);
-    Serial.print(tiempo[5]);
-    Serial.print(tiempo[6]);
-    Serial.print(tiempo[7]);
-    Serial.print(tiempo[8]);
-    Serial.print(tiempo[9]);
-    Serial.print(tiempo[10]);
-    Serial.print(tiempo[11]);
-    Serial.print(tiempo[12]);
-    Serial.print(tiempo[13]);
-    Serial.print(tiempo[14]);
-    Serial.print(tiempo[15]);
-    Serial.print(tiempo[16]);
-    Serial.print(tiempo[17]);
-
-  }*/
-  
-  /*if (tiempo[17) == 13){
-   cont = 0;
-   for (int i = 0; i <=17; i++){
-    Serial.print(char(Serial2.read()));
-   }
-  }*/
   
 
-    serialm->save(tiempo);
-    delay(3000);
+  //sscanf(tiempo, "%s %s", basura, hora);
+  ptr = strtok(tiempo, sep);
+  fecha2 = ptr;
+  ptr2 = strtok(NULL, sep);
+  hora = ptr2;
+  Serial.println(fecha2);
+  Serial.println(hora);
+
+if (hora != NULL){
+    serialm->save(hora);
+}
+if (fecha2 != NULL){
+    serialh->save(fecha2);
+}
+    delay(4000);
+    
  
 }

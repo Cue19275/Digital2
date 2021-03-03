@@ -82,11 +82,13 @@ void envio(void);
 //******************************************************************************
 
 void __interrupt() ISR(void) {
-   if(PIR1bits.TXIF == 1){
+    if(dato_esp == 1){
+    if(PIR1bits.TXIF == 1){
        PIE1bits.TXIE = 0;
        toggleTX++;
        envio();
-   } 
+   }
+    }
    if (INTCONbits.TMR0IF == 1){
        INTCONbits.TMR0IF = 0;
        TMR0 = 100;
@@ -117,9 +119,11 @@ void main(void) {
         
         if (dato_esp == 1){
             PORTB = 1;
+            PIE1bits.TXIE = 1;
         }
-        else {
+        if (dato_esp == 0){
             PORTB = 0;
+            PIE1bits.TXIE = 0;
         }
     }
 }
