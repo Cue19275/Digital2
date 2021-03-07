@@ -35,7 +35,7 @@ sld->get();
 
 void loop(){
   io.run();
-
+  Serial2.write(1);
   if(Serial2.available()>0){ //Aquí digo que cuando el buffer del puerto serial tenga almacenada alguna cantidad de bytes
                                //Se procede a hacer la lectura del puerto
     /*Serial.print(char(Serial2.read())); //Se leen los bytes del puerto serial en forma de char, luego se imprimen en el monitor
@@ -43,7 +43,7 @@ void loop(){
     tiempo[cont]= Serial2.read();
     cont++;*/
     
-    Serial2.write(1);
+    
     Serial2.readBytesUntil(10, tiempo, 17);
  /*fecha.concat(tiempo[0]);
  fecha.concat(tiempo[1]);
