@@ -271,7 +271,7 @@ void envio (void){
         case 15:
             TXREG = 58;
             break;
-        case 16:
+        case 16:       
             TXREG = segD;
             break;
         case 17:
