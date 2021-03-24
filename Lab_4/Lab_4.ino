@@ -1,19 +1,19 @@
-int J1_1 = PB_5;
-int J1_2 = PB_0;
-int J1_3 = PB_1;
-int J1_4 = PE_4;
-int J1_5 = PE_5;
-int J1_6 = PB_4;
-int J1_7 = PA_5;
-int J1_8 = PA_6;
-int J2_1 = PD_0;
-int J2_2 = PD_1;
-int J2_3 = PD_2;
-int J2_4 = PD_3;
-int J2_5 = PE_1;
-int J2_6 = PE_2;
-int J2_7 = PE_3;
-int J2_8 = PD_7;
+#define J1_1 PB_5
+#define J1_2 PB_0
+#define J1_3 PB_1
+#define J1_4 PE_4
+#define J1_5 PE_5
+#define J1_6 PB_4
+#define J1_7 PA_5
+#define J1_8 PA_6
+#define J2_1 PD_0
+#define J2_2 PD_1
+#define J2_3 PD_2
+#define J2_4 PD_3
+#define J2_5 PE_1
+#define J2_6 PE_2
+#define J2_7 PE_3
+#define J2_8 PD_7
 
 int   estadoSalida;
 int   estado;
@@ -67,27 +67,27 @@ void loop() {
   else if (enable_J == 1){
     cont1();
     cont2();
-    if (terminado = 1){
-      while(1){
+    /*if (terminado == 1){
+      
              estado = digitalRead(PUSH1);
-              if (estado == 1){
+              if (estado == LOW){
                   estadoSalida=1;
               }
               
               if (estadoSalida==1){
-                  if (estado == 0){
+                  if (estado == HIGH){
                       estadoSalida =0;
                       flagJ1 = 1;
                       
                   }
               }
                     estadoC2 = digitalRead(PUSH2);
-              if (estadoC2 == 1){
+              if (estadoC2 == LOW){
                   estadoSalidaC2=1;
               }
               
               if (estadoSalidaC2==1){
-                  if (estadoC2 == 0){
+                  if (estadoC2 == HIGH){
                       estadoSalidaC2 =0;
                       flagJ2 = 1;
                   }
@@ -97,24 +97,41 @@ void loop() {
                 flagJ1 = 0;
                 enable_J = 0;
                 terminado = 0;
-                break
               }
-      }
-    }
+      
+    }*/
   }
+  delay(200);
 }
 
 void semaforo(void){
         estado = digitalRead(PUSH1);
-        if (estado == 1){
+        if (estado == LOW){
             estadoSalida=1;
         }
         
         if (estadoSalida==1){
-            if (estado == 0){
+            if (estado == HIGH){
                 estadoSalida =0;
+                flagJ1 = 1;
+            }
+        }
+        estadoC2 = digitalRead(PUSH2);
+    if (estadoC2 == LOW){
+        estadoSalidaC2=1;
+    }
+    
+    if (estadoSalidaC2==1){
+        if (estadoC2 == HIGH){
+            estadoSalidaC2 =0;
+            flagJ2 = 1;
+        }
+    }
+        if (flagJ1 == 1 && flagJ2 == 1){
                 apagado();
                 enable_J = 1;
+                flagJ1 = 0;
+                flagJ2 = 0;
                 digitalWrite(RED_LED, HIGH);
                 digitalWrite(GREEN_LED, LOW);
                 digitalWrite(BLUE_LED, LOW);
@@ -126,7 +143,6 @@ void semaforo(void){
                 digitalWrite(GREEN_LED, HIGH);
                 digitalWrite(RED_LED, LOW);
                 digitalWrite(BLUE_LED, LOW);
-            }
         }
 }
 
@@ -155,27 +171,119 @@ void apagado (void){
 
 void cont1 (void) {
   estado = digitalRead(PUSH1);
-    if (estado == 1){
+    if (estado == LOW){
         estadoSalida=1;
     }
     
     if (estadoSalida==1){
-        if (estado == 0){
+        if (estado == HIGH){
             estadoSalida =0;
             contaJ1++;
+            switch(contaJ1){
+              case 1:
+              digitalWrite(J1_1, HIGH);
+              digitalWrite(J1_2, LOW);
+              digitalWrite(J1_3, LOW);
+              digitalWrite(J1_4, LOW);
+              digitalWrite(J1_5, LOW);
+              digitalWrite(J1_6, LOW);
+              digitalWrite(J1_7, LOW);
+              digitalWrite(J1_8, LOW);
+              break;
+              case 2:
+              digitalWrite(J1_1, LOW);
+              digitalWrite(J1_2, HIGH);
+              digitalWrite(J1_3, LOW);
+              digitalWrite(J1_4, LOW);
+              digitalWrite(J1_5, LOW);
+              digitalWrite(J1_6, LOW);
+              digitalWrite(J1_7, LOW);
+              digitalWrite(J1_8, LOW);
+              break;
+              case 3:
+              digitalWrite(J1_1, LOW);
+              digitalWrite(J1_2, LOW);
+              digitalWrite(J1_3, HIGH);
+              digitalWrite(J1_4, LOW);
+              digitalWrite(J1_5, LOW);
+              digitalWrite(J1_6, LOW);
+              digitalWrite(J1_7, LOW);
+              digitalWrite(J1_8, LOW);
+              break;
+              case 4:
+              digitalWrite(J1_1, LOW);
+              digitalWrite(J1_2, LOW);
+              digitalWrite(J1_3, LOW);
+              digitalWrite(J1_4, HIGH);
+              digitalWrite(J1_5, LOW);
+              digitalWrite(J1_6, LOW);
+              digitalWrite(J1_7, LOW);
+              digitalWrite(J1_8, LOW);
+              break;
+              case 5:
+              digitalWrite(J1_1, LOW);
+              digitalWrite(J1_2, LOW);
+              digitalWrite(J1_3, LOW);
+              digitalWrite(J1_4, LOW);
+              digitalWrite(J1_5, HIGH);
+              digitalWrite(J1_6, LOW);
+              digitalWrite(J1_7, LOW);
+              digitalWrite(J1_8, LOW);
+              break;
+              case 6:
+              digitalWrite(J1_1, LOW);
+              digitalWrite(J1_2, LOW);
+              digitalWrite(J1_3, LOW);
+              digitalWrite(J1_4, LOW);
+              digitalWrite(J1_5, LOW);
+              digitalWrite(J1_6, HIGH);
+              digitalWrite(J1_7, LOW);
+              digitalWrite(J1_8, LOW);
+              break;
+              case 7:
+              digitalWrite(J1_1, LOW);
+              digitalWrite(J1_2, LOW);
+              digitalWrite(J1_3, LOW);
+              digitalWrite(J1_4, LOW);
+              digitalWrite(J1_5, LOW);
+              digitalWrite(J1_6, LOW);
+              digitalWrite(J1_7, HIGH);
+              digitalWrite(J1_8, LOW);
+              break;
+              case 8:
+              digitalWrite(J1_1, LOW);
+              digitalWrite(J1_2, LOW);
+              digitalWrite(J1_3, LOW);
+              digitalWrite(J1_4, LOW);
+              digitalWrite(J1_5, LOW);
+              digitalWrite(J1_6, LOW);
+              digitalWrite(J1_7, LOW);
+              digitalWrite(J1_8, HIGH);
+              break;
+              case 9:
+              
+              contaJ1 = 0;
+              contaJ2 = 0;
+              enable_J = 0;
+              digitalWrite(GREEN_LED, LOW);
+              digitalWrite(RED_LED, HIGH);
+              digitalWrite(BLUE_LED, HIGH);
+              break;
             
         }
     }
 }
+}
+
 
 void cont2 (void) {
         estadoC2 = digitalRead(PUSH2);
-    if (estadoC2 == 1){
+    if (estadoC2 == LOW){
         estadoSalidaC2=1;
     }
     
     if (estadoSalidaC2==1){
-        if (estadoC2 == 0){
+        if (estadoC2 == HIGH){
             estadoSalidaC2 =0;
             contaJ2++;
             switch(contaJ2){
@@ -258,38 +366,17 @@ void cont2 (void) {
               digitalWrite(J2_6, LOW);
               digitalWrite(J2_7, LOW);
               digitalWrite(J2_8, HIGH);
+              break;
+              case 9:
+       
               contaJ2 = 0;
-              terminado = 0;
-              
+              contaJ1 = 0;
+              enable_J = 0;
+              digitalWrite(GREEN_LED, HIGH);
+              digitalWrite(BLUE_LED, HIGH);
               break;
               
             }
-        }
-    }
-}
-
-void debounce (void){
-      estado = digitalRead(PUSH1);
-    if (estado == 1){
-        estadoSalida=1;
-    }
-    
-    if (estadoSalida==1){
-        if (estado == 0){
-            estadoSalida =0;
-        }
-    }
-}
-
-void debounce2 (void){
-      estadoC2 = digitalRead(PUSH2);
-    if (estadoC2 == 1){
-        estadoSalidaC2=1;
-    }
-    
-    if (estadoSalidaC2==1){
-        if (estadoC2 == 0){
-            estadoSalidaC2 =0;
         }
     }
 }
