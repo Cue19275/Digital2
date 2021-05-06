@@ -45,14 +45,7 @@ void loop(){
     
     
     Serial2.readBytesUntil(10, tiempo, 17);
- /*fecha.concat(tiempo[0]);
- fecha.concat(tiempo[1]);
- fecha.concat(tiempo[2]);
- fecha.concat(tiempo[3]);
- fecha.concat(tiempo[4]);
- fecha.concat(tiempo[5]);
- fecha.concat(tiempo[6]);
- fecha.concat(tiempo[7]);*/
+
 
     Serial2.write(0);
     
