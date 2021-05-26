@@ -134,7 +134,6 @@ void D7SEG(int a) {
 // Handler de Inicio página
 //************************************************************************************************
 void handle_OnConnect() {
-  Serial.println("GPIO2 Status: OFF");
   server.send(200, "text/html", SendHTML());
 }
 //************************************************************************************************
@@ -147,29 +146,233 @@ void handle_NotFound() {
 // Procesador de HTML
 //************************************************************************************************
 String SendHTML(void) {
-  String ptr = "<!DOCTYPE html> <html>\n";
-  ptr += "<head><meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0, user-scalable=no\">\n";
-  ptr += "<title>LED Control</title>\n";
-  ptr += "<style>html { font-family: Helvetica; display: inline-block; margin: 0px auto; text-align: center;}\n";
-  ptr += "body{margin-top: 50px;} h1 {color: #444444;margin: 50px auto 30px;} h3 {color: #444444;margin-bottom: 50px;}\n";
-  ptr += ".button {display: block;width: 80px;background-color: #3498db;border: none;color: white;padding: 13px 30px;text-decoration: none;font-size: 25px;margin: 0px auto 35px;cursor: pointer;border-radius: 4px;}\n";
-  ptr += ".button-on {background-color: #3498db;}\n";
-  ptr += ".button-on:active {background-color: #2980b9;}\n";
-  ptr += ".button-off {background-color: #34495e;}\n";
-  ptr += ".button-off:active {background-color: #2c3e50;}\n";
-  ptr += "p {font-size: 14px;color: #888;margin-bottom: 10px;}\n";
-  ptr += "</style>\n";
-  ptr += "</head>\n";
-  ptr += "<body>\n";
-  ptr += "<h1>ESP32 Web Server &#128664</h1>\n";
-  ptr += "<h3>Ejemplo de Web Server</h3>\n";
+  String ptr = "</<!DOCTYPE html>";
+ptr+="<html lang=\"en\" dir=\"ltr\">";
+ptr+="  <head>";
+ptr+="  <script type=\"text/javascript\">";
+ptr+="  setTimeout(function(){";
+ptr+="     window.location.reload(1);";
+ptr+="  }, 5000);";
+ptr+="  </script>";
 
+ptr+="    <meta http-equiv=\"refresh\" content=\"10\">";
+ptr+="    <meta charset=\"utf-8\">";
+ptr+="    <script src=\"script.js\"></script>";
+ptr+="    <title>Proyecto Parqueos</title>";
+ptr+="";
+ptr+="    <style media=\"screen\">";
+ptr+="";
+ptr+="      body{background-color:black;}";;
+ptr+="      h1{";
+ptr+="        text-align:center;";
+ptr+="        font-size: 50px;";
+ptr+="      }";
+ptr+="      h1 span{";
+ptr+="        background:white;";
+ptr+="        color:black<";
+ptr+="      }";
+ptr+="      .carro1{";
+ptr+="        font-size: 100px;";
+ptr+="        position: absolute;";
+ptr+="        top: 25px;";
+ptr+="        left: 30px;";
+ptr+="      }";
+ptr+="      .carro2{";
+ptr+="        font-size: 100px;";
+ptr+="        position: absolute;";
+ptr+="        top: 25px;";
+ptr+="        left: 210px;";
+ptr+="      }";
+ptr+="      .carro3{";
+ptr+="        font-size: 100px;";
+ptr+="        position: absolute;";
+ptr+="        top: 25px;";
+ptr+="        left: 385px;";
+ptr+="      }";
+ptr+="      .carro4{";
+ptr+="        font-size: 100px;";
+ptr+="        position: absolute;";
+ptr+="        top: 25px;";
+ptr+="        left: 560px;";
+ptr+="      }";
+ptr+="      .flag_parq{";
+ptr+="        position:absolute;";
+ptr+="        top: 345px;";
+ptr+="        left: 255px;";
+ptr+="        font-size: 20px;";
+ptr+="        font-family: Arial, Helvetica, sans-serif;";
+ptr+="        font-weight:bold";
+ptr+="      }";
+ptr+="      .rectangulo1{";
+ptr+="        height: 100px;";
+ptr+="        width: 15px;";
+ptr+="        background-color: #990000;";
+ptr+="        border-radius: 9999px;";
+ptr+="        box-shadow: 0px 0px 25px #990000;";
+ptr+="        position: absolute;";
+ptr+="        top: 367px;";
+ptr+="        left: 350px;";
+ptr+="        transform: rotate(90deg);";
+ptr+="      }";
+ptr+="      .rectangulo2{";
+ptr+="        height: 100px;";
+ptr+="        width: 15px;";
+ptr+="        background-color: #990000;";
+ptr+="        border-radius: 9999px;";
+ptr+="        box-shadow: 0px 0px 25px #990000;";
+ptr+="        position: absolute;";
+ptr+="        top: 425px;";
+ptr+="        left: 290px;";
+ptr+="";
+ptr+="      }";
+ptr+="      .rectangulo3{";
+ptr+="        height: 100px;";
+ptr+="        width: 15px;";
+ptr+="        background-color: #990000;";
+ptr+="        border-radius: 9999px;";
+ptr+="        box-shadow: 0px 0px 25px #990000;";
+ptr+="        position: absolute;";
+ptr+="        top: 480px;";
+ptr+="        left: 350px;";
+ptr+="        transform: rotate(90deg);";
+ptr+="      }";
+ptr+="      .rectangulo4{";
+ptr+="        height: 100px;";
+ptr+="        width: 15px;";
+ptr+="        background-color: #990000;";
+ptr+="        border-radius: 9999px;";
+ptr+="        box-shadow: 0px 0px 25px #990000;";
+ptr+="        position: absolute;";
+ptr+="        top: 425px;";
+ptr+="        left: 410px;";
+ptr+="      }";
+ptr+="      .rectangulo5{";
+ptr+="        height: 100px;";
+ptr+="        width: 15px;";
+ptr+="        background-color: #990000;";
+ptr+="        border-radius: 9999px;";
+ptr+="        box-shadow: 0px 0px 25px #990000;";
+ptr+="        position: absolute;";
+ptr+="        top: 595px;";
+ptr+="        left: 350px;";
+ptr+="        transform: rotate(90deg);";
+ptr+="      }";
+ptr+="      .rectangulo6{";
+ptr+="        height: 100px;";
+ptr+="        width: 15px;";
+ptr+="        background-color: #990000;";
+ptr+="        border-radius: 9999px;";
+ptr+="        box-shadow: 0px 0px 25px #990000;";
+ptr+="        position: absolute;";
+ptr+="        top: 535px;";
+ptr+="        left: 290px;";
+ptr+="      }";
+ptr+="      .rectangulo7{";
+ptr+="        height: 100px;";
+ptr+="        width: 15px;";
+ptr+="        background-color: #990000;";
+ptr+="        border-radius: 9999px;";
+ptr+="        box-shadow: 0px 0px 25px #990000;";
+ptr+="        position: absolute;";
+ptr+="        top: 535px;";
+ptr+="        left: 410px;";
+ptr+="      }";
+ptr+="      .fondo_parqueo{";
+ptr+="        height:250px;";
+ptr+="        width:700px;";
+ptr+="        background-color:grey;";
+ptr+="        position: absolute;";
+ptr+="        top: 90px;";
+ptr+="        left: 10px;";
+ptr+="        z-index: -1;";
+ptr+="      }";
+ptr+="      .divisor1_parqueo{";
+ptr+="        height:220px;";
+ptr+="        width:10px;";
+ptr+="        background-color:yellow;";
+ptr+="        position: absolute;";
+ptr+="        top: 100px;";
+ptr+="        left: 185px;";
+ptr+="      }";
+ptr+="      .divisor2_parqueo{";
+ptr+="        height:220px;";
+ptr+="        width:10px;";
+ptr+="        background-color:yellow;";
+ptr+="        position: absolute;";
+ptr+="        top: 100px;";
+ptr+="        left: 360px;";
+ptr+="      }";
+ptr+="      .divisor3_parqueo{";
+ptr+="        height:220px;";
+ptr+="        width:10px;";
+ptr+="        background-color:yellow;";
+ptr+="        position: absolute;";
+ptr+="        top: 100px;";
+ptr+="        left: 535px;";
+ptr+="      }";
+ptr+="    </style>";
+ptr+="  </head>";
+ptr+="";
+ptr+="  <body>";
+ptr+="    <h1><span>Parque-o-Matic</span></h1>";
+ptr+="    <div class=\"flag_parq\">";
+ptr+="      <p style=\"color:white\">Parqueos Disponibles</p>";
+ptr+="    </div>";
+if(p1==1){
+ptr+="    <div class=\"carro1\"><p>&#128664;</p></div>";
+}
+if(p2==1){
+ptr+="    <div class=\"carro2\"><p>&#128664;</p></div>";
+}
+if(p3==1){
+ptr+="    <div class=\"carro3\"><p>&#128664;</p></div>";
+}
+if(p4==1){
+ptr+="    <div class=\"carro4\"><p>&#128664;</p></div>";
+}
+if(dispo==4){
 
-    ptr += "<p>LED1 Status: ON</p><a class=\"button button-off\" href=\"/led1off\">OFF</a>\n";
- 
+ptr+="    <div class=\"rectangulo2\"></div>";
+ptr+="    <div class=\"rectangulo3\"></div>";
+ptr+="    <div class=\"rectangulo4\"></div>";
 
+ptr+="    <div class=\"rectangulo7\"></div>"; 
+}
+else if(dispo==3){
+ptr+="    <div class=\"rectangulo1\"></div>";
 
-  ptr += "</body>\n";
-  ptr += "</html>\n";
+ptr+="    <div class=\"rectangulo3\"></div>";
+ptr+="    <div class=\"rectangulo4\"></div>";
+ptr+="    <div class=\"rectangulo5\"></div>";//Abajo
+
+ptr+="    <div class=\"rectangulo7\"></div>";  
+}
+else if(dispo==2){
+ptr+="    <div class=\"rectangulo1\"></div>";
+ptr+="    <div class=\"rectangulo3\"></div>";
+ptr+="    <div class=\"rectangulo4\"></div>";
+ptr+="    <div class=\"rectangulo5\"></div>";//Abajo
+ptr+="    <div class=\"rectangulo6\"></div>";
+}
+else if(dispo==1){
+  ptr+="    <div class=\"rectangulo7\"></div>";
+  ptr+="    <div class=\"rectangulo4\"></div>";
+}
+else if(dispo==0){
+  ptr+="    <div class=\"rectangulo1\"></div>";
+ptr+="    <div class=\"rectangulo2\"></div>";
+ptr+="    <div class=\"rectangulo4\"></div>";
+ptr+="    <div class=\"rectangulo5\"></div>";//Abajo
+ptr+="    <div class=\"rectangulo6\"></div>";
+ptr+="    <div class=\"rectangulo7\"></div>";
+}
+ptr+="    <div class=\"fondo_parqueo\"></div>";
+ptr+="    <div class=\"divisor1_parqueo\"></div>";
+ptr+="    <div class=\"divisor2_parqueo\"></div>";
+ptr+="    <div class=\"divisor3_parqueo\"></div>";
+ptr+="";
+ptr+="  </body>";
+ptr+="</html>";
+
   return ptr;
 }
